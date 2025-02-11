@@ -1,0 +1,25 @@
+# Block Tags
+Block tags can be used to ensure that a block meets certain conditions.
+
+## Applying Tags ​
+Block tags can be applied in the block's components, prefixed with tag:, as seen below:
+
+- Example Applying Tags
+BP/blocks/tree_stump.json
+
+{
+    "format_version": "1.21.40",
+    "minecraft:block": {
+        "description": {
+            "identifier": "wiki:tree_stump",
+            "menu_category": {
+                "category": "nature"
+            }
+        },
+        "components": {
+            "tag:wood": {},
+            "tag:my_lovely_tag": {},
+            "tag:wiki:very_useless": {}
+        }
+    }
+}

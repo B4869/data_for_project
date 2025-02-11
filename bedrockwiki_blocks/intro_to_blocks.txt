@@ -1,0 +1,87 @@
+# Intro to Blocks
+
+* FORMAT & MIN ENGINE VERSION 1.21.40
+This page discusses basic block features. You can learn more about other Block Components.
+
+* NOTE
+Vanilla blocks are hardcoded. You may not override or access them.
+
+## Registering Blocks 
+
+Block definitions are structured similarly to entities: they contain a description and a list of components that defines the block's behavior.
+Unlike entities, blocks do not have a resource definition other than in RP/blocks.json.
+Below is the minimum behavior-side code to get a custom block into the creative inventory.
+
+ - Example 
+BP/blocks/custom_block.json
+
+{
+    "format_version": "1.21.40",
+    "minecraft:block": {
+        "description": {
+            "identifier": "wiki:custom_block",
+            "menu_category": {
+                "category": "construction", // The creative inventory or recipe book tab that the block is placed into
+                "group": "itemGroup.name.concrete", // The expandable group that the block is a part of. (Optional)
+                "is_hidden_in_commands": false // Is the block hidden from use in commands? (Optional)
+            }
+        },
+        "components": {} // Must be here, even if empty!
+    }
+}
+
+- Block Description ​
+    Defines the block's identifier - a unique ID in the format of namespace:identifier.
+    Configures which menu_category the block is placed into.
+        - Also takes the optional parameters group and is_hidden_in_commands.
+The block description is also home to states and traits, which are covered in their own pages.
+
+## Adding Components ​
+
+Right now, our custom block is using the default component values (which can be found Block Components).
+
+Let's configure our own functionality!
+
+- Example Adding Components 
+BP/blocks/custom_block.json
+
+{
+    "format_version": "1.21.40",
+    "minecraft:block": {
+        "description": {
+            "identifier": "wiki:custom_block",
+            "menu_category": {
+                "category": "construction"
+            }
+        },
+        "components": {
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 3
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 3
+            },
+            "minecraft:friction": 0.4,
+            "minecraft:map_color": "#ffffff",
+            "minecraft:light_dampening": 0,
+            "minecraft:light_emission": 4,
+            "minecraft:loot": "loot_tables/blocks/custom_block.json"
+        }
+    }
+}
+
+minecraft:destructible_by_mining defines how long the player will need to mine the block until it breaks. Currently, it isn't possible to set different destroy times for different tools.
+
+minecraft:destructible_by_explosion defines the resistance to explosions. The higher the value, the lower the chance of destruction.
+
+minecraft:friction defines how much friction the block has. For example, soul sand has a high value for friction, so it slows the players. Ice has a lower friction value, so it has a slippery effect. The friction of classic blocks such as wood or stone is 0.4.
+
+minecraft:map_color is the hex color code that will be displayed on a Minecraft map to represent this block. #ffffff means white. You can get hex codes for other colors hex color picker.
+
+minecraft:light_dampening defines how much light will be blocked from passing through.
+
+minecraft:light_emission defines the light level the block will output.
+
+minecraft:loot defines a loot table path for the block to drop. If this is removed, then the block will drop itself. You can learn more about Loot Tables.
+
+Browse more Block Components!

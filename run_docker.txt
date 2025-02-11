@@ -1,0 +1,8 @@
+docker run --name my_postgres \
+  -e POSTGRES_PASSWORD=bd232 \
+  -e POSTGRES_USER=myProject232 \
+  -p 5432:5432 \
+  -v pgdata:/var/lib/postgresql/data \
+  --restart unless-stopped \
+  -d \
+  my-postgres-with-pgvector
