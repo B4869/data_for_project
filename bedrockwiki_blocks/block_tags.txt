@@ -33,6 +33,6 @@ BP/blocks/tree_stump.json
     - Example Block Descriptor
         Block Descriptor
 
-        {
-            "tags": "q.any_tag('wiki:glowing') && q.all_tags('wiki:custom_ore', 'stone')"
-        }
+            {
+                "tags": "q.any_tag('wiki:glowing') && q.all_tags('wiki:custom_ore', 'stone')"
+            }
