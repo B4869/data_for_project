@@ -23,3 +23,16 @@ BP/blocks/tree_stump.json
         }
     }
 }
+
+## Testing for Tags 
+
+- From Block Descriptors 
+    q.all_tags
+    q.any_tag 
+    
+    - Example Block Descriptor
+        Block Descriptor
+
+        {
+            "tags": "q.any_tag('wiki:glowing') && q.all_tags('wiki:custom_ore', 'stone')"
+        }
