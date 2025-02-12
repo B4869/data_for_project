@@ -1,0 +1,201 @@
+# Texture Animation
+From this page you will learn:
+- How to apply flipbook textures to a block.
+- Which values you can apply in RP/textures/flipbook_textures.json and what they do.
+
+
+## Applying Flipbook Textures ​
+Flipbook textures are animated textures. Blocks like fire, water, lava and magma use them. 
+You can use animated texture for your blocks too! For the first time let's use magma's animated texture. 
+You can simply apply animated magma's texture to your block by changing texture value to one, defined in Vanilla 
+RP/textures/terrain_texture.json:
+
+- Example Flipbook Textures
+    
+    "magma": {
+        "textures": "textures/blocks/magma"
+    }
+
+- Example Flipbook Textures 2
+    BP/blocks/flipbook_block.json
+
+        {
+            "format_version": "1.21.60",
+            "minecraft:block": {
+                "description": {
+                    "identifier": "wiki:flipbook_block",
+                    "menu_category": {
+                        "category": "construction"
+                    }
+                },
+                "components": {
+                    "minecraft:geometry": "minecraft:geometry.full_block",
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "magma" // Add it here.
+                        }
+                    }
+                }
+            }
+        }
+
+## Defining Flipbook Textures ​
+After making block have animated texture, it is time to figure out how it all works.
+
+- 1.Minecraft takes name and path to texture defined in terrain_texture.json
+
+    - Example animated texture 1 
+        RP/textures/terrain_texture.json
+
+            {
+                "texture_name": "atlas.terrain",
+                "resource_pack_name": "wiki", // ID for your resource pack
+                "padding": 8, // Prevent textures from visually overflowing into each other
+                "num_mip_levels": 4, // Quality of texture when viewed from a distance or at an angle
+                "texture_data": {
+                    "magma": {
+                        "textures": "textures/blocks/magma"
+                    }
+                }
+            }
+
+- 2.Minecraft searches looks into flipbook_textures.json aiming to find animation parameters for this name (magma)
+
+    -Example animated texture 2
+        RP/textures/flipbook_textures.json
+
+            [
+                {
+                    "atlas_tile": "magma",
+                    "flipbook_texture": "textures/blocks/magma",
+                    "ticks_per_frame": 10
+                }
+            ]
+
+"atlas_tile" here adds animation parameters to magma name, defined in terrain_texture file.
+
+- 3.Minecraft uses this animated texture for blocks who have magma as texture.
+
+## Flipbook Texture Parameters ​
+While looking up for something in vanilla flipbook texture file, you may notice some additional parameters:
+
++---------------------+-------------+-----------------------------------------------------------+
+| Component          | Type        | Description                                               |
++---------------------+-------------+-----------------------------------------------------------+
+| flipbook_texture   | string      | Path to texture.                                         |
+| atlas_tile         | string      | The shortname defined in the terrain_texture.json file.  |
+| atlas_index       | integer     | The index of the texture array inside the definition.    |
+| atlas_tile_variant | integer     | The variant of the block's texture array inside the     |
+|                   |             | shortname's block variation.                             |
+| ticks_per_frame   | integer     | How fast frames should be changed. 20 ticks = 1 second.  |
+| frames            | array/int   | List with frame index to use on each frame, or the      |
+|                   |             | total number of frames to be repeated sequentially.      |
+| replicate         | integer     | Sets the size of pixels. Default: 1.                     |
+| blend_frames      | boolean     | Defines if frames transition should be smooth or not.   |
+|                   |             | Default: true.                                           |
++---------------------+-------------+-----------------------------------------------------------+
+
+- atlas_index ​
+A component where you'll define the block texture index to animate.
+    
+    - Examples atlas_index
+        RP/textures/terrain_texture.json#texture_data
+
+            "dirt": {
+                "textures": [
+                    "textures/blocks/dirt",
+                    "textures/blocks/coarse_dirt" // Imagine that this is the path you want to animate
+                ]
+            }
+
+Since path 2 has an animated texture, therefore you'll put "atlas_index": 1 on the Dirt block's flipbook texture.
+
+- atlas_tile_variant ​
+A component where you'll define the block variant (which is registered to the variations array) to animate.
+
+    - Example atlas_tile_variant 
+        RP/textures/terrain_texture.json#texture_data
+
+            "dirt": {
+                "textures": [
+                    {
+                        "variations": [
+                            { "path": "textures/blocks/dirt_va" }, // Imagine that this is the block variation you want to animate
+                            { "path": "textures/blocks/dirt0" },
+                            { "path": "textures/blocks/dirt1" }
+                        ]
+                    }
+                ]
+            }
+
+Now let's say we wanted path 1 to be animated, now what you'll do here is to put "atlas_tile_variant": 1 on the Dirt block's flipbook texture.
+
+- replicate ​
+Changes size of the peace of used texture. Can only take values that are multiples of two. If frame has smaller amount of pixels, extends them.
+
++----------------+----------------------------------+
+| replicate value | What it does                   |
++----------------+----------------------------------+
+| < 0            | Breaks animation               |
+| 0              | Breaks animation & texture     |
+| 2              | Renders 1 / 4 pixels of frame  |
+| x              | Renders 1 / x² pixels of frame |
++----------------+----------------------------------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

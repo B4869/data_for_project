@@ -7,7 +7,6 @@ This page discusses basic block features. You can learn more about other Block C
 Vanilla blocks are hardcoded. You may not override or access them.
 
 ## Registering Blocks 
-
 Block definitions are structured similarly to entities: they contain a description and a list of components that defines the block's behavior.
 Unlike entities, blocks do not have a resource definition other than in RP/blocks.json.
 Below is the minimum behavior-side code to get a custom block into the creative inventory.
@@ -37,9 +36,7 @@ BP/blocks/custom_block.json
 The block description is also home to states and traits, which are covered in their own pages.
 
 ## Adding Components ​
-
 Right now, our custom block is using the default component values (which can be found Block Components).
-
 Let's configure our own functionality!
 
 - Example Adding Components 
