@@ -1,0 +1,6 @@
+# BlockComponentTickEvent 
+
+## Extends
+- BlockEvent
+
+Contains information regarding a specific block ticking.

@@ -1,0 +1,48 @@
+# InputMode 
+Describes the type of input of a device.
+
+## Constants
+
+- Gamepad
+Gamepad = "Gamepad"
+
+Gamepad input.
+
+- KeyboardAndMouse
+KeyboardAndMouse = "KeyboardAndMouse"
+
+Keyboard and mouse input.
+
+- MotionController
+MotionController = "MotionController"
+
+Motion controller input.
+
+- Touch
+Touch = "Touch"
+
+Touch input.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

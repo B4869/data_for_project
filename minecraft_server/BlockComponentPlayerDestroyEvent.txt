@@ -1,0 +1,40 @@
+# BlockComponentPlayerDestroyEvent 
+
+## Extends
+BlockEvent
+Contains information regarding a specific block being destroyed.
+
+## Properties
+
+- destroyedBlockPermutation
+read-only destroyedBlockPermutation: BlockPermutation;
+
+Returns permutation information about this block before it was destroyed.
+
+Type: BlockPermutation
+
+- player
+read-only player?: Player;
+
+The player that destroyed this block.
+
+Type: Player
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

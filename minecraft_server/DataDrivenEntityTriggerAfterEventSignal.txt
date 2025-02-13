@@ -1,0 +1,70 @@
+# DataDrivenEntityTriggerAfterEventSignal 
+Contains event registration related to firing of a data driven entity event - for example, the minecraft:ageable_grow_up event on a chicken.
+
+## Methods
+
+- subscribe
+subscribe(callback: (arg0: DataDrivenEntityTriggerAfterEvent) => void, options?: EntityDataDrivenTriggerEventOptions): (arg0: DataDrivenEntityTriggerAfterEvent) => void
+
+Adds a callback that will be called after a data driven entity event is triggered.
+
+    - Parameters
+
+        - callback: (arg0: DataDrivenEntityTriggerAfterEvent) => void
+
+        - options?: EntityDataDrivenTriggerEventOptions = null
+
+Returns (arg0: DataDrivenEntityTriggerAfterEvent) => void
+
+* Notes:
+ - This function can't be called in read-only mode.
+
+- unsubscribe
+unsubscribe(callback: (arg0: DataDrivenEntityTriggerAfterEvent) => void): void
+
+Removes a callback that will be called after a data driven entity event is triggered.
+
+    - Parameters
+
+        - callback: (arg0: DataDrivenEntityTriggerAfterEvent) => void
+
+* Notes:
+ - This function can't be called in read-only mode.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+# CustomComponentNameErrorReason Enumeration
+
+## Constants
+
+- NoNamespace
+
+NoNamespace = 1
+
+- DisallowedNamespace
+
+DisallowedNamespace = 2
+

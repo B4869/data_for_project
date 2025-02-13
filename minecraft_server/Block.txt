@@ -1,0 +1,408 @@
+# Block 
+Represents a block in a dimension. A block represents a unique X, Y, and Z within a dimension and get/sets the state of the block at that location. This type was significantly updated in version 1.17.10.21.
+
+## Properties
+
+- dimension
+read-only dimension: Dimension;
+
+Returns the dimension that the block is within.
+
+Type: Dimension
+
+- isAir
+read-only isAir: boolean;
+
+Returns true if this block is an air block (i.e., empty space).
+
+Type: boolean
+
+* Notes:
+ - This property can throw errors when used.
+    - Throws LocationInUnloadedChunkError, LocationOutOfWorldBoundariesError 
+
+- isLiquid
+read-only isLiquid: boolean;
+
+Returns true if this block is a liquid block - (e.g., a water block and a lava block are liquid, while an air block and a stone block are not. Water logged blocks are not liquid blocks).
+
+Type: boolean
+
+* Notes:
+ - This property can throw errors when used.
+    - Throws LocationInUnloadedChunkError, LocationOutOfWorldBoundariesError
+
+- isWaterlogged
+read-only isWaterlogged: boolean;
+
+Returns or sets whether this block has water on it.
+
+Type: boolean
+
+* Notes:
+ - This property can throw errors when used.
+    - Throws LocationInUnloadedChunkError, LocationOutOfWorldBoundariesError
+
+- location
+read-only location: Vector3;
+
+Coordinates of the specified block.
+
+Type: Vector3
+
+* Notes:
+ - This property can throw errors when used.
+
+- permutation
+read-only permutation: BlockPermutation;
+
+Additional block configuration data that describes the block.
+
+Type: BlockPermutation
+
+* Notes:
+ - This property can throw errors when used.
+    - Throws LocationInUnloadedChunkError, LocationOutOfWorldBoundariesError
+
+- type
+read-only type: BlockType;
+
+Gets the type of block.
+
+Type: BlockType
+
+* Notes:
+ - This property can throw errors when used.
+    - Throws LocationInUnloadedChunkError, LocationOutOfWorldBoundariesError
+
+- typeId
+read-only typeId: string;
+
+Identifier of the type of block for this block. Warning: Vanilla block names can be changed in future releases, try using 'Block.matches' instead for block comparison.
+
+Type: string
+
+* Notes:
+ - This property can throw errors when used.
+    - Throws LocationInUnloadedChunkError, LocationOutOfWorldBoundariesError
+
+- x
+read-only x: number;
+
+X coordinate of the block.
+
+Type: number
+
+- y
+read-only y: number;
+
+Y coordinate of the block.
+
+Type: number
+
+- z
+read-only z: number;
+
+Z coordinate of the block.
+
+Type: number
+
+## Methods
+
+- above
+above(steps?: number): Block | undefined
+
+Returns the @minecraft/server.Block above this block (positive in the Y direction).
+
+    - Parameters
+        - steps?: number = 1
+        
+        Number of steps above to step before returning.
+
+Returns Block | undefined
+
+* Notes:
+ - This function can throw errors.
+    - Throws LocationInUnloadedChunkError, LocationOutOfWorldBoundariesError
+
+- below
+below(steps?: number): Block | undefined
+
+Returns the @minecraft/server.Block below this block (negative in the Y direction).
+
+    - Parameters
+        - steps?: number = 1
+        
+        Number of steps below to step before returning.
+
+Returns Block | undefined
+
+* Notes:
+ - This function can throw errors.
+    - Throws LocationInUnloadedChunkError, LocationOutOfWorldBoundariesError
+
+- center
+center(): Vector3
+
+Returns the @minecraft/server.Vector3 of the center of this block on the X, Y, and Z axis.
+
+Returns Vector3
+
+- east
+east(steps?: number): Block | undefined
+
+Returns the @minecraft/server.Block to the east of this block (positive in the X direction).
+
+    - Parameters
+        - steps?: number = 1
+        
+        Number of steps to the east to step before returning.
+
+Returns Block | undefined
+
+* Notes:
+ - This function can throw errors.
+    - Throws LocationInUnloadedChunkError, LocationOutOfWorldBoundariesError
+
+- getComponent
+getComponent(componentId: T): BlockComponentTypeMap[T] | undefined
+
+Gets a component (that represents additional capabilities) for a block - for example, an inventory component of a chest block.
+
+    - Parameters
+        - componentId: T
+        
+        The identifier of the component (e.g., 'minecraft:inventory'). If no namespace prefix is specified, 'minecraft:' is assumed. Available component IDs can be found as part of the @minecraft/server.BlockComponentTypes enum.
+
+Returns BlockComponentTypeMap[T] | undefined - Returns the component if it exists on the block, otherwise undefined.
+
+* Notes:
+ - This function can throw errors.
+    - Throws LocationInUnloadedChunkError, LocationOutOfWorldBoundariesError
+
+- getItemStack
+getItemStack(amount?: number, withData?: boolean): ItemStack | undefined
+
+Creates a prototype item stack based on this block that can be used with Container/ContainerSlot APIs.
+
+    - Parameters
+        - amount?: number = 1
+
+        umber of instances of this block to place in the item stack.
+
+        - withData?: boolean = false
+
+        Whether additional data facets of the item stack are included.
+
+Returns ItemStack | undefined - An itemStack with the specified amount of items and data. Returns undefined if block type is incompatible.
+
+* Notes:
+ - This function can throw errors.
+    - Throws LocationInUnloadedChunkError, LocationOutOfWorldBoundariesError
+
+- getRedstonePower
+getRedstonePower(): number | undefined
+
+Returns the net redstone power of this block.
+
+Returns number | undefined - Returns undefined if redstone power is not applicable to this block.
+
+* Notes:
+ - This function can throw errors.
+    - Throws LocationInUnloadedChunkError, LocationOutOfWorldBoundariesError
+
+- getTags
+getTags(): string[]
+
+Returns a set of tags for a block.
+
+Returns string[] - The list of tags that the block has.
+
+* Notes:
+ - This function can throw errors.
+    - Throws LocationInUnloadedChunkError, LocationOutOfWorldBoundariesError
+
+- hasTag
+
+hasTag(tag: string): boolean
+
+Checks to see if the permutation of this block has a specific tag.
+
+    - Parameters
+        - tag: string
+
+        Tag to check for.
+
+Returns boolean - Returns true if the permutation of this block has the tag, else false.
+
+    - Examples hasTag
+        checkBlockTags.js
+
+            import { DimensionLocation } from "@minecraft/server";
+
+            function checkBlockTags(log, targetLocation) {
+            // Fetch the block
+            const block = targetLocation.dimension.getBlock(targetLocation);
+
+            // Check that the block is loaded
+            if (block) {
+                log(`Block is dirt: ${block.hasTag("dirt")}`);
+                log(`Block is wood: ${block.hasTag("wood")}`);
+                log(`Block is stone: ${block.hasTag("stone")}`);
+            }
+            }
+
+(preview) Work with this sample on the MCTools.dev code sandbox.
+
+* Notes:
+ - This function can throw errors.
+    - Throws LocationInUnloadedChunkError, LocationOutOfWorldBoundariesError
+
+- matches 
+matches(blockName: string, states?: Record<string, boolean | number | string>): boolean
+
+Tests whether this block matches a specific criteria.
+
+    - Parameters
+        - blockName: string
+        
+        Block type identifier to match this API against.
+        
+        - states?: Record<string, boolean | number | string> = null
+        
+        Optional set of block states to test this block against.
+
+Returns boolean - Returns true if the block matches the specified criteria.
+
+* Notes:
+ - This function can throw errors.
+    - Throws LocationInUnloadedChunkError, LocationOutOfWorldBoundariesError
+
+- north
+north(steps?: number): Block | undefined
+
+Returns the @minecraft/server.Block to the north of this block (negative in the Z direction).
+
+    - Parameters
+        - steps?: number = 1
+        
+        Number of steps to the north to step before returning.
+
+Returns Block | undefined
+
+* Notes:
+ - This function can throw errors.
+    - Throws LocationInUnloadedChunkError, LocationOutOfWorldBoundariesError
+
+- offset
+offset(offset: Vector3): Block | undefined
+
+Returns a block at an offset relative vector to this block.
+
+    - Parameters
+        - offset: Vector3
+        
+        The offset vector. For example, an offset of 0, 1, 0 will return the block above the current block.
+
+Returns Block | undefined - Block at the specified offset, or undefined if that block could not be retrieved (for example, the block and its relative chunk is not loaded yet.)
+
+* Notes:
+
+ - This function can throw errors.
+    - Throws LocationInUnloadedChunkError, LocationOutOfWorldBoundariesError
+
+- setPermutation
+setPermutation(permutation: BlockPermutation): void
+
+Sets the block in the dimension to the state of the permutation.
+
+    - Parameters
+        - permutation: BlockPermutation
+        
+        ermutation that contains a set of property states for the Block.
+
+* Notes:
+ - This function can't be called in read-only mode.
+ - This function can throw errors.
+    -Throws LocationInUnloadedChunkError, LocationOutOfWorldBoundariesError
+
+- setType
+setType(blockType: BlockType | string): void
+
+Sets the type of block.
+
+    - Parameters
+        - blockType: BlockType | string
+        
+        Identifier of the type of block to apply - for example, minecraft:powered_repeater.
+
+* Notes:
+ - This function can't be called in read-only mode.
+ - This function can throw errors.
+    - Throws Error, LocationInUnloadedChunkError, LocationOutOfWorldBoundariesError
+
+- setWaterlogged
+setWaterlogged(isWaterlogged: boolean): void
+
+Sets whether this block has a water logged state - for example, whether stairs are submerged within water.
+
+    - Parameters
+        - isWaterlogged: boolean
+
+        true if the block should have water within it.
+
+* Notes:
+ - This function can't be called in read-only mode.
+ - This function can throw errors.
+    - Throws Error, LocationInUnloadedChunkError, LocationOutOfWorldBoundariesError
+
+- south
+south(steps?: number): Block | undefined
+
+Returns the @minecraft/server.Block to the south of this block (positive in the Z direction).
+
+    - Parameters
+        - steps?: number = 1
+
+        Number of steps to the south to step before returning.
+
+Returns Block | undefined
+
+* Notes:
+ - This function can throw errors.
+    - Throws LocationInUnloadedChunkError, LocationOutOfWorldBoundariesError
+
+- west
+west(steps?: number): Block | undefined
+
+Returns the @minecraft/server.Block to the west of this block (negative in the X direction).
+
+    - Parameters
+        - steps?: number = 1
+
+        Number of steps to the west to step before returning.
+
+Returns Block | undefined
+
+* Notes:
+ - This function can throw errors.
+    - Throws LocationInUnloadedChunkError, LocationOutOfWorldBoundariesError
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,56 @@
+# DataDrivenEntityTriggerAfterEvent 
+Contains information related to firing of a data driven entity event - for example, the minecraft:ageable_grow_up event on a chicken.
+
+## Properties
+
+- entity
+read-only entity: Entity;
+
+Entity that the event triggered on.
+
+Type: Entity
+
+- eventId
+read-only eventId: string;
+
+Name of the data driven event being triggered.
+
+Type: string
+
+## Methods
+
+- getModifiers
+getModifiers(): DefinitionModifier[]
+
+An updateable list of modifications to component state that are the effect of this triggered event.
+
+Returns DefinitionModifier[]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

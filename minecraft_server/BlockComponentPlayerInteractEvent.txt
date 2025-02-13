@@ -1,0 +1,45 @@
+# BlockComponentPlayerInteractEvent 
+
+## Extends
+
+- BlockEvent
+
+Contains information regarding a specific block being interacted with.
+
+## Properties
+
+- face
+read-only face: Direction;
+
+The block face that was interacted with.
+
+Type: Direction
+
+- faceLocation
+read-only faceLocation?: Vector3;
+
+Location relative to the bottom north-west corner of the block that the player interacted with.
+
+Type: Vector3
+
+- player
+read-only player?: Player;
+
+The player that interacted with this block.
+
+Type: Player
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

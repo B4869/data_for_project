@@ -1,0 +1,52 @@
+# BlockComponentPlayerPlaceBeforeEvent 
+
+## Extends
+
+- BlockEvent
+
+Contains information regarding an event before a player places a block.
+
+## Properties
+
+- cancel
+cancel: boolean;
+
+If set to true, cancels the block place event.
+
+Type: boolean
+
+- face
+read-only face: Direction;
+
+The block face that was placed onto.
+
+Type: Direction
+
+- permutationToPlace
+permutationToPlace: BlockPermutation;
+
+The block permutation that will be placed if the event is not cancelled. If set to a different block permutation, that permutation will be placed instead.
+
+Type: BlockPermutation
+
+- player
+read-only player?: Player;
+
+The player that is placing this block.
+
+Type: Player
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

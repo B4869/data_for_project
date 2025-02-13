@@ -1,0 +1,51 @@
+# ButtonPushAfterEventSignal 
+Manages callbacks that are connected to when a button is pushed.
+
+## Methods
+
+- Examples buttonPushEvent
+    buttonPushEvent.js
+
+        import { world, system, BlockPermutation } from "@minecraft/server";
+        import { MinecraftBlockTypes } from "@minecraft/vanilla-data";
+
+        function buttonPushEvent(log, targetLocation) {
+        if (!targetLocation || !targetLocation.dimension) {
+            log("Invalid target location.", -1);
+            return;
+        }
+
+        const cobblestone = targetLocation.dimension.getBlock(targetLocation);
+        const button = targetLocation.dimension.getBlock({
+            x: targetLocation.x,
+            y: targetLocation.y + 1,
+            z: targetLocation.z,
+        });
+
+        if (!cobblestone || !button) {
+            log("Could not find block at location.");
+            return;
+        }
+
+        cobblestone.setPermutation(BlockPermutation.resolve(MinecraftBlockTypes.Cobblestone));
+        button.setPermutation(
+            BlockPermutation.resolve(MinecraftBlockTypes.AcaciaButton).withState("facing_direction", 1)
+        );
+
+        world.afterEvents.buttonPush.subscribe((buttonPushEvent) => {
+            const eventLoc = buttonPushEvent.block.location;
+
+            if (
+            eventLoc.x === targetLocation.x &&
+            eventLoc.y === targetLocation.y + 1 &&
+            eventLoc.z === targetLocation.z
+            ) {
+            log("Button push event at tick " + system.currentTick);
+            }
+        });
+        }
+
+(preview) Work with this sample on the MCTools.dev code sandbox.
+
+
+
