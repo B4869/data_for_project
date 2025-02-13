@@ -67,29 +67,3 @@ To calculate how likely a texture variation is, add all of the weights together 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

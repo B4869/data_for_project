@@ -125,35 +125,3 @@ The following are valid values for the sound property:
 | wood                         |
 +------------------------------+
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

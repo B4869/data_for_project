@@ -95,21 +95,3 @@ Then, textures can be applied by material instances through their RP/textures/te
             }
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

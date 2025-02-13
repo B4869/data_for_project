@@ -7,8 +7,8 @@ Block tags can be applied in the block's components, prefixed with tag:, as seen
 - Example Applying Tags
     BP/blocks/tree_stump.json
 
-    {
-        "format_version": "1.21.40",
+        {
+        "format_version": "1.21.60",
         "minecraft:block": {
             "description": {
                 "identifier": "wiki:tree_stump",
@@ -36,6 +36,21 @@ Block tags can be applied in the block's components, prefixed with tag:, as seen
             {
                 "tags": "q.any_tag('wiki:glowing') && q.all_tags('wiki:custom_ore', 'stone')"
             }
+
+- From Entities 
+    - q.relative_block_has_all_tags
+    - q.relative_block_has_any_tag
+    - q.block_has_all_tags
+    - q.block_has_any_tag
+
+    - Example From Entities 
+        minecraft:client_entity > description
+
+            "scripts": {
+            "pre_animation": [
+                "v.is_on_sand = q.relative_block_has_any_tag(0, -1, 0, 'sand');"
+            ]
+        }
 
 - Additional Queries
 
@@ -72,4 +87,203 @@ Block tags can be applied in the block's components, prefixed with tag:, as seen
                     }
                 }
             }
-            
+
+## ​List of Vanilla Tags 
+
+    [
+    {
+    Tag: acacia,
+    Vanilla Usage: minecraft:acacia_log
+    },
+    {
+    Tag: birch,
+    Vanilla Usage: minecraft:birch_log
+    },
+    {
+    Tag: dark_oak,
+    Vanilla Usage: minecraft:dark_oak_log
+    },
+    {
+    Tag: diamond_pick_diggable,
+    Vanilla Usage: [
+    minecraft:coal_ore,
+    minecraft:deepslate_coal_ore,
+                    minecraft:deepslate_diamond_ore,
+                    minecraft:deepslate_emerald_ore,
+                    minecraft:deepslate_gold_ore,
+    minecraft:deepslate_iron_ore,
+    minecraft:deepslate_redstone_ore,
+    minecraft:diamond_ore,
+    minecraft:emerald_ore,
+    minecraft:gold_ore,
+    minecraft:iron_ore,
+    minecraft:lapis_ore,
+    minecraft:lit_deepslate_redstone_ore,
+    minecraft:lit_redstone_ore,
+    minecraft:obsidian,
+    minecraft:raw_gold_block,
+    minecraft:raw_iron_block,
+    minecraft:redstone_ore
+
+    ]
+    },
+    {
+    Tag: dirt,
+    Vanilla Usage: [
+    minecraft:coarse_dirt,
+    minecraft:dirt,
+    minecraft:dirt_with_roots,
+    minecraft:farmland,
+    minecraft:grass_block,
+    minecraft:moss_block,
+    minecraft:mud,
+    minecraft:muddy_mangrove_roots,
+    minecraft:mycelium,
+    minecraft:pale_moss_block,
+    minecraft:podzol
+    ]
+    },
+    {
+    Tag: fertilize_area,
+    Vanilla Usage: [
+    minecraft:allium,
+    minecraft:azure_bluet,
+    minecraft:blue_orchid,
+    minecraft:cornflower,
+    minecraft:crimson_nylium,
+    minecraft:dandelion,
+    minecraft:grass_block,
+    minecraft:lily_of_the_valley,
+    minecraft:moss_block,
+    minecraft:orange_tulip,
+    minecraft:oxeye_daisy,
+    minecraft:pale_moss_block,
+    minecraft:pink_tulip,
+    minecraft:poppy,
+    minecraft:red_tulip,
+    minecraft:warped_nylium,
+    minecraft:white_tulip
+    ]
+    },
+    {
+    Tag: grass,
+    Vanilla Usage: [
+    minecraft:coarse_dirt,
+    minecraft:dirt,
+    minecraft:grass_block,
+    minecraft:grass_path
+    ]
+    },
+    {
+    Tag: gravel,
+    Vanilla Usage: [
+    minecraft:gravel,
+    minecraft:suspicious_gravel
+    ]
+    },
+    {
+    Tag: iron_pick_diggable,
+    Vanilla Usage: [
+    minecraft:coal_ore,
+    minecraft:deepslate_coal_ore,
+    minecraft:deepslate_diamond_ore,
+    minecraft:deepslate_emerald_ore,
+    minecraft:deepslate_gold_ore,
+    minecraft:deepslate_iron_ore,
+    minecraft:deepslate_redstone_ore,
+    minecraft:diamond_ore,
+    minecraft:emerald_ore,
+    minecraft:gold_ore,
+    minecraft:iron_ore,
+    minecraft:lapis_ore,
+    minecraft:lit_deepslate_redstone_ore,
+    minecraft:lit_redstone_ore,
+    minecraft:raw_gold_block,
+    minecraft:raw_iron_block,
+    minecraft:redstone_ore
+    ]
+    },
+    {
+    Tag: jungle,
+    Vanilla Usage: minecraft:jungle_log
+    },
+    {
+    Tag: log,
+    Vanilla Usage: [
+    minecraft:acacia_log,
+    minecraft:birch_log,
+    minecraft:dark_oak_log,
+    minecraft:jungle_log,
+    minecraft:oak_log,
+    minecraft:spruce_log
+    ]
+    },
+    {
+    Tag: metal,
+    Vanilla Usage: [
+    minecraft:cauldron,
+    minecraft:gold_block,
+    minecraft:iron_bars,
+    minecraft:iron_block,
+    minecraft:iron_door
+    ]
+    },
+    {
+    Tag: minecraft:crop,
+    Vanilla Usage: [
+    minecraft:beetroot,
+    minecraft:carrots,
+    minecraft:pitcher_crop,
+    minecraft:potatoes,
+    minecraft:sweet_berry_bush,
+    minecraft:torchflower_crop,
+    minecraft:wheat
+    ]
+    },
+    {
+    Tag: minecraft:diamond_tier_destructible,
+    Vanilla Usage: [
+    minecraft:ancient_debris,
+    minecraft:crying_obsidian,
+    minecraft:glowingobsidian,
+    minecraft:netherite_block,
+    minecraft:obsidian,
+    minecraft:respawn_anchor
+    ]
+    },
+    {
+    Tag: minecraft:iron_tier_destructible,
+    Vanilla Usage: [
+    minecraft:deepslate_diamond_ore,
+    minecraft:deepslate_emerald_ore,
+    minecraft:deepslate_gold_ore,
+    minecraft:deepslate_redstone_ore,
+    minecraft:diamond_block,
+    minecraft:diamond_ore,
+    minecraft:emerald_block,
+    minecraft:emerald_ore,
+    minecraft:gold_block,
+    minecraft:gold_ore,
+    minecraft:lit_deepslate_redstone_ore,
+    minecraft:lit_redstone_ore,
+    minecraft:raw_gold_block,
+    minecraft:redstone_ore
+    ]
+    },
+    ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
