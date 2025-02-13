@@ -570,37 +570,3 @@ Your pack should now contain the following files:
 
 With the help of this tutorial/template, you now have the knowledge and skills to create your own custom crop, as well as its seed and food items.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

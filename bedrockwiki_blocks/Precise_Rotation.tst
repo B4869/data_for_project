@@ -494,24 +494,3 @@ Your block JSON and script files after the above steps should look similar to th
             );
         });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

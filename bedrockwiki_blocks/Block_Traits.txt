@@ -1,0 +1,145 @@
+# Block Traits
+
+ * FORMAT & MIN ENGINE VERSION 1.21.60
+ Before you learn about block traits, you should be confident with block states.
+ When working with block states, ensure that the min_engine_version in your pack manifest is 1.20.20 or higher.
+ 
+## Applying Traits ​
+Block traits can be used to apply vanilla block states (such as direction) to your custom blocks easily, without the need for events and triggers.
+
+- Example Traits 
+    BP/blocks/custom_slab.json
+
+        {
+        "format_version": "1.21.60",
+        "minecraft:block": {
+            "description": {
+            "identifier": "wiki:custom_slab",
+            "menu_category": {
+                "category": "construction",
+                "group": "minecraft:itemGroup.name.slab"
+            },
+            "traits": {
+                "minecraft:placement_position": {
+                "enabled_states": ["minecraft:vertical_half"]
+                }
+            }
+            },
+            "components": { ... },
+            "permutations": [ ... ]
+        }
+        }
+This example will set the minecraft:vertical_half block state when placed to either 'top' or 'bottom' - depending on where the player is looking.
+Permutations are still required for this state to make a functional difference, with conditions querying
+
+- Example Permutations 
+    
+    q.block_state('minecraft:vertical_half')
+
+## List of Traits 
+
+- Placement Direction ​
+Contains information about the player's rotation when the block was placed.
+
+Released from experiment Upcoming Creator Features for format versions 1.20.20 and higher.
+
+    +-----------------------------+-------------------------------+------------------------------------------------+
+    | State                       | Values                        | Description                                    |
+    +-----------------------------+-------------------------------+------------------------------------------------+
+    | minecraft:cardinal_direction | "south" (default)            | Cardinal facing direction of player when placed. |
+    |                             | "north"                       |                                                |
+    |                             | "west"                        |                                                |
+    |                             | "east"                        |                                                |
+    +-----------------------------+-------------------------------+------------------------------------------------+
+    | minecraft:facing_direction   | "down" (default)             | Overall direction of player when placed.      |
+    |                             | "up"                          |                                                |
+    |                             | "south"                       |                                                |
+    |                             | "north"                       |                                                |
+    |                             | "west"                        |                                                |
+    |                             | "east"                        |                                                |
+    +-----------------------------+-------------------------------+------------------------------------------------+
+
+    - Additional Parameters
+    y_rotation_offset - This rotation offset only applies to the horizontal state values (north, south, east, west) . Only axis-aligned angles may be specified (e.g. 90, 180, -90). 
+
+        - Example Additional Parameters
+            minecraft:block > description > traits
+
+                "minecraft:placement_direction": {
+                "enabled_states": ["minecraft:cardinal_direction"],
+                "y_rotation_offset": 180
+                }
+
+- Placement Position
+    Contains information about where the player placed the block.
+    
+    Released from experiment Upcoming Creator Features for format versions 1.20.20 and higher.
+
+    - Provided States
+    
+        +---------------------------+------------------+----------------------------------+
+        | State                     | Values           | Description                      |
+        +---------------------------+------------------+----------------------------------+
+        | minecraft:block_face      | "down" (default) | Face on which the block was placed. |
+        |                           | "up"             |                                  |
+        |                           | "south"          |                                  |
+        |                           | "north"          |                                  |
+        |                           | "west"           |                                  |
+        |                           | "east"           |                                  |
+        +---------------------------+------------------+----------------------------------+
+        | minecraft:vertical_half   | "top"            | The vertical half where the block was placed. |
+        |                           | "bottom" (default) |                                  |
+        +---------------------------+------------------+----------------------------------+
+
+        - Example Provided States
+            minecraft:block > description > traits
+            
+                "minecraft:placement_position": {
+                "enabled_states": [
+                    "minecraft:block_face",
+                    "minecraft:vertical_half"
+                ]
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

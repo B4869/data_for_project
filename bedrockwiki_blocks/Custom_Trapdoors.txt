@@ -227,36 +227,3 @@ This will be the geometry used for your custom trapdoors.
 * TIP
 Vanilla trapdoors have a few issues in the direction of the texture in certain faces and having a height of 2.95 when it should be 3. This block template and geometry fixes both of those issues.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
