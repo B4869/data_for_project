@@ -1,0 +1,49 @@
+# EntityHealthChangedAfterEventSignal 
+Manages callbacks that are connected to when the health of an entity changes.
+
+# Methods
+
+- subscribe
+subscribe(callback: (arg0: EntityHealthChangedAfterEvent) => void, options?: EntityEventOptions): (arg0: EntityHealthChangedAfterEvent) => void
+
+Adds a callback that will be called when the health of an entity changes.
+
+    - Parameters
+
+        - callback: (arg0: EntityHealthChangedAfterEvent) => void
+        - options?: EntityEventOptions = null
+
+Returns (arg0: EntityHealthChangedAfterEvent) => void
+
+* Notes:
+ - This function can't be called in read-only mode.
+
+- unsubscribe
+unsubscribe(callback: (arg0: EntityHealthChangedAfterEvent) => void): void
+
+Removes a callback from being called when the health of an entity changes.
+
+    - Parameters
+        
+        - callback: (arg0: EntityHealthChangedAfterEvent) => void
+
+* Notes:
+ - This function can't be called in read-only mode.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

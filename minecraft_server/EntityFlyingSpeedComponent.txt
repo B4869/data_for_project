@@ -1,0 +1,73 @@
+# EntityFlyingSpeedComponent 
+
+## Extends
+
+- EntityComponent
+
+Represents the flying speed of an entity.
+
+## Properties
+
+- value
+value: number;
+
+Current value of the flying speed of the associated entity.
+
+Type: number
+
+* Notes:
+ - This property can't be edited in read-only mode.
+
+## Constants
+
+- componentId
+static read-only componentId = "minecraft:flying_speed";
+
+Type: string
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

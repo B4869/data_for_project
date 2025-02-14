@@ -1,0 +1,119 @@
+# EntityEquippableComponent 
+
+## Extends
+
+- EntityComponent
+
+Provides access to a mob's equipment slots. This component exists for all mob entities.
+
+## Methods
+
+- getEquipment
+getEquipment(equipmentSlot: EquipmentSlot): ItemStack | undefined
+
+Gets the equipped item for the given EquipmentSlot.
+
+        - Parameters
+        
+            - equipmentSlot: EquipmentSlot
+
+            The equipment slot. e.g. "head", "chest", "offhand"
+
+Returns ItemStack | undefined - Returns the item equipped to the given EquipmentSlot. If empty, returns undefined.
+
+* Notes:
+ - This function can throw errors.
+
+- getEquipmentSlot
+getEquipmentSlot(equipmentSlot: EquipmentSlot): ContainerSlot
+
+Gets the ContainerSlot corresponding to the given EquipmentSlot.
+
+    - Parameters
+
+        - equipmentSlot: EquipmentSlot
+
+        The equipment slot. e.g. "head", "chest", "offhand".
+
+Returns ContainerSlot - Returns the ContainerSlot corresponding to the given EquipmentSlot.
+
+* Notes:
+ - This function can throw errors.
+
+- setEquipment
+setEquipment(equipmentSlot: EquipmentSlot, itemStack?: ItemStack): boolean
+
+Replaces the item in the given EquipmentSlot.
+
+    - Parameters
+
+        - equipmentSlot: EquipmentSlot
+
+        The equipment slot. e.g. "head", "chest", "offhand".
+
+        - itemStack?: ItemStack = null
+
+        The item to equip. If undefined, clears the slot.
+
+Returns boolean
+
+* Notes:
+ -This function can't be called in read-only mode.
+ - This function can throw errors.
+
+## Constants
+
+- componentId
+static read-only componentId = "minecraft:equippable";
+
+Type: string
+
+    - Example givePlayerElytra
+        givePlayerElytra.js
+
+            import { EquipmentSlot, ItemStack, Player, EntityComponentTypes } from '@minecraft/server';
+            import { MinecraftItemTypes } from '@minecraft/vanilla-data';
+
+            function giveEquipment(player) {
+                const equipmentCompPlayer = player.getComponent(EntityComponentTypes.Equippable);
+                if (equipmentCompPlayer) {
+                    equipmentCompPlayer.setEquipment(EquipmentSlot.Chest, new ItemStack(MinecraftItemTypes.Elytra));
+                }
+            }
+
+    (preview) Work with this sample on the MCTools.dev code sandbox.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

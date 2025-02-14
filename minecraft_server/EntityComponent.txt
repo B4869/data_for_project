@@ -1,0 +1,149 @@
+# EntityComponent
+
+## Extends
+
+- Component
+
+## Classes that extend EntityComponent
+
+- EntityAddRiderComponent
+- EntityAgeableComponent
+- EntityAttributeComponent
+- EntityBaseMovementComponent
+- EntityBreathableComponent
+- EntityCanClimbComponent
+- EntityCanFlyComponent
+- EntityCanPowerJumpComponent
+- EntityColor2Component
+- EntityColorComponent
+- EntityEquippableComponent
+- EntityFireImmuneComponent
+- EntityFloatsInLiquidComponent
+- EntityFlyingSpeedComponent
+- EntityFrictionModifierComponent
+- EntityGroundOffsetComponent
+- EntityHealableComponent
+- EntityInventoryComponent
+- EntityIsBabyComponent
+- EntityIsChargedComponent
+- EntityIsChestedComponent
+- EntityIsDyeableComponent
+- EntityIsHiddenWhenInvisibleComponent
+- EntityIsIgnitedComponent
+- EntityIsIllagerCaptainComponent
+- EntityIsSaddledComponent
+- EntityIsShakingComponent
+- EntityIsShearedComponent
+- EntityIsStackableComponent
+- EntityIsStunnedComponent
+- EntityIsTamedComponent
+- EntityItemComponent
+- EntityLeashableComponent
+- EntityMarkVariantComponent
+- EntityNavigationComponent
+- EntityNpcComponent
+- EntityOnFireComponent
+- EntityProjectileComponent
+- EntityPushThroughComponent
+- EntityRideableComponent
+- EntityRidingComponent
+- EntityScaleComponent
+- EntitySkinIdComponent
+- EntityStrengthComponent
+- EntityTameableComponent
+- EntityTameMountComponent
+- EntityTypeFamilyComponent
+- EntityVariantComponent
+- EntityWantsJockeyComponent
+- PlayerCursorInventoryComponent
+
+
+Base class for downstream entity components.
+
+## Properties
+
+- entity
+read-only entity: Entity;
+
+The entity that owns this component. The entity will be undefined if it has been removed.
+
+Type: Entity
+
+* Notes:
+ - This property can throw errors when used.
+    - Throws InvalidEntityError
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

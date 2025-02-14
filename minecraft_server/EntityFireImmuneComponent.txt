@@ -1,0 +1,91 @@
+# EntityFireImmuneComponent
+
+## Extends
+
+- EntityComponent
+
+When added, this component signifies that this entity doesn't take damage from fire.
+
+## Constants
+
+- componentId
+static read-only componentId = "minecraft:fire_immune";
+
+Type: string
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

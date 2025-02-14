@@ -1,0 +1,58 @@
+# EffectType 
+Represents a type of effect - like poison - that can be applied to an entity.
+
+## Methods
+
+- getName
+getName(): string
+
+Identifier name of this effect type.
+
+Returns string - Identifier of the effect type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

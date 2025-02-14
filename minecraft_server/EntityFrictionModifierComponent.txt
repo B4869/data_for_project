@@ -1,0 +1,87 @@
+# EntityFrictionModifierComponent 
+
+## Extends
+
+- EntityComponent
+
+Defines how much friction affects this entity.
+
+## Properties
+
+- value
+value: number;
+
+Current value of the friction modifier of the associated entity.
+
+Type: number
+
+* Notes:
+ - This property can't be edited in read-only mode.
+
+## Constants
+
+- componentId
+static read-only componentId = "minecraft:friction_modifier";
+
+Type: string
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,39 @@
+# minecraft/common
+
+## Manifest Details
+
+    JSON
+        {
+            "module_name": "@minecraft/common",
+            "version": "1.2.0"
+        }
+
+## Available Versions
+
+- 1.2.0
+- 1.1.0
+- 1.0.0
+
+## Enumerations
+
+- InvalidArgumentErrorType
+
+## Errors
+
+- ArgumentOutOfBoundsError
+
+- EngineError
+
+- InvalidArgumentError
+
+- PropertyOutOfBoundsError
+
+- RuntimeConditionError
+
+
+
+
+
+
+
+

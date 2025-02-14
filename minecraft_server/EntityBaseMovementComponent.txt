@@ -1,0 +1,78 @@
+# EntityBaseMovementComponent
+
+## Extends
+
+- EntityComponent
+
+## Classes that extend EntityBaseMovementComponent
+
+- EntityMovementAmphibiousComponent
+- EntityMovementBasicComponent
+- EntityMovementFlyComponent
+- EntityMovementGenericComponent
+- EntityMovementGlideComponent
+- EntityMovementHoverComponent
+- EntityMovementJumpComponent
+- EntityMovementSkipComponent
+- EntityMovementSwayComponent
+
+Base class for a family of entity movement events.
+
+## Properties
+
+maxTurn
+read-only maxTurn: number;
+
+Maximum turn rate for this movement modality of the mob.
+
+Type: number
+
+* Notes:
+ - This property can throw errors when used.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
