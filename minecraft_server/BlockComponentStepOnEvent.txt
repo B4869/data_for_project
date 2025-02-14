@@ -1,0 +1,33 @@
+# BlockComponentStepOnEvent
+
+## Extends
+- BlockEvent
+
+Contains information regarding an entity stepping onto a specific block.
+
+## Properties
+
+- entity
+read-only entity?: Entity;
+
+The entity that stepped on the block.
+
+Type: Entity
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

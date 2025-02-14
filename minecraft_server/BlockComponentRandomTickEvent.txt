@@ -1,0 +1,7 @@
+# BlockComponentRandomTickEvent Class
+
+## Extends
+
+- BlockEvent
+
+Contains information regarding a specific block randomly ticking.

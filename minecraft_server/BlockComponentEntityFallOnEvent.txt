@@ -1,0 +1,43 @@
+# BlockComponentEntityFallOnEvent 
+
+## Extends
+
+- BlockEvent
+
+Contains information regarding an entity falling onto a specific block.
+
+## Properties
+
+- entity
+read-only entity?: Entity;
+
+The entity that fell onto the block.
+
+Type: Entity
+
+- fallDistance
+read-only fallDistance: number;
+
+The distance that the entity fell onto this block with.
+
+Type: number
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

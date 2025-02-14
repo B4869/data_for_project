@@ -1,0 +1,36 @@
+# Direction Enumeration
+A general purpose relative direction enumeration.
+
+## Constants
+
+- Down
+Down = "Down"
+
+Returns the @minecraft/server.Block beneath (y - 1) of this item.
+
+- East
+East = "East"
+
+Returns the @minecraft/server.Block to the east (x + 1) of this item.
+
+- North
+North = "North"
+
+Returns the @minecraft/server.Block to the east (z + 1) of this item.
+
+- South
+South = "South"
+
+Returns the @minecraft/server.Block to the south (z - 1) of this item.
+
+- Up
+Up = "Up"
+
+Returns the @minecraft/server.Block above (y + 1) of this item.
+
+- West
+West = "West"
+
+Returns the @minecraft/server.Block to the west (x - 1) of this item.
+
+

@@ -1,0 +1,35 @@
+# BlockExplodeAfterEvent 
+
+## Extends
+- BlockEvent
+
+Contains information regarding an explosion that has occurred for a specific block.
+
+## Properties
+
+- explodedBlockPermutation
+read-only explodedBlockPermutation: BlockPermutation;
+
+Description of the block that has exploded.
+
+Type: BlockPermutation
+
+- source
+read-only source?: Entity;
+
+Optional source of the explosion.
+
+Type: Entity
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,622 @@
+# minecraft/server Module
+Contains many types related to manipulating a Minecraft world, including entities, blocks, dimensions, and more.
+
+## Changelog
+
+## Manifest Details
+
+- Example Manifest Details
+     JSON
+
+        {
+            "module_name": "@minecraft/server",
+            "version": "1.17.0"
+        }
+
+## Available Versions
+
+- 2.0.0-beta
+- 1.17.0
+- 1.16.0
+- 1.15.0
+- 1.14.0
+- 1.13.0
+- 1.12.0
+- 1.11.0
+- 1.10.0
+- 1.9.0
+- 1.8.0
+- 1.7.0
+- 1.6.0
+- 1.5.0
+- 1.4.0
+- 1.3.0
+- 1.2.0
+- 1.1.0
+- 1.0.0
+- 0.1.0
+
+## Enumerations
+
+- AimAssistTargetMode
+- BlockComponentTypes
+- BlockPistonState
+- BlockVolumeIntersection
+- ButtonState
+- CompoundBlockVolumeAction
+- CompoundBlockVolumePositionRelativity
+- CustomComponentNameErrorReason
+- Difficulty
+- Direction
+- DisplaySlotId
+- DyeColor
+- EasingType
+- EnchantmentSlot
+- EntityComponentTypes
+- EntityDamageCause
+- EntityInitializationCause
+- EquipmentSlot
+- FluidType
+- GameMode
+- GameRule
+- GraphicsMode
+- HudElement
+- HudVisibility
+- InputButton
+- InputMode
+- InputPermissionCategory
+- ItemComponentTypes
+- I-temLockMode
+- LiquidType
+- MemoryTier
+- MoonPhase
+- NamespaceNameErrorReason
+- ObjectiveSortOrder
+- PaletteColor
+- PlatformType
+- ScoreboardIdentityType
+- ScriptEventSource
+- SignSide
+- StructureAnimationMode
+- StructureMirrorAxis
+- StructureRotation
+- StructureSaveMode
+- TimeOfDay
+- TintMethod
+- WatchdogTerminateReason
+- WeatherType
+
+## Type Aliases
+
+- BlockComponentTypeMap
+- BlockStateArg
+- EntityComponentTypeMap
+- ItemComponentTypeMap
+
+## Classes
+
+- AimAssistCategory
+- AimAssistCategorySettings
+- AimAssistPreset
+- AimAssistPresetSettings
+- AimAssistRegistry
+- BiomeType
+- BiomeTypes
+- Block
+- BlockComponent
+- BlockComponentEntityFallOnEvent
+- BlockComponentOnPlaceEvent
+- BlockComponentPlayerDestroyEvent
+- BlockComponentPlayerInteractEvent
+- BlockComponentPlayerPlaceBeforeEvent
+- BlockComponentRandomTickEvent
+- BlockComponentRegistry
+- BlockComponentStepOffEvent
+- BlockComponentStepOnEvent
+- BlockComponentTickEvent
+- BlockEvent
+- BlockExplodeAfterEvent
+- BlockExplodeAfterEventSignal
+- BlockFluidContainerComponent
+- BlockInventoryComponent
+- BlockLocationIterator
+- BlockMapColorComponent
+- BlockPermutation
+- BlockPistonComponent
+- BlockRecordPlayerComponent
+- BlockSignComponent
+- BlockStates
+- BlockStateType
+- BlockType
+- BlockTypes
+- BlockVolume
+- BlockVolumeBase
+- BoundingBoxUtils
+- ButtonPushAfterEvent
+- ButtonPushAfterEventSignal
+- Camera
+- ChatSendAfterEvent
+- ChatSendAfterEventSignal
+- ChatSendBeforeEvent
+- ChatSendBeforeEventSignal
+- ClientSystemInfo
+- CommandResult
+- Component
+- CompoundBlockVolume
+- Container
+- ContainerSlot
+- DataDrivenEntityTriggerAfterEvent
+- DataDrivenEntityTriggerAfterEventSignal
+- Dimension
+- DimensionType
+- DimensionTypes
+- Effect
+- EffectAddAfterEvent
+- EffectAddAfterEventSignal
+- EffectAddBeforeEvent
+- EffectAddBeforeEventSignal
+- EffectType
+- EffectTypes
+- EnchantmentType
+- EnchantmentTypes
+- Entity
+- EntityAddRiderComponent
+- EntityAgeableComponent
+- EntityAttributeComponent
+- EntityBaseMovementComponent
+- EntityBreathableComponent
+- EntityCanClimbComponent
+- EntityCanFlyComponent
+- EntityCanPowerJumpComponent
+- EntityColor2Component
+- EntityColorComponent
+- EntityComponent
+- EntityDefinitionFeedItem
+- EntityDieAfterEvent
+- EntityDieAfterEventSignal
+- EntityEquippableComponent
+- EntityFireImmuneComponent
+- EntityFloatsInLiquidComponent
+- EntityFlyingSpeedComponent
+- EntityFrictionModifierComponent
+- EntityGroundOffsetComponent
+- EntityHealableComponent
+- EntityHealthChangedAfterEvent
+- EntityHealthChangedAfterEventSignal
+- EntityHealthComponent
+- EntityHitBlockAfterEvent
+- EntityHitBlockAfterEventSignal
+- EntityHitEntityAfterEvent
+- EntityHitEntityAfterEventSignal
+- EntityHurtAfterEvent
+- EntityHurtAfterEventSignal
+- EntityInventoryComponent
+- EntityIsBabyComponent
+- EntityIsChargedComponent
+- EntityIsChestedComponent
+- EntityIsDyeableComponent
+- EntityIsHiddenWhenInvisibleComponent
+- EntityIsIgnitedComponent
+- EntityIsIllagerCaptainComponent
+- EntityIsSaddledComponent
+- EntityIsShakingComponent
+- EntityIsShearedComponent
+- EntityIsStackableComponent
+- EntityIsStunnedComponent
+- EntityIsTamedComponent
+- EntityItemComponent
+- EntityIterator
+- EntityLavaMovementComponent
+- EntityLeashableComponent
+- EntityLoadAfterEvent
+- EntityLoadAfterEventSignal
+- EntityMarkVariantComponent
+- EntityMovementAmphibiousComponent
+- EntityMovementBasicComponent
+- EntityMovementComponent
+- EntityMovementFlyComponent
+- EntityMovementGenericComponent
+- EntityMovementGlideComponent
+- EntityMovementHoverComponent
+- EntityMovementJumpComponent
+- EntityMovementSkipComponent
+- EntityMovementSwayComponent
+- EntityNavigationClimbComponent
+- EntityNavigationComponent
+- EntityNavigationFloatComponent
+- EntityNavigationFlyComponent
+- EntityNavigationGenericComponent
+- EntityNavigationHoverComponent
+- EntityNavigationWalkComponent
+- EntityNpcComponent
+- EntityOnFireComponent
+- EntityProjectileComponent
+- EntityPushThroughComponent
+- EntityRemoveAfterEvent
+- EntityRemoveAfterEventSignal
+- EntityRemoveBeforeEvent
+- EntityRemoveBeforeEventSignal
+- EntityRideableComponent
+- EntityRidingComponent
+- EntityScaleComponent
+- EntitySkinIdComponent
+- EntitySpawnAfterEvent
+- EntitySpawnAfterEventSignal
+- EntityStrengthComponent
+- EntityTameableComponent
+- EntityTameMountComponent
+- EntityType
+- EntityTypeFamilyComponent
+- EntityTypeIterator
+- EntityTypes
+- EntityUnderwaterMovementComponent
+- EntityVariantComponent
+- EntityWantsJockeyComponent
+- ExplosionAfterEvent
+- ExplosionAfterEventSignal
+- ExplosionBeforeEvent
+- ExplosionBeforeEventSignal
+- FeedItem
+- FeedItemEffect
+- FilterGroup
+- FluidContainer
+- GameRuleChangeAfterEvent
+- GameRuleChangeAfterEventSignal
+- GameRules
+- InputInfo
+- ItemCompleteUseAfterEvent
+- ItemCompleteUseAfterEventSignal
+- ItemCompleteUseEvent
+- ItemComponent
+- ItemComponentBeforeDurabilityDamageEvent
+- ItemComponentCompleteUseEvent
+- ItemComponentConsumeEvent
+- ItemComponentHitEntityEvent
+- ItemComponentMineBlockEvent
+- ItemComponentRegistry
+- ItemComponentUseEvent
+- ItemComponentUseOnEvent
+- ItemCompostableComponent
+- ItemCooldownComponent
+- ItemDurabilityComponent
+- ItemDyeableComponent
+- ItemEnchantableComponent
+- ItemFoodComponent
+- ItemPotionComponent
+- ItemReleaseUseAfterEvent
+- ItemReleaseUseAfterEventSignal
+- ItemStack
+- ItemStartUseAfterEvent
+- ItemStartUseAfterEventSignal
+- ItemStartUseOnAfterEvent
+- ItemStartUseOnAfterEventSignal
+- ItemStopUseAfterEvent
+- ItemStopUseAfterEventSignal
+- ItemStopUseOnAfterEvent
+- ItemStopUseOnAfterEventSignal
+- ItemType
+- ItemTypes
+- ItemUseAfterEvent
+- ItemUseAfterEventSignal
+- ItemUseBeforeEvent
+- ItemUseBeforeEventSignal
+- ItemUseOnAfterEvent
+- ItemUseOnAfterEventSignal
+- ItemUseOnBeforeEvent
+- ItemUseOnBeforeEventSignal
+- ItemUseOnEvent
+- LeverActionAfterEvent
+- LeverActionAfterEventSignal
+- ListBlockVolume
+- MessageReceiveAfterEvent
+- MolangVariableMap
+- PistonActivateAfterEvent
+- PistonActivateAfterEventSignal
+- Player
+- PlayerAimAssist
+- PlayerBreakBlockAfterEvent
+- PlayerBreakBlockAfterEventSignal
+- PlayerBreakBlockBeforeEvent
+- PlayerBreakBlockBeforeEventSignal
+- PlayerButtonInputAfterEvent
+- PlayerButtonInputAfterEventSignal
+- PlayerCursorInventoryComponent
+- PlayerDimensionChangeAfterEvent
+- PlayerDimensionChangeAfterEventSignal
+- PlayerEmoteAfterEvent
+- PlayerEmoteAfterEventSignal
+- PlayerGameModeChangeAfterEvent
+- PlayerGameModeChangeAfterEventSignal
+- PlayerGameModeChangeBeforeEvent
+- PlayerGameModeChangeBeforeEventSignal
+- PlayerInputModeChangeAfterEvent
+- PlayerInputModeChangeAfterEventSignal
+- PlayerInputPermissionCategoryChangeAfterEvent
+- PlayerInputPermissionCategoryChangeAfterEventSignal
+- PlayerInputPermissions
+- PlayerInteractWithBlockAfterEvent
+- PlayerInteractWithBlockAfterEventSignal
+- PlayerInteractWithBlockBeforeEvent
+- PlayerInteractWithBlockBeforeEventSignal
+- PlayerInteractWithEntityAfterEvent
+- PlayerInteractWithEntityAfterEventSignal
+- PlayerInteractWithEntityBeforeEvent
+- PlayerInteractWithEntityBeforeEventSignal
+- PlayerIterator
+- PlayerJoinAfterEvent
+- PlayerJoinAfterEventSignal
+- PlayerLeaveAfterEvent
+- PlayerLeaveAfterEventSignal
+- PlayerLeaveBeforeEvent
+- PlayerLeaveBeforeEventSignal
+- PlayerPlaceBlockAfterEvent
+- PlayerPlaceBlockAfterEventSignal
+- PlayerPlaceBlockBeforeEvent
+- PlayerPlaceBlockBeforeEventSignal
+- PlayerSpawnAfterEvent
+- PlayerSpawnAfterEventSignal
+- PotionEffectType
+- PotionLiquidType
+- PotionModifierType
+- Potions
+- PressurePlatePopAfterEvent
+- PressurePlatePopAfterEventSignal
+- PressurePlatePushAfterEvent
+- PressurePlatePushAfterEventSignal
+- ProjectileHitBlockAfterEvent
+- ProjectileHitBlockAfterEventSignal
+- ProjectileHitEntityAfterEvent
+- ProjectileHitEntityAfterEventSignal
+- Scoreboard
+- ScoreboardIdentity
+- ScoreboardObjective
+- ScoreboardScoreInfo
+- ScreenDisplay
+- ScriptEventCommandMessageAfterEvent
+- ScriptEventCommandMessageAfterEventSignal
+- Seat
+- ServerMessageAfterEventSignal
+- ShutdownBeforeEventSignal
+- ShutdownEvent
+- StartupBeforeEventSignal
+- StartupEvent
+- Structure
+- StructureManager
+- System
+- SystemAfterEvents
+- SystemBeforeEvents
+- SystemInfo
+- TargetBlockHitAfterEvent
+- TargetBlockHitAfterEventSignal
+- Trigger
+- TripWireTripAfterEvent
+- TripWireTripAfterEventSignal
+- WatchdogTerminateBeforeEvent
+- WatchdogTerminateBeforeEventSignal
+- WeatherChangeAfterEvent
+- WeatherChangeAfterEventSignal
+- WeatherChangeBeforeEvent
+- WeatherChangeBeforeEventSignal
+- World
+- WorldAfterEvents
+- WorldBeforeEvents
+- WorldLoadAfterEvent
+- WorldLoadAfterEventSignal
+
+
+## Interfaces
+
+- BiomeSearchOptions
+- BlockCustomComponent
+- BlockEventOptions
+- BlockFillOptions
+- BlockFilter
+- BlockHitInformation
+- BlockRaycastHit
+- BlockRaycastOptions
+- BoundingBox
+- CameraDefaultOptions
+- CameraEaseOptions
+- CameraFadeOptions
+- CameraFadeTimeOptions
+- CameraFixedBoomOptions
+- CameraSetFacingOptions
+- CameraSetLocationOptions
+- CameraSetPosOptions
+- CameraSetRotOptions
+- CameraTargetOptions
+- CompoundBlockVolumeItem
+- DefinitionModifier
+- DimensionLocation
+- Enchantment
+- EntityApplyDamageByProjectileOptions
+- EntityApplyDamageOptions
+- EntityDamageSource
+- EntityDataDrivenTriggerEventOptions
+- EntityEffectOptions
+- EntityEventOptions
+- EntityFilter
+- EntityHitInformation
+- EntityQueryOptions
+- EntityQueryPropertyOptions
+- EntityQueryScoreOptions
+- EntityRaycastHit
+- EntityRaycastOptions
+- EqualsComparison
+- ExplosionOptions
+- GreaterThanComparison
+- GreaterThanOrEqualsComparison
+- InputEventOptions
+- ItemCustomComponent
+- JigsawPlaceOptions
+- JigsawStructurePlaceOptions
+- LessThanComparison
+- LessThanOrEqualsComparison
+- MusicOptions
+- NotEqualsComparison
+- PlayAnimationOptions
+- PlayerAimAssistSettings
+- PlayerSoundOptions
+- PotionOptions
+- ProjectileShootOptions
+- RangeComparison
+- RawMessage
+- RawMessageScore
+- RawText
+- RGB
+- RGBA
+- ScoreboardObjectiveDisplayOptions
+- ScriptEventMessageFilterOptions
+- SpawnEntityOptions
+- StructureCreateOptions
+- StructurePlaceOptions
+- TeleportOptions
+- TitleDisplayOptions
+- Vector2
+- Vector3
+- VectorXZ
+- WorldSoundOptions
+
+## Errors
+
+- BlockCustomComponentAlreadyRegisteredError  
+- BlockCustomComponentReloadNewComponentError  
+- BlockCustomComponentReloadNewEventError  
+- BlockCustomComponentReloadVersionError  
+- CommandError  
+- CustomComponentInvalidRegistryError  
+- CustomComponentNameError  
+- EnchantmentLevelOutOfBoundsError  
+- EnchantmentTypeNotCompatibleError  
+- EnchantmentTypeUnknownIdError  
+- InvalidContainerSlotError  
+- InvalidEntityError  
+- InvalidIteratorError  
+- InvalidStructureError  
+- ItemCustomComponentAlreadyRegisteredError  
+- ItemCustomComponentReloadNewComponentError  
+- ItemCustomComponentReloadNewEventError  
+- ItemCustomComponentReloadVersionError  
+- LocationInUnloadedChunkError  
+- LocationOutOfWorldBoundariesError  
+- NamespaceNameError  
+- PlaceJigsawError  
+- UnloadedChunksError  
+
+## Constants
+
+- HudElementsCount
+
+static read-only HudElementsCount = 13;
+
+Type: number
+
+- HudVisibilityCount
+
+static read-only HudVisibilityCount = 2;
+
+Type: numbe
+
+
+- MoonPhaseCount
+
+static read-only MoonPhaseCount = 8;
+
+Holds the number of MoonPhases
+
+Type: number
+
+
+- TicksPerSecond
+static read-only TicksPerSecond = 20;
+
+How many times the server ticks per second of real time.
+
+Type: number
+
+## Objects
+
+- system
+
+static read-only system: System;
+
+A class that provides system-level events and functions.
+
+Type: System
+
+- world
+static read-only world: World;
+
+A class that wraps the state of a world - a set of dimensions and the environment of Minecraft.
+
+Type: World
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

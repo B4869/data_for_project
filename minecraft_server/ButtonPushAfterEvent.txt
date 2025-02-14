@@ -1,0 +1,55 @@
+# ButtonPushAfterEvent 
+
+## Extends
+
+- BlockEvent
+
+Contains information related to changes to a button push.
+
+## Properties
+
+- source
+read-only source: Entity;
+
+Optional source that triggered the button push.
+
+Type: Entity
+
+    - Examples buttonPushEvent
+        buttonPushEvent.js
+
+            import { world, system, BlockPermutation } from "@minecraft/server";
+            import { MinecraftBlockTypes } from "@minecraft/vanilla-data";
+
+            function buttonPushEvent(log, targetLocation) {
+            // ตั้งค่า Cobblestone และ Button
+            const cobblestone = targetLocation.dimension.getBlock(targetLocation);
+            const button = targetLocation.dimension.getBlock({
+                x: targetLocation.x,
+                y: targetLocation.y + 1,
+                z: targetLocation.z,
+            });
+
+            if (!cobblestone || !button) {
+                log("Could not find block at location.");
+                return -1;
+            }
+
+            cobblestone.setPermutation(BlockPermutation.resolve(MinecraftBlockTypes.Cobblestone));
+            button.setPermutation(
+                BlockPermutation.resolve(MinecraftBlockTypes.AcaciaButton).withState("facing_direction", 1)
+            );
+
+            world.afterEvents.buttonPush.subscribe((event) => {
+                const eventLoc = event.block.location;
+
+                if (eventLoc.x === targetLocation.x && eventLoc.y === targetLocation.y + 1 && eventLoc.z === targetLocation.z) {
+                log("Button push event at tick " + system.currentTick);
+                }
+            });
+            }
+
+    (preview) Work with this sample on the MCTools.dev code sandbox.
+
+
+

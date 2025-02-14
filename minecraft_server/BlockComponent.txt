@@ -1,0 +1,35 @@
+# BlockComponent
+
+## Extends
+- Component
+
+## Classes that extend BlockComponent
+
+- BlockFluidContainerComponent
+- BlockInventoryComponent
+- BlockMapColorComponent
+- BlockPistonComponent
+- BlockRecordPlayerComponent
+- BlockSignComponent
+
+Base type for components associated with blocks.
+
+## Properties
+
+- block
+read-only block: Block;
+
+Block instance that this component pertains to.
+
+Type: Block
+
+
+
+
+
+
+
+
+
+
+

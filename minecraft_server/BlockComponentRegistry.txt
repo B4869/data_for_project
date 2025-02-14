@@ -1,0 +1,23 @@
+# BlockComponentRegistry 
+
+## Methods
+ - registerCustomComponent
+
+- registerCustomComponent
+registerCustomComponent(name: string, customComponent: BlockCustomComponent): void
+
+    - Parameters
+        - name: string
+        customComponent: BlockCustomComponent
+
+* Notes:
+ - This function can throw errors.
+    - Throws BlockCustomComponentAlreadyRegisteredError, BlockCustomComponentReloadNewComponentError, BlockCustomComponentReloadNewEventError, BlockCustomComponentReloadVersionError, CustomComponentInvalidRegistryError, @minecraft/common.EngineError, NamespaceNameError
+
+
+
+
+
+
+
+

@@ -1,0 +1,77 @@
+# Component 
+
+## Classes that extend Component
+
+- BlockComponent
+- EntityComponent
+- ItemComponent
+
+Base class for downstream Component implementations.
+
+## Properties
+
+- typeId
+read-only typeId: string;
+
+Identifier of the component.
+
+Type: string
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

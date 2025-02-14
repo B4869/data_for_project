@@ -1,0 +1,22 @@
+# BlockStates
+
+## Methods
+
+- get
+static "get"(stateName: string): BlockStateType | undefined
+
+Retrieves a specific block state instance.
+
+    - Parameters
+        - stateName: string
+
+Returns BlockStateType | undefined - Returns the @minecraft/server.Block state instance if it is found. If the block state instance is not found returns undefined.
+
+- getAll
+static getAll(): BlockStateType[]
+
+Retrieves a set of all available block states.
+
+Returns BlockStateType[]
+
+

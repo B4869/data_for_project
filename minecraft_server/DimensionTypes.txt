@@ -1,0 +1,34 @@
+# DimensionTypes 
+Used for accessing all available dimension types.
+
+## Methods
+
+- get
+static "get"(dimensionTypeId: string): DimensionType | undefined
+
+Retrieves a dimension type using a string-based identifier.
+
+    - Parameters
+        - dimensionTypeId: string
+    
+Returns DimensionType | undefined
+
+- getAll
+static getAll(): DimensionType[]
+
+Retrieves an array of all dimension types.
+
+Returns DimensionType[]
+
+
+
+
+
+
+
+
+
+
+
+
+

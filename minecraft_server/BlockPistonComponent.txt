@@ -1,0 +1,85 @@
+# BlockPistonComponent
+
+## Extends
+
+- BlockComponent
+
+When present, this block has piston-like behavior. Contains additional properties for discovering block piston state.
+
+## Properties
+
+- isMoving
+read-only isMoving: boolean;
+
+Whether the piston is in the process of expanding or retracting.
+
+Type: boolean
+
+* Notes:
+ - This property can throw errors when used.
+
+- state
+read-only state: BlockPistonState;
+
+The current state of the piston.
+
+Type: BlockPistonState
+
+* Notes:
+ - This property can throw errors when used.
+
+## Methods
+
+- getAttachedBlocks
+getAttachedBlocks(): Block[]
+
+Retrieves a set of blocks that this piston is connected with.
+
+Returns Block[]
+
+* Notes:
+ - This function can throw errors.
+
+- getAttachedBlocksLocations
+getAttachedBlocksLocations(): Vector3[]
+
+Retrieves a set of block locations that this piston is connected with.
+
+Returns Vector3[]
+
+* Notes:
+ - This function can throw errors.
+
+## Constants
+
+-componentId
+static read-only componentId = "minecraft:piston";
+
+Type: string
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

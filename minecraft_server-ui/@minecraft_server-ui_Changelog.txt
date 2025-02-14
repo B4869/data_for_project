@@ -1,0 +1,111 @@
+# @minecraft/server-ui Changelog
+
+-In this article
+Version Changes
+
+    - 2.0.0-beta
+    - 1.3.0
+    - 1.2.0
+    - 1.1.0
+    - 1.0.0
+
+## Version Changes
+
+- 2.0.0-beta
+- 1.3.0
+- 1.2.0
+- 1.1.0
+- 1.0.0
+
+## 2.0.0-beta
+
+- Added module dependency @minecraft/server@2.0.0-beta
+
+- Removed module dependency @minecraft/server@1.3.0
+
+- Changed ActionFormData
+
+    - Added function divider
+    - Added function header
+    - Added function label
+
+- Changed MessageFormData
+
+    - Changed function show
+        - Changed return type from Promise<MessageFormResponse> (throws exceptions) to Promise<MessageFormResponse> (throws exceptions)
+
+## 1.3.0
+
+- Added module dependency @minecraft/server@1.3.0
+
+- Removed module dependency @minecraft/server@1.2.0
+
+- Added UIManager
+- Added object uiManager
+
+## 1.2.0
+
+- Changed ModalFormData
+
+- Added function submitButton
+
+## 1.1.0
+
+- Changed FormResponse
+
+    - Added property cancelationReason
+
+    - Added property canceled
+
+- Added enum FormCancelationReason
+
+## 1.0.0
+
+- Added @minecraft/server-ui Module
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

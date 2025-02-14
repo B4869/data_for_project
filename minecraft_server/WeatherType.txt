@@ -1,0 +1,21 @@
+# WeatherType 
+Used to specify the type of weather condition within the world.
+
+## Constants
+
+- Clear
+Clear = "Clear"
+
+Specifies a clear weather condition.
+
+- Rain
+Rain = "Rain"
+
+Specifies a rain weather condition.
+
+- Thunder
+Thunder = "Thunder"
+
+Specifies a rain and thunder weather condition.
+
+

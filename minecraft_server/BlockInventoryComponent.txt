@@ -1,0 +1,95 @@
+# BlockInventoryComponent 
+
+## Extends
+
+- BlockComponent
+
+Represents the inventory of a block in the world. Used with blocks like chests.
+
+- Examples 
+    placeItemsInChest.js
+
+        import { ItemStack, BlockInventoryComponent, DimensionLocation } from "@minecraft/server";
+        import { MinecraftBlockTypes, MinecraftItemTypes } from "@minecraft/vanilla-data";
+
+        function placeItemsInChest(log, targetLocation) {
+        // Fetch block
+        const block = targetLocation.dimension.getBlock(targetLocation);
+
+        if (!block) {
+            log("Could not find block. Maybe it is not loaded?", -1);
+            return;
+        }
+
+        // Make it a chest
+        block.setType(MinecraftBlockTypes.Chest);
+
+        // Get the inventory
+        const inventoryComponent = block.getComponent("inventory");
+
+        if (!inventoryComponent || !inventoryComponent.container) {
+            log("Could not find inventory component.", -1);
+            return;
+        }
+
+        const inventoryContainer = inventoryComponent.container;
+
+        // Set slot 0 to a stack of 10 apples
+        inventoryContainer.setItem(0, new ItemStack(MinecraftItemTypes.Apple, 10));
+        }
+
+(preview) Work with this sample on the MCTools.dev code sandbox.
+
+## Properties
+
+- container
+read-only container?: Container;
+
+The container which holds an @minecraft/server.ItemStack.
+
+Type: Container
+
+* Notes:
+ - This property can throw errors when used.
+
+## Constants
+
+- componentId
+static read-only componentId = "minecraft:inventory";
+
+Type: string
+
+- Examples
+    placeItemsInChest.js
+
+        import { ItemStack, BlockInventoryComponent, DimensionLocation } from "@minecraft/server";
+        import { MinecraftBlockTypes, MinecraftItemTypes } from "@minecraft/vanilla-data";
+
+        function placeItemsInChest(log, targetLocation) {
+        // Fetch block
+        const block = targetLocation.dimension.getBlock(targetLocation);
+
+        if (!block) {
+            log("Could not find block. Maybe it is not loaded?", -1);
+            return;
+        }
+
+        // Make it a chest
+        block.setType(MinecraftBlockTypes.Chest);
+
+        // Get the inventory
+        const inventoryComponent = block.getComponent("inventory");
+
+        if (!inventoryComponent || !inventoryComponent.container) {
+            log("Could not find inventory component.", -1);
+            return;
+        }
+
+        const inventoryContainer = inventoryComponent.container;
+
+        // Set slot 0 to a stack of 10 apples
+        inventoryContainer.setItem(0, new ItemStack(MinecraftItemTypes.Apple, 10));
+        }
+
+(preview) Work with this sample on the MCTools.dev code sandbox.
+
