@@ -1,0 +1,14 @@
+# EntityIsStunnedComponent 
+
+## Extends
+
+- EntityComponent
+
+When added, this component signifies that this entity is currently stunned.
+
+##Constants
+
+- componentId
+static read-only componentId = "minecraft:is_stunned";
+
+Type: string

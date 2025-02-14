@@ -1,0 +1,37 @@
+# EntityMovementFlyComponent
+
+## Extends
+
+- EntityBaseMovementComponent
+
+When added, this move control causes the mob to fly.
+
+## Constants
+
+- componentId
+
+static read-only componentId = "minecraft:movement.fly";
+
+Type: string
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

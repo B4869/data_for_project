@@ -1,0 +1,45 @@
+# EntityMovementAmphibiousComponent
+
+## Extends
+
+- EntityBaseMovementComponent
+
+When added, this movement control allows the mob to swim in water and walk on land.
+
+## Constants
+
+- componentId
+static read-only componentId = "minecraft:movement.amphibious";
+
+Type: string
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

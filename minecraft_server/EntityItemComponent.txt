@@ -1,0 +1,63 @@
+# EntityItemComponent 
+
+## Extends
+
+- EntityComponent
+
+If added onto the entity, this indicates that the entity represents a free-floating item in the world. Lets you retrieve the actual item stack contents via the itemStack property.
+
+
+## Properties
+
+- itemStack
+read-only itemStack: ItemStack;
+
+Item stack represented by this entity in the world.
+
+Type: ItemStack
+
+* Notes:
+ - This property can throw errors when used.
+
+## Constants
+
+- componentId
+static read-only componentId = "minecraft:item";
+
+Type: string
+
+    - Example testThatEntityIsFeatherItem
+        testThatEntityIsFeatherItem.js
+
+            import { EntityItemComponent, EntityComponentTypes, DimensionLocation } from "@minecraft/server";
+
+            function testThatEntityIsFeatherItem(log, targetLocation) {
+            const items = targetLocation.dimension.getEntities({
+                location: targetLocation,
+                maxDistance: 20,
+            });
+
+            for (const item of items) {
+                const itemComp = item.getComponent(EntityComponentTypes.Item);
+
+                if (itemComp) {
+                if (itemComp.itemStack.typeId.endsWith("feather")) {
+                    log("Success! Found a feather", 1);
+                }
+                }
+            }
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

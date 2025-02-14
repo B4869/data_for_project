@@ -1,0 +1,16 @@
+# EntityRemoveBeforeEvent 
+Data for an event that happens when an entity is being removed from the world (for example, the entity is unloaded because it is not close to players.)
+
+## Properties
+
+- removedEntity
+read-only removedEntity: Entity;
+
+Reference to an entity that is being removed.
+
+Type: Entity
+
+
+
+
+

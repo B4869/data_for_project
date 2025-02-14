@@ -1,0 +1,36 @@
+# EntityMovementGlideComponent
+
+## Extends
+
+- EntityBaseMovementComponent
+
+When added, this movement control allows the mob to glide.
+
+## Properties
+
+- speedWhenTurning
+read-only speedWhenTurning: number;
+
+Speed in effect when the entity is turning.
+
+Type: number
+
+* Notes:
+ - This property can throw errors when used.
+
+- startSpeed
+read-only startSpeed: number;
+
+Start speed during a glide.
+
+Type: number
+
+* Notes:
+ - This property can throw errors when used.
+
+## Constants
+
+- componentId
+static read-only componentId = "minecraft:movement.glide";
+
+Type: string

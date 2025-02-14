@@ -1,0 +1,14 @@
+# EntityMovementGenericComponent
+
+## Extends
+
+- EntityBaseMovementComponent
+
+When added, this move control allows a mob to fly, swim, climb, etc.
+
+## Constants
+
+- componentId
+static read-only componentId = "minecraft:movement.generic";
+
+Type: string

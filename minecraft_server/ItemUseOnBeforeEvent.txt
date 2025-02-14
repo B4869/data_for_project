@@ -1,0 +1,52 @@
+# ItemUseOnBeforeEvent
+
+## Extends
+
+- ItemUseOnAfterEvent
+
+Contains information related to an item being used on a block.
+
+## Properties
+
+- cancel
+cancel: boolean;
+
+If set to true, this will cancel the item use behavior.
+
+Type: boolean
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

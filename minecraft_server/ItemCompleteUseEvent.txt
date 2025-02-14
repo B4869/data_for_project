@@ -1,0 +1,25 @@
+# ItemCompleteUseEvent 
+
+## Classes that extend ItemCompleteUseEvent
+
+- ItemComponentCompleteUseEvent
+
+Contains information related to a chargeable item completing being charged.
+
+## Properties
+
+- itemStack
+read-only itemStack: ItemStack;
+
+Returns the item stack that has completed charging.
+
+Type: ItemStack
+
+- source
+read-only source: Player;
+
+Returns the source entity that triggered this item event.
+
+Type: Player
+
+

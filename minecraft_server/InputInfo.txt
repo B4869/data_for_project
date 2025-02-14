@@ -1,0 +1,36 @@
+# InputInfo 
+Contains the input information for a client instance.
+
+## Properties
+
+- lastInputModeUsed
+read-only lastInputModeUsed: InputMode;
+
+The last input mode used by the player.
+
+Type: InputMode
+
+* Notes:
+ - This property can throw errors when used.
+    - Throws @minecraft/common.EngineError, InvalidEntityError
+
+- touchOnlyAffectsHotbar
+read-only touchOnlyAffectsHotbar: boolean;
+
+Whether the player touch input only affects the touchbar or not.
+
+Type: boolean
+
+* Notes:
+ - This property can throw errors when used.
+ - Throws InvalidEntityError
+
+
+
+
+
+
+
+
+
+

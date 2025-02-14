@@ -1,0 +1,48 @@
+# EntityNavigationFlyComponent 
+
+## Extends
+
+- EntityNavigationComponent
+Allows this entity to generate paths in the air (for example, like Minecraft parrots do.)
+
+## Constants
+
+- componentId
+static read-only componentId = "minecraft:navigation.fly";
+
+Type: string
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

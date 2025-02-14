@@ -1,0 +1,75 @@
+#EntityHitEntityAfterEventSignal 
+Manages callbacks that are connected to when an entity makes a melee attack on another entity.
+
+## Methods
+
+- subscribe
+subscribe(callback: (arg0: EntityHitEntityAfterEvent) => void, options?: EntityEventOptions): (arg0: EntityHitEntityAfterEvent) => void
+
+Adds a callback that will be called when an entity hits another entity.
+
+    - Parameters
+
+        - callback: (arg0: EntityHitEntityAfterEvent) => void
+
+         -options?: EntityEventOptions = null
+
+Returns (arg0: EntityHitEntityAfterEvent) => void
+
+* Notes:
+ - This function can't be called in read-only mod
+
+- unsubscribe
+unsubscribe(callback: (arg0: EntityHitEntityAfterEvent) => void): void
+
+Removes a callback from being called when an entity makes a melee attack on another entity.
+
+- Parameters
+
+    - callback: (arg0: EntityHitEntityAfterEvent) => void
+
+* Notes:
+ - This function can't be called in read-only mod
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

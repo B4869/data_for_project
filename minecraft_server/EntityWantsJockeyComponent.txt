@@ -1,0 +1,38 @@
+# EntityWantsJockeyComponent 
+
+## Extends
+
+- EntityComponent
+
+When added, this component signifies that this entity wants to become a jockey.
+
+## Constants
+
+- componentId
+static read-only componentId = "minecraft:wants_jockey";
+
+Type: string
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,72 @@
+# ItemType
+Represents the type of an item - for example, Wool.
+
+## Properties
+
+- id
+read-only id: string;
+
+Returns the identifier of the item type - for example, 'minecraft:apple'.
+
+Type: string
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

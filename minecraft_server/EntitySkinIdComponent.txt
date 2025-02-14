@@ -1,0 +1,79 @@
+# EntitySkinIdComponent 
+
+## Extends
+
+- EntityComponent
+
+Skin Id value. Can be used to differentiate skins, such as base skins for villagers.
+
+## Properties
+
+- value
+value: number;
+
+Returns the value of the skin Id identifier of the entity.
+
+Type: number
+
+* Notes:
+ - This property can't be edited in read-only mode.
+
+## Constants
+
+- componentId
+static read-only componentId = "minecraft:skin_id";
+
+Type: string
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

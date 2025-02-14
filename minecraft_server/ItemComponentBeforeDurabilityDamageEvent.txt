@@ -1,0 +1,106 @@
+# ItemComponentBeforeDurabilityDamageEvent 
+Contains information regarding an item before it is damaged from hitting an entity.
+
+## Properties
+
+- attackingEntity
+read-only attackingEntity: Entity;
+
+The attacking entity.
+
+Type: Entity
+
+- durabilityDamage
+durabilityDamage: number;
+
+The damage applied to the item's durability when the event occurs.
+
+Type: number
+
+- hitEntity
+read-only hitEntity: Entity;
+
+The entity being hit.
+
+Type: Entity
+
+- itemStack
+itemStack?: ItemStack;
+
+The item stack used to hit the entity.
+
+Type: ItemStack
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

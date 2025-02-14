@@ -1,0 +1,53 @@
+# EntityNavigationFloatComponent 
+
+## Extends
+
+- EntityNavigationComponent
+
+Allows this entity to generate paths by flying around the air like the regular Ghast.
+
+## Constants
+
+- componentId
+static read-only componentId = "minecraft:navigation.float";
+
+Type: string
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

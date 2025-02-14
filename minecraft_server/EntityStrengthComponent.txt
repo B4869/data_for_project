@@ -1,0 +1,40 @@
+# EntityStrengthComponent 
+
+## Extends
+
+- EntityComponent
+
+Defines the entity's ability to carry items. An entity with a higher strength would have higher potential carry capacity and more item slots
+
+## Properties
+
+- max
+read-only max: number;
+
+Maximum strength of this entity, as defined in the entity type definition.
+
+Type: number
+
+* Notes:
+ - This property can throw errors when used.
+
+- value
+read-only value: number;
+
+Current value of the strength component that has been set for entities.
+
+Type: number
+
+- Notes:
+ - This property can throw errors when used.
+
+## Constants
+
+- componentId
+static read-only componentId = "minecraft:strength";
+
+Type: string
+
+
+
+

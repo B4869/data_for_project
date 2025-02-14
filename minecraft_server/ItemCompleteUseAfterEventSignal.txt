@@ -1,0 +1,51 @@
+# ItemCompleteUseAfterEventSignal 
+Manages callbacks that are connected to the completion of charging for a chargeable item.
+
+## Methods
+
+- subscribe
+subscribe(callback: (arg0: ItemCompleteUseAfterEvent) => void): (arg0: ItemCompleteUseAfterEvent) => void
+
+Adds a callback that will be called when a chargeable item completes charging.
+
+    - Parameters
+    
+        - callback: (arg0: ItemCompleteUseAfterEvent) => void
+
+Returns (arg0: ItemCompleteUseAfterEvent) => void
+
+* Notes:
+ - This function can't be called in read-only mode.
+
+- unsubscribe
+unsubscribe(callback: (arg0: ItemCompleteUseAfterEvent) => void): void
+
+Removes a callback from being called when a chargeable item completes charging.
+
+    - Parameters
+
+        - callback: (arg0: ItemCompleteUseAfterEvent) => void
+
+* Notes:
+ - This function can't be called in read-only mode.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

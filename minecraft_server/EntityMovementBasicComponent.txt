@@ -1,0 +1,15 @@
+# EntityMovementBasicComponent 
+
+## Extends
+
+- EntityBaseMovementComponent
+This component accents the movement of an entity.
+
+## Constants
+
+- componentId
+static read-only componentId = "minecraft:movement.basic";
+
+Type: string
+
+

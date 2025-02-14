@@ -1,0 +1,19 @@
+# ItemComponent 
+
+## Extends
+
+- Component
+
+Classes that extend ItemComponent
+
+- ItemCompostableComponent
+- ItemCooldownComponent
+- ItemDurabilityComponent
+- ItemDyeableComponent
+- ItemEnchantableComponent
+- ItemFoodComponent
+- ItemPotionComponent
+
+
+Base class for item components.
+

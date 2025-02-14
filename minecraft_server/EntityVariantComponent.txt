@@ -1,0 +1,54 @@
+# EntityVariantComponent
+
+## Extends
+
+- EntityComponent
+
+Used to differentiate the component group of a variant of an entity from others. (e.g. ocelot, villager).
+
+## Properties
+
+- value
+read-only value: number;
+
+Current value for variant for this entity, as specified via components.
+
+Type: number
+
+* Notes:
+ - This property can throw errors when used.
+
+## Constants
+
+- componentId
+static read-only componentId = "minecraft:variant";
+
+Type: string
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

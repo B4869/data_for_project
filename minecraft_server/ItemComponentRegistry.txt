@@ -1,0 +1,64 @@
+# ItemComponentRegistry 
+Provides the functionality for registering custom components for items.
+
+## Methods
+
+- registerCustomComponent
+registerCustomComponent(name: string, itemCustomComponent: ItemCustomComponent): void
+
+Registers an item custom component that can be used in item JSON configuration.
+
+    - Parameters
+
+        - name: string
+
+        The id that represents this custom component. Must have a namespace. This id can be specified in a item's JSON configuration under the 'minecraft:custom_components' item component.
+
+        - itemCustomComponent: ItemCustomComponent
+
+        The collection of event functions that will be called when the event occurs on an item using this custom component id.
+
+# Notes:
+ - This function can throw errors.
+    - Throws CustomComponentInvalidRegistryError, @minecraft/common.EngineError, ItemCustomComponentAlreadyRegisteredError, ItemCustomComponentReloadNewComponentError, ItemCustomComponentReloadNewEventError, ItemCustomComponentReloadVersionError, NamespaceNameError
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

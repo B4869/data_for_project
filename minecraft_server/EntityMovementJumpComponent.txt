@@ -1,0 +1,26 @@
+# EntityMovementJumpComponent 
+
+## Extends
+
+- EntityBaseMovementComponent
+Move control that causes the mob to jump as it moves with a specified delay between jumps.
+
+## Constants
+
+- componentId
+static read-only componentId = "minecraft:movement.jump";
+
+Type: string
+
+
+
+
+
+
+
+
+
+
+
+
+

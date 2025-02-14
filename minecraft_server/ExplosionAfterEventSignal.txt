@@ -1,0 +1,59 @@
+# ExplosionAfterEventSignal 
+Manages callbacks that are connected to when an explosion occurs.
+
+## Methods
+
+- subscribe
+subscribe(callback: (arg0: ExplosionAfterEvent) => void): (arg0: ExplosionAfterEvent) => void
+
+Adds a callback that will be called when an explosion occurs.
+
+    - Parameters
+
+    callback: (arg0: ExplosionAfterEvent) => void
+
+Returns (arg0: ExplosionAfterEvent) => void
+
+* Notes:
+ - This function can't be called in read-only mode.
+
+- unsubscribe
+unsubscribe(callback: (arg0: ExplosionAfterEvent) => void): void
+
+Removes a callback from being called when an explosion occurs.
+
+    - Parameters
+
+    callback: (arg0: ExplosionAfterEvent) => void
+    
+* Notes:
+ - This function can't be called in read-only mode.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

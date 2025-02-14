@@ -1,0 +1,21 @@
+# EntityIsChestedComponent 
+
+## Extends
+
+- EntityComponent
+
+When added, this component signifies that this entity is currently carrying a chest.
+
+## Constants
+
+- componentId
+static read-only componentId = "minecraft:is_chested";
+
+Type: string
+
+
+
+
+
+
+

@@ -1,0 +1,46 @@
+# ItemComponentConsumeEvent
+Contains information related to a food item being consumed.
+
+## Properties
+
+- itemStack
+read-only itemStack: ItemStack;
+
+The item stack that was consumed.
+
+Type: ItemStack
+
+- source
+read-only source: Entity;
+
+The source entity that consumed the item.
+
+Type: Entity
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

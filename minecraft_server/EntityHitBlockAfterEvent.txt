@@ -1,5 +1,35 @@
 # EntityHitBlockAfterEvent
+Contains information related to an entity hitting a block.
 
+## Properties
+
+- blockFace
+read-only blockFace: Direction;
+
+Face of the block that was hit.
+
+Type: Direction
+
+- damagingEntity
+read-only damagingEntity: Entity;
+
+Entity that made the attack.
+
+Type: Entity
+
+- hitBlock
+read-only hitBlock: Block;
+
+Block that was hit by the attack.
+
+Type: Block
+
+- hitBlockPermutation
+read-only hitBlockPermutation: BlockPermutation;
+
+Block permutation that was hit by the attack.
+
+Type: BlockPermutation
 
 
 

@@ -1,0 +1,36 @@
+# ItemComponentCompleteUseEvent 
+
+## Extends
+
+- ItemCompleteUseEvent
+
+Contains information related to a chargeable item completing being charged via a component.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

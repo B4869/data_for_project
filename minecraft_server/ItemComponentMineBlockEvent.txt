@@ -1,0 +1,32 @@
+# ItemComponentMineBlockEvent 
+Contains information regarding the mining of a block using an item.
+
+## Properties
+
+- block
+read-only block: Block;
+
+The block impacted by this event.
+
+Type: Block
+
+- itemStack
+read-only itemStack?: ItemStack;
+
+The item stack used to mine the block.
+
+Type: ItemStack
+
+- minedBlockPermutation
+read-only minedBlockPermutation: BlockPermutation;
+
+The block permutation that was mined.
+
+Type: BlockPermutation
+
+- source
+read-only source: Entity;
+
+The entity that mined the block.
+
+Type: Entity

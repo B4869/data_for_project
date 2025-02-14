@@ -1,0 +1,25 @@
+# EntityPushThroughComponent 
+
+## Extends
+
+- EntityComponent
+Sets the distance through which the entity can push through.
+
+## Properties
+
+- value
+value: number;
+
+Value of the push through distances of this entity.
+
+Type: number
+
+* Notes:
+ - This property can't be edited in read-only mode.
+
+## Constants
+
+- componentId
+static read-only componentId = "minecraft:push_through";
+
+Type: string
