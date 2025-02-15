@@ -12,7 +12,7 @@ Adds a callback that will be called when a chargeable item is released from char
 
         - callback: (arg0: ItemReleaseUseAfterEvent) => void
 
-Returns (arg0: ItemReleaseUseAfterEvent) => void
+    Returns (arg0: ItemReleaseUseAfterEvent) => void
 
 - unsubscribe
 unsubscribe(callback: (arg0: ItemReleaseUseAfterEvent) => void): void

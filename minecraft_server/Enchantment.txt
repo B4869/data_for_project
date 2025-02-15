@@ -1,0 +1,25 @@
+# Enchantment
+This interface represents a specific leveled enchantment that is applied to an item.
+
+## Properties
+
+- level
+level: number;
+
+The level of this enchantment instance.
+
+Type: number
+
+- type
+type: EnchantmentType;
+
+The enchantment type of this instance.
+
+Type: EnchantmentType
+
+
+
+
+
+
+

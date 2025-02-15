@@ -17,7 +17,7 @@ hasTypeFamily(typeFamily: string): boolean
 
         - typeFamily: string
 
-Returns boolean
+    Returns boolean
 
 * Notes:
  - This function can throw errors.

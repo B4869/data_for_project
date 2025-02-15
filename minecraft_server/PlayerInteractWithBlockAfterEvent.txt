@@ -1,0 +1,53 @@
+# PlayerInteractWithBlockAfterEvent
+Contains information regarding an event after a player successfully interacts with a block.
+
+## Properties
+
+- beforeItemStack
+read-only beforeItemStack?: ItemStack;
+
+The ItemStack before the interaction succeeded, or undefined if hand is empty.
+
+Type: ItemStack
+
+- block
+read-only block: Block;
+
+The block that will be interacted with.
+
+Type: Block
+
+- blockFace
+read-only blockFace: Direction;
+
+The face of the block that is being interacted with.
+
+Type: Direction
+
+- faceLocation
+read-only faceLocation: Vector3;
+
+Location relative to the bottom north-west corner of the block where the item is placed.
+
+Type: Vector3
+
+- isFirstEvent
+read-only isFirstEvent: boolean;
+
+This value will be true if the event was triggered on players initial interaction button press and false on events triggered from holding the interaction button.
+
+Type: boolean
+
+- itemStack
+read-only itemStack?: ItemStack;
+
+The ItemStack after the interaction succeeded, or undefined if hand is empty.
+
+Type: ItemStack
+
+- player
+read-only player: Player;
+
+Source Player for this event.
+
+Type: Player

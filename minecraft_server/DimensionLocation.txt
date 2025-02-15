@@ -1,0 +1,32 @@
+# DimensionLocation 
+An exact coordinate within the world, including its dimension and location.
+
+## Properties
+
+- dimension
+dimension: Dimension;
+
+Dimension that this coordinate is associated with.
+
+Type: Dimension
+
+- x
+x: number;
+
+X component of this dimension-location.
+
+Type: number
+
+- y
+y: number;
+
+Y component of this dimension-location.
+
+Type: number
+
+- z
+z: number;
+
+Z component of this dimension-location.
+
+Type: number

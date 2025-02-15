@@ -12,7 +12,7 @@ Adds a callback that will be called when an item stops being used on a block.
 
         - callback: (arg0: ItemStopUseOnAfterEvent) => void
 
-Returns (arg0: ItemStopUseOnAfterEvent) => void
+    Returns (arg0: ItemStopUseOnAfterEvent) => void
 
 * Notes:
  - This function can't be called in read-only mode.

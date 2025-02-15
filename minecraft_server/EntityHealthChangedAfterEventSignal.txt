@@ -13,7 +13,7 @@ Adds a callback that will be called when the health of an entity changes.
         - callback: (arg0: EntityHealthChangedAfterEvent) => void
         - options?: EntityEventOptions = null
 
-Returns (arg0: EntityHealthChangedAfterEvent) => void
+    Returns (arg0: EntityHealthChangedAfterEvent) => void
 
 * Notes:
  - This function can't be called in read-only mode.

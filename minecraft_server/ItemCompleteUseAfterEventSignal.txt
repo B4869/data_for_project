@@ -12,7 +12,7 @@ Adds a callback that will be called when a chargeable item completes charging.
     
         - callback: (arg0: ItemCompleteUseAfterEvent) => void
 
-Returns (arg0: ItemCompleteUseAfterEvent) => void
+    Returns (arg0: ItemCompleteUseAfterEvent) => void
 
 * Notes:
  - This function can't be called in read-only mode.

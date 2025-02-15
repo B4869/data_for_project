@@ -12,7 +12,7 @@ Adds a callback that will be called when before an explosion occurs. The callbac
 
         - callback: (arg0: ExplosionBeforeEvent) => void
 
-Returns (arg0: ExplosionBeforeEvent) => void
+    Returns (arg0: ExplosionBeforeEvent) => void
 
 * Notes:
  - This function can't be called in read-only mode.

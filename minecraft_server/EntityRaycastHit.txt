@@ -1,0 +1,18 @@
+# EntityRaycastHit 
+Contains information for entity raycast hit results.
+
+## Properties
+
+- distance
+distance: number;
+
+Distance from ray origin to entity bounds.
+
+Type: number
+
+- entity
+entity: Entity;
+
+Entity that was hit.
+
+Type: Entity

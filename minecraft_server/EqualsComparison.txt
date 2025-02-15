@@ -1,0 +1,11 @@
+# EqualsComparison
+Equal to operator.
+
+## Properties
+
+- equals
+equals: boolean | number | string;
+
+Threshold value compared against.
+
+Type: boolean | number | string

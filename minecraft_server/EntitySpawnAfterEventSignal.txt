@@ -13,7 +13,7 @@ Method to register an event handler for what happens when an entity spawns.
 
         Function that handles the spawn event.
 
-Returns (arg0: EntitySpawnAfterEvent) => void
+    Returns (arg0: EntitySpawnAfterEvent) => void
 
     - Example logEntitySpawnEvent
         - logEntitySpawnEvent.js

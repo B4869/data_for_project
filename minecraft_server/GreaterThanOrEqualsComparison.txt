@@ -1,0 +1,22 @@
+# GreaterThanOrEqualsComparison 
+Greater than or equal to operator.
+
+## Properties
+
+- greaterThanOrEquals
+greaterThanOrEquals: number;
+
+Threshold value compared against.
+
+Type: number
+
+
+
+
+
+
+
+
+
+
+

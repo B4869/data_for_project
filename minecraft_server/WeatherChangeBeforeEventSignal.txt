@@ -1,0 +1,46 @@
+# WeatherChangeBeforeEventSignal 
+Manages callbacks that are connected to before weather changing.
+
+## Methods
+
+- subscribe
+subscribe(callback: (arg0: WeatherChangeBeforeEvent) => void): (arg0: WeatherChangeBeforeEvent) => void
+
+Adds a callback that will be called before weather changes.
+
+    - Parameters
+
+        - callback: (arg0: WeatherChangeBeforeEvent) => void
+
+    Returns (arg0: WeatherChangeBeforeEvent) => void
+
+* Notes:
+ - This function can't be called in read-only mode.
+
+- unsubscribe
+unsubscribe(callback: (arg0: WeatherChangeBeforeEvent) => void): void
+
+Removes a callback from being called before weather changes.
+
+    - Parameters
+
+        - callback: (arg0: WeatherChangeBeforeEvent) => void
+
+* Notes:
+ - This function can't be called in read-only mode.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

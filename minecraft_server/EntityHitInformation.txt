@@ -1,0 +1,17 @@
+# EntityHitInformation 
+Contains additional information about an entity that was hit.
+
+## Properties
+
+- entity
+entity?: Entity;
+
+Entity that was hit.
+
+Type: Entity
+
+
+
+
+
+

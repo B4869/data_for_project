@@ -1,0 +1,25 @@
+# StructureCreateOptions 
+Provides additional options for @minecraft/server.StructureManager.createFromWorld
+
+## Properties
+
+- includeBlocks
+includeBlocks?: boolean;
+
+Whether blocks should be included in the structure. Defaults to true.
+
+Type: boolean
+
+- includeEntities
+includeEntities?: boolean;
+
+Whether entities should be included in the structure. Defaults to true.
+
+Type: boolean
+
+- saveMode
+saveMode?: StructureSaveMode;
+
+How the Structure should be saved. Defaults to StructureSaveMode.World.
+
+Type: StructureSaveMode

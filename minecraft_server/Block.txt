@@ -119,7 +119,7 @@ Returns the @minecraft/server.Block above this block (positive in the Y directio
         
         Number of steps above to step before returning.
 
-Returns Block | undefined
+    Returns Block | undefined
 
 * Notes:
  - This function can throw errors.
@@ -135,7 +135,7 @@ Returns the @minecraft/server.Block below this block (negative in the Y directio
         
         Number of steps below to step before returning.
 
-Returns Block | undefined
+    Returns Block | undefined
 
 * Notes:
  - This function can throw errors.
@@ -158,7 +158,7 @@ Returns the @minecraft/server.Block to the east of this block (positive in the X
         
         Number of steps to the east to step before returning.
 
-Returns Block | undefined
+    Returns Block | undefined
 
 * Notes:
  - This function can throw errors.
@@ -174,7 +174,7 @@ Gets a component (that represents additional capabilities) for a block - for exa
         
         The identifier of the component (e.g., 'minecraft:inventory'). If no namespace prefix is specified, 'minecraft:' is assumed. Available component IDs can be found as part of the @minecraft/server.BlockComponentTypes enum.
 
-Returns BlockComponentTypeMap[T] | undefined - Returns the component if it exists on the block, otherwise undefined.
+    Returns BlockComponentTypeMap[T] | undefined - Returns the component if it exists on the block, otherwise undefined.
 
 * Notes:
  - This function can throw errors.
@@ -194,7 +194,7 @@ Creates a prototype item stack based on this block that can be used with Contain
 
         Whether additional data facets of the item stack are included.
 
-Returns ItemStack | undefined - An itemStack with the specified amount of items and data. Returns undefined if block type is incompatible.
+    Returns ItemStack | undefined - An itemStack with the specified amount of items and data. Returns undefined if block type is incompatible.
 
 * Notes:
  - This function can throw errors.
@@ -233,7 +233,7 @@ Checks to see if the permutation of this block has a specific tag.
 
         Tag to check for.
 
-Returns boolean - Returns true if the permutation of this block has the tag, else false.
+    Returns boolean - Returns true if the permutation of this block has the tag, else false.
 
     - Examples hasTag
         checkBlockTags.js
@@ -272,7 +272,7 @@ Tests whether this block matches a specific criteria.
         
         Optional set of block states to test this block against.
 
-Returns boolean - Returns true if the block matches the specified criteria.
+    Returns boolean - Returns true if the block matches the specified criteria.
 
 * Notes:
  - This function can throw errors.
@@ -288,7 +288,7 @@ Returns the @minecraft/server.Block to the north of this block (negative in the 
         
         Number of steps to the north to step before returning.
 
-Returns Block | undefined
+    Returns Block | undefined
 
 * Notes:
  - This function can throw errors.
@@ -304,7 +304,7 @@ Returns a block at an offset relative vector to this block.
         
         The offset vector. For example, an offset of 0, 1, 0 will return the block above the current block.
 
-Returns Block | undefined - Block at the specified offset, or undefined if that block could not be retrieved (for example, the block and its relative chunk is not loaded yet.)
+    Returns Block | undefined - Block at the specified offset, or undefined if that block could not be retrieved (for example, the block and its relative chunk is not loaded yet.)
 
 * Notes:
 
@@ -366,7 +366,7 @@ Returns the @minecraft/server.Block to the south of this block (positive in the 
 
         Number of steps to the south to step before returning.
 
-Returns Block | undefined
+    Returns Block | undefined
 
 * Notes:
  - This function can throw errors.
@@ -382,7 +382,7 @@ Returns the @minecraft/server.Block to the west of this block (negative in the X
 
         Number of steps to the west to step before returning.
 
-Returns Block | undefined
+    Returns Block | undefined
 
 * Notes:
  - This function can throw errors.

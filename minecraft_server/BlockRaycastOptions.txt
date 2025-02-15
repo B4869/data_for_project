@@ -1,0 +1,34 @@
+# BlockRaycastOptions
+
+## Extends
+
+- BlockFilter
+
+Contains additional options for configuring a block raycast query.
+
+## Properties
+
+- includeLiquidBlocks
+includeLiquidBlocks?: boolean;
+
+If true, liquid blocks will be considered as blocks that 'stop' the raycast.
+
+Type: boolean
+
+- includePassableBlocks
+includePassableBlocks?: boolean;
+
+If true, passable blocks like vines and flowers will be considered as blocks that 'stop' the raycast.
+
+Type: boolean
+
+- maxDistance
+maxDistance?: number;
+
+Maximum distance, in blocks, to process the raycast.
+
+Type: number
+
+
+
+

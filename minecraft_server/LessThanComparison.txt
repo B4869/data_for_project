@@ -1,0 +1,12 @@
+# LessThanComparison 
+Less than operator.
+
+## Properties
+
+- lessThan
+lessThan: number;
+
+Threshold value compared against.
+
+Type: number
+

@@ -1,0 +1,6 @@
+# EnchantmentLevelOutOfBoundsError 
+
+## Extends
+
+- Error
+

@@ -1,0 +1,23 @@
+# CameraTargetOptions
+Used to target an entity with a free camera.
+
+## Properties
+
+- offsetFromTargetCenter
+offsetFromTargetCenter?: Vector3;
+
+Set an <x, y, z> offset from the target entity's center.
+
+Type: Vector3
+
+- targetEntity
+targetEntity: Entity;
+
+The singular entity you want to target.
+
+Type: Entity
+
+
+
+
+

@@ -1,0 +1,28 @@
+# EntityEventOptions 
+Contains optional parameters for registering an entity event.
+
+## Properties
+
+- entities
+entities?: Entity[];
+
+If this value is set, this event will only fire for entities that match the entities within this collection.
+
+Type: Entity[]
+
+- entityTypes
+entityTypes?: string[];
+
+If this value is set, this event will only fire if the impacted entities' type matches this parameter.
+
+Type: string[]
+
+
+
+
+
+
+
+
+
+

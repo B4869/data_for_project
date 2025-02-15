@@ -92,7 +92,7 @@ Adds an entity to this entity as a rider.
 
         Entity that will become the rider of this entity.
 
-Returns boolean - True if the rider entity was successfully added.
+    Returns boolean - True if the rider entity was successfully added.
 
     - Example minibiomes
         minibiomes.js 

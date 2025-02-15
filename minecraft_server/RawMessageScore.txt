@@ -1,0 +1,22 @@
+# RawMessageScore 
+Provides a description of a score token to use within a raw message.
+
+## Properties
+
+- name
+name?: string;
+
+Name of the score value to match.
+
+Type: string
+
+- objective
+objective?: string;
+
+Name of the score value to match.
+
+Type: string
+
+
+
+

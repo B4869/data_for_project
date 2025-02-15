@@ -12,7 +12,7 @@ Adds a callback that will be called when an item is used.
 
         - callback: (arg0: ItemUseAfterEvent) => void
 
-Returns (arg0: ItemUseAfterEvent) => void
+    Returns (arg0: ItemUseAfterEvent) => void
 
 * Notes:
  - This function can't be called in read-only mode.
@@ -23,9 +23,9 @@ unsubscribe(callback: (arg0: ItemUseAfterEvent) => void): void
 
 Removes a callback from being called when an item is used.
 
-- Parameters
+    - Parameters
     
-    - callback: (arg0: ItemUseAfterEvent) => void
+        - callback: (arg0: ItemUseAfterEvent) => void
 
 * Notes:
  - This function can't be called in read-only mode.

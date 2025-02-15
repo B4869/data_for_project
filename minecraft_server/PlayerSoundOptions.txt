@@ -1,0 +1,46 @@
+# PlayerSoundOptions 
+Additional options for how a sound plays for a player.
+
+## Properties
+
+- location
+location?: Vector3;
+
+Location of the sound; if not specified, the sound is played near a player.
+
+Type: Vector3
+
+- pitch
+pitch?: number;
+
+Optional pitch of the sound.
+
+Type: number
+
+- volume
+volume?: number;
+
+Optional volume of the sound.
+
+Type: number
+
+Feedback
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

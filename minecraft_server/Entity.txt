@@ -162,7 +162,7 @@ Adds or updates an effect, like poison, to the entity.
 
         Additional options for the effect.
 
-Returns Effect | undefined - Returns nothing if the effect was added or updated successfully. This can throw an error if the duration or amplifier are outside of the valid ranges, or if the effect does not exist.
+    Returns Effect | undefined - Returns nothing if the effect was added or updated successfully. This can throw an error if the duration or amplifier are outside of the valid ranges, or if the effect does not exist.
 
     - Example spawnPoisonedVillager
         spawnPoisonedVillager.js
@@ -244,7 +244,7 @@ Adds a specified tag to an entity.
 
         Content of the tag to add. The tag must be less than 256 characters.
 
-Returns boolean - Returns true if the tag was added successfully. This can fail if the tag already exists on the entity.
+    Returns boolean - Returns true if the tag was added successfully. This can fail if the tag already exists on the entity.
 
     - Example tagsQuery
         tagsQuery.js
@@ -301,7 +301,7 @@ Applies a set of damage to an entity.
 
         Additional options about the source of damage, which may add additional effects or spur additional behaviors on this entity.
 
-Returns boolean - Whether the entity takes any damage. This can return false if the entity is invulnerable or if the damage applied is less than or equal to 0.
+    Returns boolean - Whether the entity takes any damage. This can return false if the entity is invulnerable or if the damage applied is less than or equal to 0.
 
     - Example applyDamageThenHeal
         applyDamageThenHeal.js
@@ -463,7 +463,7 @@ Extinguishes the fire if the entity is on fire. Note that you can call getCompon
 
         Whether to show any visual effects connected to the extinguishing.
 
-Returns boolean - Returns whether the entity was on fire.
+    Returns boolean - Returns whether the entity was on fire.
 
     - Example setOnFire
         setOnFire.js
@@ -504,7 +504,7 @@ Returns the first intersecting block from the direction that this entity is look
 
         Additional configuration options for the ray cast.
 
-Returns BlockRaycastHit | undefined - Returns the first intersecting block from the direction that this entity is looking at.
+    Returns BlockRaycastHit | undefined - Returns the first intersecting block from the direction that this entity is looking at.
 
 * Notes:
  - This function can throw errors.
@@ -519,7 +519,7 @@ Gets a component (that represents additional capabilities) for an entity.
 
         The identifier of the component (e.g., 'minecraft:health'). If no namespace prefix is specified, 'minecraft:' is assumed. Available component IDs can be found as part of the @minecraft/server.EntityComponentTypes enum.
 
-Returns EntityComponentTypeMap[T] | undefined - Returns the component if it exists on the entity, otherwise undefined.
+    Returns EntityComponentTypeMap[T] | undefined - Returns the component if it exists on the entity, otherwise undefined.
 
 * Notes:
  - This function can throw errors.
@@ -547,7 +547,7 @@ Returns a property value.
 
         The property identifier.
 
-Returns boolean | number | string | Vector3 | undefined - Returns the value for the property, or undefined if the property has not been set.
+    Returns boolean | number | string | Vector3 | undefined - Returns the value for the property, or undefined if the property has not been set.
 
 * Notes:
  - This function can throw errors.
@@ -583,7 +583,7 @@ Returns the effect for the specified EffectType on the entity, undefined if the 
         
         The effect identifier.
 
-Returns Effect | undefined - Effect object for the specified effect, undefined if the effect is not present, or throws an error if the effect does not exist.
+    Returns Effect | undefined - Effect object for the specified effect, undefined if the effect is not present, or throws an error if the effect does not exist.
 
 * Notes:
  - This function can throw errors.
@@ -609,7 +609,7 @@ Gets the entities that this entity is looking at by performing a ray cast from t
 
         Additional configuration options for the ray cast.
 
-Returns EntityRaycastHit[] - Returns a set of entities from the direction that this entity is looking at.
+    Returns EntityRaycastHit[] - Returns a set of entities from the direction that this entity is looking at.
 
 * Notes:
  - This function can throw errors.
@@ -635,7 +635,7 @@ Gets an entity Property value. If the property was set using the setProperty fun
 
         The entity Property identifier.
 
-Returns boolean | number | string | undefined - Returns the current property value. For enum properties, a string is returned. For float and int properties, a number is returned. For undefined properties, undefined is returned.
+    Returns boolean | number | string | undefined - Returns the current property value. For enum properties, a string is returned. For float and int properties, a number is returned. For undefined properties, undefined is returned.
 
 * Notes:
  - This function can throw errors.
@@ -713,7 +713,7 @@ Returns true if the specified component is present on this entity.
 
         The identifier of the component (e.g., 'minecraft:rideable') to retrieve. If no namespace prefix is specified, 'minecraft:' is assumed.
 
-Returns boolean - Returns true if the specified component is present on this entity.
+    Returns boolean - Returns true if the specified component is present on this entity.
 
 * Notes:
  - This function can throw errors.
@@ -779,7 +779,7 @@ Matches the entity against the passed in options. Uses the location of the entit
 
         The query to perform the match against.
 
-Returns boolean - Returns true if the entity matches the criteria in the passed in EntityQueryOptions, otherwise it returns false.
+    Returns boolean - Returns true if the entity matches the criteria in the passed in EntityQueryOptions, otherwise it returns false.
 
 * Notes:
  - This function can't be called in read-only mode.
@@ -824,7 +824,7 @@ Removes the specified EffectType on the entity, or returns false if the effect i
 
         The effect identifier.
 
-Returns boolean - Returns true if the effect has been removed. Returns false if the effect is not found or does not exist.
+    Returns boolean - Returns true if the effect has been removed. Returns false if the effect is not found or does not exist.
 
 * Notes:
  - This function can't be called in read-only mode.
@@ -841,7 +841,7 @@ Removes a specified tag from an entity.
 
         Content of the tag to remove.
 
-Returns boolean - Returns whether the tag existed on the entity.
+    Returns boolean - Returns whether the tag existed on the entity.
 
 * Notes:
  - This function can't be called in read-only mode.
@@ -858,7 +858,7 @@ Resets an Entity Property back to its default value, as specified in the Entity'
 
         The Entity Property identifier.
 
-Returns boolean | number | string - Returns the default property value. For enum properties, a string is returned. For float and int properties, a number is returned. For undefined properties, undefined is returned.
+    Returns boolean | number | string - Returns the default property value. For enum properties, a string is returned. For float and int properties, a number is returned. For undefined properties, undefined is returned.
 
 * Notes:
  - This function can't be called in read-only mode.
@@ -916,7 +916,7 @@ Sets an entity on fire (if it is not in water or rain). Note that you can call g
 
         Whether side-effects should be applied (e.g. thawing freeze) and other conditions such as rain or fire protection should be taken into consideration.
 
-Returns boolean - Whether the entity was set on fire. This can fail if seconds is less than or equal to zero, the entity is wet or the entity is immune to fir
+    Returns boolean - Whether the entity was set on fire. This can fail if seconds is less than or equal to zero, the entity is wet or the entity is immune to fir
 
     - Example setOnFire
         setOnFire.js

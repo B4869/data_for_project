@@ -1,0 +1,45 @@
+# PlayerInputPermissions 
+Contains APIs to enable/disable player input permissions.
+
+## Methods
+
+- isPermissionCategoryEnabled
+isPermissionCategoryEnabled(permissionCategory: InputPermissionCategory): boolean
+
+Returns true if an input permission is enabled.
+
+    - Parameters
+    
+        - permissionCategory: InputPermissionCategory
+    
+    Returns boolean
+
+* Notes:      
+ - This function can't be called in read-only mode.
+ - This function can throw errors.
+    - Throws Error
+
+- setPermissionCategory
+setPermissionCategory(permissionCategory: InputPermissionCategory, isEnabled: boolean): void
+
+Enable or disable an input permission. When enabled the input will work, when disabled will not work.
+
+    - Parameters
+    
+        - permissionCategory: InputPermissionCategory
+        
+        - isEnabled: boolean
+
+* Notes:      
+ - This function can't be called in read-only mode.
+ - This function can throw errors.
+
+
+
+
+
+
+
+
+
+

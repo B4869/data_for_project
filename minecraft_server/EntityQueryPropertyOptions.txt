@@ -1,0 +1,23 @@
+# EntityQueryPropertyOptions
+
+## Properties
+
+- exclude
+exclude?: boolean;
+
+Type: boolean
+
+- propertyId
+propertyId: string;
+
+Type: string
+
+- value
+value?: boolean | string | EqualsComparison | GreaterThanComparison | GreaterThanOrEqualsComparison | LessThanComparison | LessThanOrEqualsComparison | NotEqualsComparison | RangeComparison;
+
+Type: boolean | string | EqualsComparison | GreaterThanComparison | GreaterThanOrEqualsComparison | LessThanComparison | LessThanOrEqualsComparison | NotEqualsComparison | RangeComparison
+
+
+
+
+

@@ -70,17 +70,17 @@ tameToPlayer(showParticles: boolean, player: Player): boolean
 
 Sets this rideable entity as tamed by the given player.
 
-Parameters
+        Parameters
 
-        - showParticles: boolean
+                - showParticles: boolean
 
-        Whether to show effect particles when this entity is tamed.
+                Whether to show effect particles when this entity is tamed.
 
-        - player: Player
+                - player: Player
 
-        The player that this entity should be tamed by.
+                The player that this entity should be tamed by.
 
-Returns boolean - Returns true if the entity was tamed.
+        Returns boolean - Returns true if the entity was tamed.
 
 * Notes:
  - This function can't be called in read-only mode.

@@ -1,0 +1,11 @@
+# NotEqualsComparison
+Not equal to operator.
+
+## Properties
+
+- notEquals
+notEquals: boolean | number | string;
+
+Threshold value compared against.
+
+Type: boolean | number | string

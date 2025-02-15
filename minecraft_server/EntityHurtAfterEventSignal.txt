@@ -8,13 +8,13 @@ subscribe(callback: (arg0: EntityHurtAfterEvent) => void, options?: EntityEventO
 
 Adds a callback that will be called when an entity is hurt.
 
-    -vParameters
+    -Parameters
 
         - callback: (arg0: EntityHurtAfterEvent) => void
 
         - options?: EntityEventOptions = null
 
-Returns (arg0: EntityHurtAfterEvent) => void
+    Returns (arg0: EntityHurtAfterEvent) => void
 
 * Notes: 
  - This function can't be called in read-only mode.

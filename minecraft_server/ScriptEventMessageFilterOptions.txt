@@ -1,0 +1,23 @@
+# ScriptEventMessageFilterOptions
+Contains additional options for registering a script event event callback.
+
+## Properties
+
+- namespaces
+namespaces: string[];
+
+Optional list of namespaces to filter inbound script event messages.
+
+Type: string[]
+
+
+
+
+
+
+
+
+
+
+
+

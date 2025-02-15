@@ -1,0 +1,42 @@
+# PlayerDimensionChangeAfterEventSignal 
+Manages callbacks that are connected to successful player dimension changes.
+
+## Methods
+
+- subscribe
+subscribe(callback: (arg0: PlayerDimensionChangeAfterEvent) => void): (arg0: PlayerDimensionChangeAfterEvent) => void
+
+Subscribes the specified callback to a player dimension change after event.
+
+    - Parameters
+    
+        - callback: (arg0: PlayerDimensionChangeAfterEvent) => void
+
+    Returns (arg0: PlayerDimensionChangeAfterEvent) => void
+
+* Notes:
+ - This function can't be called in read-only mode.
+
+- unsubscribe
+unsubscribe(callback: (arg0: PlayerDimensionChangeAfterEvent) => void): void
+
+Removes the specified callback from a player dimension change after event.
+
+    - Parameters
+        
+        -callback: (arg0: PlayerDimensionChangeAfterEvent) => void
+
+* Notes:
+ - This function can't be called in read-only mode.
+
+
+
+
+
+
+
+
+
+
+
+

@@ -14,7 +14,7 @@ Adds a callback that will be called when an entity hits a block.
 
         - options?: EntityEventOptions = null
 
-Returns (arg0: EntityHitBlockAfterEvent) => void
+    Returns (arg0: EntityHitBlockAfterEvent) => void
 
 * Notes:
  - This function can't be called in read-only mode.

@@ -12,7 +12,7 @@ Adds a callback that will be called when a chargeable item stops charging.
 
         - callback: (arg0: ItemStopUseAfterEvent) => void
 
-Returns (arg0: ItemStopUseAfterEvent) => void
+    Returns (arg0: ItemStopUseAfterEvent) => void
 
 * Notes:
  - This function can't be called in read-only mode.

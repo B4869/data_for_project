@@ -12,7 +12,7 @@ Returns a specific item type, if available within Minecraft.
         
         - itemId: string
 
-Returns ItemType | undefined
+    Returns ItemType | undefined
 
 - getAll
 static getAll(): ItemType[]

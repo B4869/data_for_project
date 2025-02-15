@@ -48,7 +48,7 @@ Checks whether an enchantment can be added to the item stack.
 
         The enchantment interface to be added.
 
-Returns boolean - Returns true if the enchantment can be added to the item stack.
+    Returns boolean - Returns true if the enchantment can be added to the item stack.
 
 * Notes:
  - This function can throw errors.
@@ -65,7 +65,7 @@ Gets the enchantment of a given type from the item stack.
 
         The enchantment type to get.
 
-Returns Enchantment | undefined - Returns the enchantment if it exists on the item stack.
+    Returns Enchantment | undefined - Returns the enchantment if it exists on the item stack.
 
 * Notes:
  - This function can throw errors.
@@ -92,7 +92,7 @@ Checks whether an item stack has a given enchantment type.
 
         The enchantment type to check for.
 
-Returns boolean - Returns true if the item stack has the enchantment type.
+    Returns boolean - Returns true if the item stack has the enchantment type.
 
 * Notes:
  - This function can throw errors.

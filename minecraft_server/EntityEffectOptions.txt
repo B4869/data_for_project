@@ -1,0 +1,18 @@
+# EntityEffectOptions
+Contains additional options for entity effects.
+
+## Properties
+
+- amplifier
+amplifier?: number;
+
+The strength of the effect.
+
+Type: number
+
+- showParticles
+showParticles?: boolean;
+
+If true, will show particles when effect is on the entity.
+
+Type: boolean

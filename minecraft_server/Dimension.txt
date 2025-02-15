@@ -41,7 +41,7 @@ Searches the block volume for a block that satisfies the block filter.
 
         If set to true will suppress the UnloadedChunksError if some or all of the block volume is outside of the loaded chunks. Will only check the block locations that are within the loaded chunks in the volume.
 
-Returns boolean - Returns true if at least one block in the volume satisfies the filter, false otherwise.
+    Returns boolean - Returns true if at least one block in the volume satisfies the filter, false otherwise.
 
 * Notes:
  - This function can throw errors.
@@ -66,7 +66,7 @@ Creates an explosion at the specified location.
 
         Additional configurable options for the explosion.
 
-Returns boolean
+    Returns boolean
 
  - Examples
 
@@ -219,7 +219,7 @@ Returns a set of entities based on a set of conditions defined via the EntityQue
 
         Additional options that can be used to filter the set of entities returned.
 
-Returns Entity[] - An entity array.
+    Returns Entity[] - An entity array.
 
     - Examples bounceSkeletons
 
@@ -296,7 +296,7 @@ Returns a set of entities at a particular location.
         
         The location at which to return entities.
 
-Returns Entity[] - Zero or more entities at the specified location.
+    Returns Entity[] - Zero or more entities at the specified location.
 
 
 - getEntitiesFromRay
@@ -314,7 +314,7 @@ Gets entities that intersect with a specified vector emanating from a location.
 
         Additional options for processing this raycast query.
 
-Returns EntityRaycastHit[]
+    Returns EntityRaycastHit[]
 
 - getPlayers
 getPlayers(options?: EntityQueryOptions): Player[]
@@ -327,7 +327,7 @@ Returns a set of players based on a set of conditions defined via the EntityQuer
 
         Additional options that can be used to filter the set of players returned.
 
-Returns Player[] - A player array.
+    Returns Player[] - A player array.
 
 - getTopmostBlock
 getTopmostBlock(locationXZ: VectorXZ, minHeight?: number): Block | undefined
@@ -344,7 +344,7 @@ Returns the highest block at the given XZ location.
 
         The Y height to begin the search from. Defaults to the maximum dimension height.
 
-Returns Block | undefined
+    Returns Block | undefined
 
 * Notes:
  - This function can't be called in read-only mode.
@@ -388,7 +388,7 @@ Runs a command synchronously using the context of the broader dimenion.
 
         Command to run. Note that command strings should not start with slash.
 
-Returns CommandResult - Returns a command result with a count of successful values from the command.
+    Returns CommandResult - Returns a command result with a count of successful values from the command.
 
 * Notes:
  - This function can't be called in read-only mode.
@@ -472,7 +472,7 @@ Creates a new entity (e.g., a mob) at the specified location.
 
         - options?: SpawnEntityOptions = null
 
-Returns Entity - Newly created entity at the specified location.
+    Returns Entity - Newly created entity at the specified location.
 
     - Examples spawnAdultHorse.js
         spawnAdultHorse.js
@@ -547,7 +547,7 @@ Creates a new item stack as an entity at the specified location.
 
         The location at which to create the item stack.
 
-Returns Entity - Newly created item stack entity at the specified location.
+    Returns Entity - Newly created item stack entity at the specified location.
 
     -Examples itemStacks
         itemStacks.js

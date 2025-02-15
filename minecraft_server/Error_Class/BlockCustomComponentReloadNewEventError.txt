@@ -1,0 +1,5 @@
+# BlockCustomComponentReloadNewEventError 
+
+## Extends
+
+- Error

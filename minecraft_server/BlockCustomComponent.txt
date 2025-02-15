@@ -1,0 +1,74 @@
+# BlockCustomComponent
+Contains a set of events that will be raised for a block. This object must be bound using the BlockRegistry.
+
+## Properties
+
+- beforeOnPlayerPlace
+beforeOnPlayerPlace?: (arg0: BlockComponentPlayerPlaceBeforeEvent) => void;
+
+This function will be called before a player places the block.
+
+Type: (arg0: BlockComponentPlayerPlaceBeforeEvent) => void
+
+- onEntityFallOn
+onEntityFallOn?: (arg0: BlockComponentEntityFallOnEvent) => void;
+
+This function will be called when an entity falls onzto the block that this custom component is bound to.
+
+Type: (arg0: BlockComponentEntityFallOnEvent) => void
+
+- onPlace
+onPlace?: (arg0: BlockComponentOnPlaceEvent) => void;
+
+This function will be called when the block that this custom component is bound to is placed.
+
+Type: (arg0: BlockComponentOnPlaceEvent) => void
+
+- onPlayerDestroy
+onPlayerDestroy?: (arg0: BlockComponentPlayerDestroyEvent) => void;
+
+This function will be called when a player destroys a specific block.
+
+Type: (arg0: BlockComponentPlayerDestroyEvent) => void
+
+- onPlayerInteract
+onPlayerInteract?: (arg0: BlockComponentPlayerInteractEvent) => void;
+
+This function will be called when a player sucessfully interacts with the block that this custom component is bound to.
+
+Type: (arg0: BlockComponentPlayerInteractEvent) => void
+
+- onRandomTick
+onRandomTick?: (arg0: BlockComponentRandomTickEvent) => void;
+
+This function will be called when a block randomly ticks.
+
+Type: (arg0: BlockComponentRandomTickEvent) => void
+
+- onStepOff
+onStepOff?: (arg0: BlockComponentStepOffEvent) => void;
+
+This function will be called when an entity steps off the block that this custom component is bound to.
+
+Type: (arg0: BlockComponentStepOffEvent) => void
+
+- onStepOn
+onStepOn?: (arg0: BlockComponentStepOnEvent) => void;
+
+This function will be called when an entity steps onto the block that this custom component is bound to.
+
+Type: (arg0: BlockComponentStepOnEvent) => void
+
+- onTick
+onTick?: (arg0: BlockComponentTickEvent) => void;
+
+This function will be called when a block ticks.
+
+Type: (arg0: BlockComponentTickEvent) => void
+
+
+
+
+
+
+

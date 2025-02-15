@@ -1,0 +1,40 @@
+# ScriptEventCommandMessageAfterEventSignal 
+Allows for registering an event handler that responds to inbound /scriptevent commands.
+
+## Methods
+
+- subscribe
+subscribe(callback: (arg0: ScriptEventCommandMessageAfterEvent) => void, options?: ScriptEventMessageFilterOptions): (arg0: ScriptEventCommandMessageAfterEvent) => void
+
+Registers a new ScriptEvent handler.
+
+    - Parameters
+
+        - callback: (arg0: ScriptEventCommandMessageAfterEvent) => void
+
+        - options?: ScriptEventMessageFilterOptions = null
+
+    Returns (arg0: ScriptEventCommandMessageAfterEvent) => void
+
+* Notes:
+ - This function can't be called in read-only mode.
+
+- unsubscribe
+unsubscribe(callback: (arg0: ScriptEventCommandMessageAfterEvent) => void): void
+
+Unsubscribes a particular handler for a ScriptEvent event.
+
+    - Parameters
+
+        - callback: (arg0: ScriptEventCommandMessageAfterEvent) => void
+
+* Notes:
+ - This function can't be called in read-only mode.
+
+
+
+
+
+
+
+

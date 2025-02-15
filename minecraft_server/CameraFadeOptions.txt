@@ -1,0 +1,19 @@
+# CameraFadeOptions
+Used to initiate a full-screen color fade.
+
+## Properties
+
+- fadeColor
+fadeColor?: RGB;
+
+Fade color to use.
+
+Type: RGB
+
+- fadeTime
+fadeTime?: CameraFadeTimeOptions;
+
+Time in seconds for the fade-in, hold, and fade-out seconds.
+
+Type: CameraFadeTimeOptions
+

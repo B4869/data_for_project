@@ -1,0 +1,59 @@
+# PistonActivateAfterEventSignal 
+Manages callbacks that are connected to piston activations.
+
+## Methods
+
+- subscribe
+subscribe(callback: (arg0: PistonActivateAfterEvent) => void): (arg0: PistonActivateAfterEvent) => void
+
+    - Parameters
+
+        - callback: (arg0: PistonActivateAfterEvent) => void
+
+    Returns (arg0: PistonActivateAfterEvent) => void
+
+    - Example pistonAfterEvent
+        pistonAfterEvent.js
+
+            import { world, system, BlockPermutation, BlockPistonState } from "@minecraft/server";
+            import { MinecraftBlockTypes } from "@minecraft/vanilla-data";
+
+            function pistonAfterEvent(log, targetLocation) {
+            const piston = targetLocation.dimension.getBlock(targetLocation);
+            const button = targetLocation.dimension.getBlock({
+                x: targetLocation.x,
+                y: targetLocation.y + 1,
+                z: targetLocation.z,
+            });
+
+            if (!piston || !button) {
+                log("Could not find block at location.");
+                return;
+            }
+
+            piston.setPermutation(BlockPermutation.resolve(MinecraftBlockTypes.Piston).withState("facing_direction", 3));
+            button.setPermutation(BlockPermutation.resolve(MinecraftBlockTypes.AcaciaButton).withState("facing_direction", 1));
+
+            world.afterEvents.pistonActivate.subscribe((event) => {
+                const eventLoc = event.piston.block.location;
+
+                if (eventLoc.x === targetLocation.x &&
+                    eventLoc.y === targetLocation.y &&
+                    eventLoc.z === targetLocation.z) {
+                log(
+                    "Piston event at " +
+                    system.currentTick +
+                    (event.piston.isMoving ? " Moving" : "") +
+                    (event.piston.state === BlockPistonState.Expanding ? " Expanding" : "") +
+                    (event.piston.state === BlockPistonState.Expanded ? " Expanded" : "") +
+                    (event.piston.state === BlockPistonState.Retracting ? " Retracting" : "") +
+                    (event.piston.state === BlockPistonState.Retracted ? " Retracted" : "")
+                );
+                }
+            });
+            }
+
+* Notes:
+ - This function can't be called in read-only mode.
+
+

@@ -1,0 +1,36 @@
+# PlayerLeaveBeforeEventSignal
+
+## Methods
+
+- subscribe
+subscribe(callback: (arg0: PlayerLeaveBeforeEvent) => void): (arg0: PlayerLeaveBeforeEvent) => void
+
+Adds a callback that will be called when a player leaves the world.
+
+    - Parameters
+
+        - callback: (arg0: PlayerLeaveBeforeEvent) => void
+    
+    Returns (arg0: PlayerLeaveBeforeEvent) => void
+
+* Notes:
+ - This function can't be called in read-only mode.
+
+- unsubscribe
+unsubscribe(callback: (arg0: PlayerLeaveBeforeEvent) => void): void
+
+Removes a callback that will be called when a player leaves the world.
+
+    - Parameters
+        - callback: (arg0: PlayerLeaveBeforeEvent) => void
+
+* Notes:
+ - This function can't be called in read-only mode.
+
+
+
+
+
+
+
+

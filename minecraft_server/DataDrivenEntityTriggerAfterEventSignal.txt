@@ -14,7 +14,7 @@ Adds a callback that will be called after a data driven entity event is triggere
 
         - options?: EntityDataDrivenTriggerEventOptions = null
 
-Returns (arg0: DataDrivenEntityTriggerAfterEvent) => void
+    Returns (arg0: DataDrivenEntityTriggerAfterEvent) => void
 
 * Notes:
  - This function can't be called in read-only mode.

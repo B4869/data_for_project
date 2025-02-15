@@ -71,7 +71,7 @@ Set this entity as tamed by the given player.
 
         The player that this entity should be tamed by.
 
-Returns boolean - Returns true if the entity was tamed.
+    Returns boolean - Returns true if the entity was tamed.
 
 * Notes:
  - This function can't be called in read-only mode.

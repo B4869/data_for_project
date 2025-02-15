@@ -19,7 +19,7 @@ Gets the equipped item for the given EquipmentSlot.
 
             The equipment slot. e.g. "head", "chest", "offhand"
 
-Returns ItemStack | undefined - Returns the item equipped to the given EquipmentSlot. If empty, returns undefined.
+    Returns ItemStack | undefined - Returns the item equipped to the given EquipmentSlot. If empty, returns undefined.
 
 * Notes:
  - This function can throw errors.
@@ -35,7 +35,7 @@ Gets the ContainerSlot corresponding to the given EquipmentSlot.
 
         The equipment slot. e.g. "head", "chest", "offhand".
 
-Returns ContainerSlot - Returns the ContainerSlot corresponding to the given EquipmentSlot.
+    Returns ContainerSlot - Returns the ContainerSlot corresponding to the given EquipmentSlot.
 
 * Notes:
  - This function can throw errors.
@@ -55,7 +55,7 @@ Replaces the item in the given EquipmentSlot.
 
         The item to equip. If undefined, clears the slot.
 
-Returns boolean
+    Returns boolean
 
 * Notes:
  -This function can't be called in read-only mode.

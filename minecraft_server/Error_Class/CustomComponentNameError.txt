@@ -1,0 +1,12 @@
+# CustomComponentNameError
+
+## Extends
+
+- Error
+
+## Properties
+
+reason
+read-only reason: CustomComponentNameErrorReason;
+
+Type: CustomComponentNameErrorReason

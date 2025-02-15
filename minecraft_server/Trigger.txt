@@ -1,0 +1,25 @@
+# Trigger 
+
+## Properties
+
+- eventName
+eventName: string;
+
+Event name of the trigger.
+
+Type: string
+
+## Methods
+
+- constructor
+new Trigger(eventName: string)
+
+Creates a new trigger.
+
+    - Parameters
+    
+        - eventName: string
+
+    Returns Trigger
+
+

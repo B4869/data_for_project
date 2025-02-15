@@ -1,0 +1,39 @@
+# PlayerBreakBlockAfterEvent 
+
+## Extends
+
+- BlockEvent
+
+Contains information regarding an event after a player breaks a block.
+
+## Properties
+
+- brokenBlockPermutation
+read-only brokenBlockPermutation: BlockPermutation;
+
+Returns permutation information about this block before it was broken.
+
+Type: BlockPermutation
+
+- itemStackAfterBreak
+read-only itemStackAfterBreak?: ItemStack;
+
+The item stack that was used to break the block after the block was broken, or undefined if empty hand.
+
+Type: ItemStack
+
+- itemStackBeforeBreak
+read-only itemStackBeforeBreak?: ItemStack;
+
+The item stack that was used to break the block before the block was broken, or undefined if empty hand.
+
+Type: ItemStack
+
+- player
+read-only player: Player;
+
+Player that broke the block for this event.
+
+Type: Player
+
+

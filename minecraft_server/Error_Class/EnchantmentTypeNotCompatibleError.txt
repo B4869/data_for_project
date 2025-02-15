@@ -1,0 +1,5 @@
+# EnchantmentTypeNotCompatibleError
+
+## Extends 
+
+- Error

@@ -14,7 +14,7 @@ Adds a callback that will be called when an entity hits another entity.
 
          -options?: EntityEventOptions = null
 
-Returns (arg0: EntityHitEntityAfterEvent) => void
+    Returns (arg0: EntityHitEntityAfterEvent) => void
 
 * Notes:
  - This function can't be called in read-only mod

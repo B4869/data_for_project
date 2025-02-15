@@ -64,7 +64,7 @@ Gets an @minecraft/server.ItemStack of the item at the specified slot. If the sl
         
         Zero-based index of the slot to retrieve items from.
 
-Returns ItemStack | undefined
+    Returns ItemStack | undefined
 
     - Examples getFirstHotbarItem
         getFirstHotbarItem.js
@@ -103,7 +103,7 @@ Returns a container slot. This acts as a reference to a slot at the given index 
         
         The index of the slot to return. This index must be within the bounds of the container.
 
-Returns ContainerSlot
+    Returns ContainerSlot
 
 * Notes:
  - This function can throw errors.
@@ -221,7 +221,7 @@ Moves an item from one slot to another container, or to the first available slot
 
         Target container to transfer to. Note this can be the same container as the source.
 
-Returns ItemStack | undefined - An itemStack with the items that couldn't be transferred. Returns undefined if all items were transferred.
+    Returns ItemStack | undefined - An itemStack with the items that couldn't be transferred. Returns undefined if all items were transferred.
 
     - Examples transferBetweenContainers
         transferBetweenContainers.js

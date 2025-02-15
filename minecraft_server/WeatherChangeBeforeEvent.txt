@@ -1,0 +1,34 @@
+# WeatherChangeBeforeEvent 
+Contains information related to changes in weather in the environment.
+
+## Properties
+
+- cancel
+cancel: boolean;
+
+If set to true the weather change will be cancelled.
+
+Type: boolean
+
+- duration
+duration: number;
+
+Sets the duration of the new weather (in ticks).
+
+Type: number
+
+- newWeather
+newWeather: WeatherType;
+
+The type of weather that will be applied.
+
+Type: WeatherType
+
+- previousWeather
+read-only previousWeather: WeatherType;
+
+The type of weather that it was prior to the event being fired.
+zz
+Type: WeatherType
+
+
