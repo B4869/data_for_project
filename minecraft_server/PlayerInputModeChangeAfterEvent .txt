@@ -1,0 +1,30 @@
+# PlayerInputModeChangeAfterEvent 
+Event data for when a player input mode changes.
+
+## Properties
+
+- newInputModeUsed
+read-only newInputModeUsed: InputMode;
+
+The new input mode used by the player.
+
+Type: InputMode
+
+- player
+read-only player: Player;
+
+The player that had an input mode change.
+
+Type: Player
+
+- previousInputModeUsed
+read-only previousInputModeUsed: InputMode;
+
+The previous input mode used by the player.
+
+Type: InputMode
+
+
+
+
+

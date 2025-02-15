@@ -1,0 +1,64 @@
+# PlayerInputModeChangeAfterEventSignal 
+Manages callbacks that are connected to player input mode.
+
+## Methods
+
+- subscribe
+subscribe(callback: (arg0: PlayerInputModeChangeAfterEvent) => void): (arg0: PlayerInputModeChangeAfterEvent) => void
+
+Adds a callback that will be called after the player input mode changes.
+
+    - Parameters
+
+        - callback: (arg0: PlayerInputModeChangeAfterEvent) => void
+    
+    Returns (arg0: PlayerInputModeChangeAfterEvent) => void
+
+* Notes:      
+ - This function can't be called in read-only mode.
+
+
+
+unsubscribe
+unsubscribe(callback: (arg0: PlayerInputModeChangeAfterEvent) => void): void
+
+Removes a callback from being called after the player input mode changes.
+
+    - Parameters
+
+        - callback: (arg0: PlayerInputModeChangeAfterEvent) => void
+
+* Notes:      
+ - This function can't be called in read-only mode.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+# PlayerLeaveBeforeEvent 
+
+## Properties
+
+- player
+read-only player: Player;
+
+The leaving player.
+
+Type: Player

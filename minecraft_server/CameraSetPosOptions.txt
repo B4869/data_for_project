@@ -1,0 +1,24 @@
+# CameraSetPosOptions
+
+## Properties
+
+- easeOptions
+easeOptions?: CameraEaseOptions;
+
+Type: CameraEaseOptions
+
+- facingLocation
+facingLocation: Vector3;
+
+Type: Vector3
+
+- location
+location?: Vector3;
+
+Type: Vector3
+
+
+
+
+
+

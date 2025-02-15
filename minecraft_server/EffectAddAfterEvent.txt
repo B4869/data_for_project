@@ -1,0 +1,58 @@
+# EffectAddAfterEvent
+Contains information related to changes to an effect - like poison - being added to an entity.
+
+## Properties
+
+- effect
+read-only effect: Effect;
+
+Additional properties and details of the effect.
+
+Type: Effect
+
+- entity
+read-only entity: Entity;
+
+Entity that the effect is being added to.
+
+Type: Entity
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,49 @@
+# ItemTypes 
+Returns the set of item types registered within Minecraft.
+
+## Methods
+
+- get
+static "get"(itemId: string): ItemType | undefined
+
+Returns a specific item type, if available within Minecraft.
+
+    - Parameters
+        
+        - itemId: string
+
+    Returns ItemType | undefined
+
+- getAll
+static getAll(): ItemType[]
+
+Retrieves all available item types registered within Minecraft.
+
+Returns ItemType[]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

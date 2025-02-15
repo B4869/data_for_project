@@ -1,0 +1,57 @@
+# ProjectileHitEntityAfterEvent 
+
+## Properties
+
+- dimension
+read-only dimension: Dimension;
+
+Dimension where this projectile hit took place.
+
+Type: Dimension
+
+- hitVector
+read-only hitVector: Vector3;
+
+Direction vector of the projectile as it hit an entity.
+
+Type: Vector3
+
+- location
+read-only location: Vector3;
+
+Location where the projectile hit occurred.
+
+Type: Vector3
+
+- projectile
+read-only projectile: Entity;
+
+Entity for the projectile that hit an entity.
+
+Type: Entity
+
+- source
+read-only source?: Entity;
+
+Optional source entity that fired the projectile.
+
+Type: Entity
+
+## Methods
+
+-getEntityHit
+getEntityHit(): EntityHitInformation
+
+Contains additional information about an entity that was hit.
+
+Returns EntityHitInformation
+
+* Notes:
+ - This function can't be called in read-only mode.
+
+
+
+
+
+
+

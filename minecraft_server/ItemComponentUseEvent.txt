@@ -1,0 +1,82 @@
+# ItemComponentUseEvent 
+Contains information regarding the use of an item.
+
+## Properties
+
+- itemStack
+read-only itemStack?: ItemStack;
+
+The item stack when the item was used.
+
+Type: ItemStack
+
+- source
+read-only source: Player;
+
+The player who used the item.
+
+Type: Player
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

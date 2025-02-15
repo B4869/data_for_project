@@ -1,0 +1,94 @@
+# EntityHurtAfterEventSignal 
+Manages callbacks that are connected to when an entity is hurt.
+
+# Methods
+
+- subscribe
+subscribe(callback: (arg0: EntityHurtAfterEvent) => void, options?: EntityEventOptions): (arg0: EntityHurtAfterEvent) => void
+
+Adds a callback that will be called when an entity is hurt.
+
+    -Parameters
+
+        - callback: (arg0: EntityHurtAfterEvent) => void
+
+        - options?: EntityEventOptions = null
+
+    Returns (arg0: EntityHurtAfterEvent) => void
+
+* Notes: 
+ - This function can't be called in read-only mode.
+
+- unsubscribe
+unsubscribe(callback: (arg0: EntityHurtAfterEvent) => void): void
+
+Removes a callback from being called when an entity is hurt.
+
+    - Parameters
+
+        - callback: (arg0: EntityHurtAfterEvent) => void
+
+* Notes: 
+ - This function can't be called in read-only mode.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

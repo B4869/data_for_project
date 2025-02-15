@@ -1,0 +1,476 @@
+# Player 
+
+## Extends
+
+- Entity
+
+## Classes that extend Player
+
+- @minecraft/server-gametest.SimulatedPlayer
+
+Represents a player within the world.
+
+## Properties
+
+- camera
+read-only camera: Camera;
+
+The player's Camera.
+
+Type: Camera
+
+* Notes:
+ - This property can throw errors when used.
+
+- clientSystemInfo
+read-only clientSystemInfo: ClientSystemInfo;
+
+Contains the player's device information.
+
+Type: ClientSystemInfo
+
+* Notes:
+ - This property can throw errors when used.
+    - Throws Error
+
+- inputInfo
+read-only inputInfo: InputInfo;
+
+Contains the player's input information.
+
+Type: InputInfo
+
+- inputPermissions
+read-only inputPermissions: PlayerInputPermissions;
+
+Input permissions of the player.
+
+Type: PlayerInputPermissions
+
+- isEmoting
+read-only isEmoting: boolean;
+
+If true, the player is currently emoting.
+
+Type: boolean
+
+* Notes:
+ - This property can throw errors when used.
+
+- isFlying
+read-only isFlying: boolean;
+
+Whether the player is flying. For example, in Creative or Spectator mode.
+
+Type: boolean
+
+* Notes:
+ - This property can throw errors when used.
+
+- isGliding
+read-only isGliding: boolean;
+
+Whether the player is gliding with Elytra.
+
+Type: boolean
+
+* Notes:
+ - This property can throw errors when used.
+
+- isJumping
+read-only isJumping: boolean;
+
+Whether the player is jumping. This will remain true while the player is holding the jump action.
+
+Type: boolean
+
+* Notes:
+ - This property can throw errors when used.
+
+- level
+read-only level: number;
+
+The current overall level for the player, based on their experience.
+
+Type: number
+
+* Notes:
+ - This property can throw errors when used.
+
+- name
+read-only name: string;
+
+Name of the player.
+
+Type: string
+
+* Notes:
+ -This property can throw errors when used.
+
+-onScreenDisplay
+read-only onScreenDisplay: ScreenDisplay;
+
+Contains methods for manipulating the on-screen display of a Player.
+
+Type: ScreenDisplay
+
+* Notes:
+ - This property can throw errors when used.
+
+- selectedSlotIndex
+selectedSlotIndex: number;
+
+Type: number
+
+* Notes:
+ - This property can't be edited in read-only mode.
+
+-totalXpNeededForNextLevel
+read-only totalXpNeededForNextLevel: number;
+
+The overall total set of experience needed to achieve the next level for a player.
+
+Type: number
+
+* Notes:
+ - This property can throw errors when used.
+
+- xpEarnedAtCurrentLevel
+read-only xpEarnedAtCurrentLevel: number;
+
+The current set of experience achieved for the player.
+
+Type: number
+
+* Notes:
+ -This property can throw errors when used.
+
+## Methods
+
+- addExperience
+addExperience(amount: number): number
+
+Adds/removes experience to/from the Player and returns the current experience of the Player.
+
+    - Parameters
+
+        - amount: number
+
+        Amount of experience to add. Note that this can be negative. Min/max bounds at -2^24 ~ 2^24
+
+    Returns number - Returns the current experience of the Player.
+
+* Notes:
+ - This function can't be called in read-only mode.
+ - This function can throw errors.
+
+- addLevels
+addLevels(amount: number): number
+
+Adds/removes level to/from the Player and returns the current level of the Player.
+
+    - Parameters
+
+        - amount: number
+
+        Amount to add to the player. Min/max bounds at -2^24 ~ 2^24
+
+    Returns number - Returns the current level of the Player.
+
+* Notes:
+    - This function can't be called in read-only mode.
+    - This function can throw errors.
+
+- getGameMode
+getGameMode(): GameMode
+
+Retrieves the active gamemode for this player, if specified.
+
+Returns GameMode
+
+* Notes:
+ - This function can throw errors.
+
+- getItemCooldown
+getItemCooldown(cooldownCategory: string): number
+
+Gets the current item cooldown time for a particular cooldown category.
+
+    - Parameters
+
+        - cooldownCategory: string
+
+        Specifies the cooldown category to retrieve the current cooldown for.
+
+    Returns number
+
+* Notes:
+This function can throw errors.
+
+- getSpawnPoint
+getSpawnPoint(): DimensionLocation | undefined
+
+Gets the current spawn point of the player.
+
+Returns DimensionLocation | undefined
+
+* Notes:
+ - This function can throw errors.
+
+- getTotalXp
+getTotalXp(): number
+
+Gets the total experience of the Player.
+
+Returns number
+
+* Notes:
+ - This function can throw errors.
+
+- playMusic
+playMusic(trackId: string, musicOptions?: MusicOptions): void
+
+Plays a music track that only this particular player can hear.
+
+    - Parameters
+
+        - trackId: string
+
+        Identifier of the music track to play.
+
+        - musicOptions?: MusicOptions = null
+
+        Additional options for the music track.
+
+* Notes:
+ - This function can't be called in read-only mode.
+ - This function can throw errors.
+
+- playSound
+playSound(soundId: string, soundOptions?: PlayerSoundOptions): void
+
+Plays a sound that only this particular player can hear.
+
+    - Parameters
+
+        - soundId: string
+
+        - soundOptions?: PlayerSoundOptions = null
+
+        Additional optional options for the sound.
+
+    - Example playMusicAndSound
+        playMusicAndSound.js
+
+            import { world } from "@minecraft/server";
+
+            function playMusicAndSound(targetLocation) {
+            const players = world.getPlayers();
+
+            const musicOptions = {
+                fade: 0.5,
+                loop: true,
+                volume: 1.0,
+            };
+            world.playMusic("music.menu", musicOptions);
+
+            const worldSoundOptions = {
+                pitch: 0.5,
+                volume: 4.0,
+            };
+            world.playSound("ambient.weather.thunder", targetLocation, worldSoundOptions);
+
+            const playerSoundOptions = {
+                pitch: 1.0,
+                volume: 1.0,
+            };
+
+            if (players.length > 0) {
+                players[0].playSound("bucket.fill_water", playerSoundOptions);
+            }
+            }
+
+* Notes:
+ - This function can't be called in read-only mode.
+ - This function can throw errors.
+
+- queueMusic
+queueMusic(trackId: string, musicOptions?: MusicOptions): void
+
+Queues an additional music track that only this particular player can hear. If a track is not playing, a music track will play.
+
+    - Parameters
+
+        - trackId: string
+
+        Identifier of the music track to play.
+
+        - musicOptions?: MusicOptions = null
+
+        Additional options for the music track.
+
+* Notes:
+ - This function can't be called in read-only mode.
+ - This function can throw errors.
+    - An error will be thrown if volume is less than 0.0.
+    - An error will be thrown if fade is less than 0.0.
+
+- resetLevel
+resetLevel(): void
+
+Resets the level of the player.
+
+* Notes:
+ - This function can't be called in read-only mode.
+ - This function can throw errors.
+
+- sendMessage
+sendMessage(message: (RawMessage | string)[] | RawMessage | string): void
+
+Sends a message to the player.
+
+    - Parameters
+
+        - message: (RawMessage | string)[] | RawMessage | string
+
+        The message to be displayed.
+
+    - Example nestedTranslation
+        nestedTranslation.js
+
+            import { world } from "@minecraft/server";
+
+            function nestedTranslation(targetLocation) {
+            const rawMessage = {
+                translate: "accessibility.list.or.two",
+                with: [{ translate: "item.apple.name" }, { translate: "item.coal.name" }],
+            };
+            world.sendMessage(rawMessage);
+            }
+
+    - Example scoreWildcard
+        scoreWildcard.js
+
+            import { world } from "@minecraft/server";
+
+            function scoreWildcard() {
+            const rawMessage = { score: { name: "*", objective: "obj" } };
+            world.sendMessage(rawMessage);
+            }
+
+    - Example sendBasicMessage
+        sendBasicMessage.js
+
+            import { world } from "@minecraft/server";
+
+            function sendBasicMessage() {
+            const players = world.getPlayers();
+            players[0].sendMessage("Hello World!");
+            }
+
+    - Example sendPlayerMessages 
+        sendPlayerMessages.js
+
+            import { world, DimensionLocation } from "@minecraft/server";
+
+            function sendPlayerMessages(targetLocation: DimensionLocation) {
+            for (const player of world.getAllPlayers()) {
+                // Displays "First or Second"
+                const rawMessage = { translate: "accessibility.list.or.two", with: ["First", "Second"] };
+                player.sendMessage(rawMessage);
+
+                // Displays "Hello, world!"
+                player.sendMessage("Hello, world!");
+
+                // Displays "Welcome, Amazing Player 1!"
+                player.sendMessage({ translate: "authentication.welcome", with: ["Amazing Player 1"] });
+
+                // Displays the player's score for objective "obj". Each player will see their own score.
+                const rawMessageWithScore = { score: { name: "*", objective: "obj" } };
+                player.sendMessage(rawMessageWithScore);
+
+                // Displays "Apple or Coal"
+                const rawMessageWithNestedTranslations = {
+                translate: "accessibility.list.or.two",
+                with: { rawtext: [{ translate: "item.apple.name" }, { translate: "item.coal.name" }] },
+                };
+                player.sendMessage(rawMessageWithNestedTranslations);
+            }
+            }
+
+    -Example sendTranslatedMessage
+        sendTranslatedMessage.js
+
+            import { world, DimensionLocation } from "@minecraft/server";
+
+            function sendTranslatedMessage(targetLocation: DimensionLocation) {
+            const players = world.getPlayers();
+
+            // Send translated message to all players
+            players.forEach(player => {
+                player.sendMessage({ translate: "authentication.welcome", with: ["Amazing Player 1"] });
+            });
+            }
+
+* Notes:
+ - This function can throw errors.
+ - This method can throw if the provided @minecraft/server.RawMessage is in an invalid format. For example, if an empty name string is provided to score.
+
+- setGameMode
+setGameMode(gameMode?: GameMode): void
+
+Sets a gamemode override for this player.
+
+    - Parameters
+
+        - gameMode?: GameMode = null
+
+        Active gamemode.
+
+* Notes:
+ - This function can't be called in read-only mode.
+ - This function can throw errors.
+
+- setSpawnPoint
+setSpawnPoint(spawnPoint?: DimensionLocation): void
+
+Sets the current starting spawn point for this particular player.
+
+    - Parameters
+
+    - spawnPoint?: DimensionLocation = null
+
+* Notes:
+ -This function can't be called in read-only mode.
+ - This function can throw errors.
+    - Throws Error, LocationOutOfWorldBoundariesError
+
+
+- startItemCooldown
+startItemCooldown(cooldownCategory: string, tickDuration: number): void
+
+Sets the item cooldown time for a particular cooldown category.
+
+    - Parameters
+
+        - cooldownCategory: string
+
+        Specifies the cooldown category to retrieve the current cooldown for.
+
+        - tickDuration: number
+
+        Duration in ticks of the item cooldown.
+
+* Notes:
+ -This function can't be called in read-only mode.
+ - This function can throw errors.
+
+- stopMusic
+stopMusic(): void
+
+Stops any music tracks from playing for this particular player.
+
+* Notes:
+ -This function can't be called in read-only mode.
+ - This function can throw errors.
+

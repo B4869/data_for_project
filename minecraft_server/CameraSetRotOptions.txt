@@ -1,0 +1,19 @@
+# CameraSetRotOptions
+
+## Properties
+
+- easeOptions
+easeOptions?: CameraEaseOptions;
+
+Type: CameraEaseOptions
+
+- location
+location?: Vector3;
+
+Type: Vector3
+
+- rotation
+rotation: Vector2;
+
+Type: Vector2
+

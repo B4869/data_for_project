@@ -1,0 +1,27 @@
+# Vector3 
+Contains a description of a vector.
+
+## Properties
+
+- x
+x: number;
+
+X component of this vector.
+
+Type: number
+
+- y
+y: number;
+
+Y component of this vector.
+
+Type: number
+
+- z
+z: number;
+
+Z component of this vector.
+
+Type: number
+
+

@@ -1,0 +1,24 @@
+# ItemComponentUseOnEvent 
+
+## Extends
+
+- ItemUseOnEvent
+
+Contains information regarding the use of an item on a block via a component.
+
+## Properties
+
+- source
+read-only source: Entity;
+
+The entity that used the item on the block.
+
+Type: Entity
+
+- usedOnBlockPermutation
+read-only usedOnBlockPermutation: BlockPermutation;
+
+The block permutation that the item was used on.
+
+Type: BlockPermutation
+

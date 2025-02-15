@@ -1,0 +1,79 @@
+# EnchantmentType
+Contains information on a type of enchantment.
+
+## Properties
+
+- id
+read-only id: string;
+
+The name of the enchantment type.
+
+Type: string
+
+- maxLevel
+read-only maxLevel: number;
+
+The maximum level this type of enchantment can have.
+
+Type: number
+
+## Methods
+
+- constructor
+new EnchantmentType(enchantmentType: string)
+
+    - Parameters
+
+        - enchantmentType: string
+
+Returns EnchantmentType
+
+* Notes:
+ This function can throw errors.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,71 @@
+# ArgumentOutOfBoundsError 
+
+## Extends
+
+- Error
+
+This type of error is thrown when a parameter to a method or property is out of expected bounds.
+
+## Properties
+
+- maxValue
+read-only maxValue: number;
+
+Max expected value for the condition.
+
+Type: number
+
+- minValue
+read-only minValue: number;
+
+Min expected value for the condition.
+
+Type: number
+
+- value
+read-only value: number;
+
+Passed-in value for the argument.
+
+Type: number
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

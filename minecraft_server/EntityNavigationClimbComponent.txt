@@ -1,0 +1,37 @@
+# EntityNavigationClimbComponent
+
+## Extends
+
+- EntityNavigationComponent
+
+Allows this entity to generate paths that include vertical walls (for example, like Minecraft spiders do.)
+
+## Constants
+
+- componentId
+
+static read-only componentId = "minecraft:navigation.climb";
+
+Type: string
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

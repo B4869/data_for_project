@@ -1,0 +1,185 @@
+# Scoreboard 
+Contains objectives and participants for the scoreboard.
+
+## Methods
+
+- addObjective
+addObjective(objectiveId: string, displayName?: string): ScoreboardObjective
+
+Adds a new objective to the scoreboard.
+
+    - Parameters
+
+        - objectiveId: string
+
+        displayName?: string = null
+
+    Returns ScoreboardObjective
+
+
+    - Example updateScoreboard
+        updateScoreboard.js
+
+            import { world, DisplaySlotId, ObjectiveSortOrder, DimensionLocation } from "@minecraft/server";
+
+            function updateScoreboard(log: (message: string, status?: number) => void, targetLocation: DimensionLocation) {
+            const scoreboardObjectiveId = "scoreboard_demo_objective";
+            const scoreboardObjectiveDisplayName = "Demo Objective";
+
+            const players = world.getPlayers();
+            let objective = world.scoreboard.getObjective(scoreboardObjectiveId);
+
+            if (!objective) {
+                objective = world.scoreboard.addObjective(scoreboardObjectiveId, scoreboardObjectiveDisplayName);
+            }
+
+            const player0Identity = players[0].scoreboardIdentity;
+
+            if (!player0Identity) {
+                log("Could not get a scoreboard identity for player 0.");
+                return -1;
+            }
+
+            objective.setScore(player0Identity, 100);
+
+            world.scoreboard.setObjectiveAtDisplaySlot(DisplaySlotId.Sidebar, {
+                objective: objective,
+                sortOrder: ObjectiveSortOrder.Descending,
+            });
+
+            const playerScore = objective.getScore(player0Identity) ?? 0;
+            objective.setScore(player0Identity, playerScore + 10);
+            }
+
+* Notes:
+ - This function can't be called in read-only mode.
+ - This function can throw errors.
+
+- clearObjectiveAtDisplaySlot
+clearObjectiveAtDisplaySlot(displaySlotId: DisplaySlotId): ScoreboardObjective | undefined
+
+Clears the objective that occupies a display slot.
+
+    - Parameters
+
+    - displaySlotId: DisplaySlotId
+    
+    Returns ScoreboardObjective | undefined
+
+* Notes:
+ - This function can't be called in read-only mode.
+
+- getObjective
+getObjective(objectiveId: string): ScoreboardObjective | undefined
+
+Returns a specific objective (by id).
+
+    - Parameters
+    
+        - objectiveId: string
+    
+        Identifier of the objective.
+
+    Returns ScoreboardObjective | undefined
+
+- getObjectiveAtDisplaySlot
+getObjectiveAtDisplaySlot(displaySlotId: DisplaySlotId): ScoreboardObjectiveDisplayOptions | undefined
+
+Returns an objective that occupies the specified display slot.
+
+    - Parameters
+
+        - displaySlotId: DisplaySlotId
+
+        Returns ScoreboardObjectiveDisplayOptions | undefined
+
+- getObjectives
+getObjectives(): ScoreboardObjective[]
+
+Returns all defined objectives.
+
+Returns ScoreboardObjective[]
+
+- getParticipants
+getParticipants(): ScoreboardIdentity[]
+
+Returns all defined scoreboard identities.
+
+Returns ScoreboardIdentity[]
+
+- removeObjective
+removeObjective(objectiveId: ScoreboardObjective | string): boolean
+
+Removes an objective from the scoreboard.
+
+    - Parameters
+
+        - objectiveId: ScoreboardObjective | string
+
+        Returns boolean
+
+* Notes:
+ - This function can't be called in read-only mode.
+ - This function can throw errors.
+
+- setObjectiveAtDisplaySlot
+setObjectiveAtDisplaySlot(displaySlotId: DisplaySlotId, objectiveDisplaySetting: ScoreboardObjectiveDisplayOptions): ScoreboardObjective | undefined
+
+Sets an objective into a display slot with specified additional display settings.
+
+    - Parameters
+
+            - displaySlotId: DisplaySlotId
+
+            objectiveDisplaySetting: ScoreboardObjectiveDisplayOptions
+        
+        Returns ScoreboardObjective | undefined - Returns the previous ScoreboardObjective set at the display slot, if no objective was previously set it returns undefined.
+
+    - Example updateScoreboard
+        updateScoreboard.js
+
+            import { world, DisplaySlotId, ObjectiveSortOrder, DimensionLocation } from "@minecraft/server";
+
+            function updateScoreboard(log, targetLocation) {
+            const scoreboardObjectiveId = "scoreboard_demo_objective";
+            const scoreboardObjectiveDisplayName = "Demo Objective";
+
+            const players = world.getPlayers();
+            let objective = world.scoreboard.getObjective(scoreboardObjectiveId);
+
+            if (!objective) {
+                objective = world.scoreboard.addObjective(scoreboardObjectiveId, scoreboardObjectiveDisplayName);
+            }
+
+            const player0Identity = players[0].scoreboardIdentity;
+
+            if (!player0Identity) {
+                log("Could not get a scoreboard identity for player 0.");
+                return -1;
+            }
+
+            objective.setScore(player0Identity, 100);
+
+            world.scoreboard.setObjectiveAtDisplaySlot(DisplaySlotId.Sidebar, {
+                objective: objective,
+                sortOrder: ObjectiveSortOrder.Descending,
+            });
+
+            const playerScore = objective.getScore(player0Identity) ?? 0;
+            objective.setScore(player0Identity, playerScore + 10);
+            }
+
+* Notes:
+ - This function can't be called in read-only mode.
+ - This function can throw errors.
+
+
+
+
+
+
+
+
+
+
+

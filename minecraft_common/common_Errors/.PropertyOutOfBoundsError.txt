@@ -1,0 +1,60 @@
+# PropertyOutOfBoundsError 
+
+## Extends
+
+- Error
+
+## Properties
+
+- maxValue
+read-only maxValue: number;
+
+Type: number
+
+- minValue
+read-only minValue: number;
+
+Type: number
+
+- value
+read-only value: number;
+
+Type: number
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

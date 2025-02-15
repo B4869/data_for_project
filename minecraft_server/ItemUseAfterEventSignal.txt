@@ -1,0 +1,70 @@
+# ItemUseAfterEventSignal 
+Manages callbacks that are connected to an item use event.
+
+## Methods
+
+- subscribe
+subscribe(callback: (arg0: ItemUseAfterEvent) => void): (arg0: ItemUseAfterEvent) => void
+
+Adds a callback that will be called when an item is used.
+
+    - Parameters
+
+        - callback: (arg0: ItemUseAfterEvent) => void
+
+    Returns (arg0: ItemUseAfterEvent) => void
+
+* Notes:
+ - This function can't be called in read-only mode.
+
+- unsubscribe
+
+unsubscribe(callback: (arg0: ItemUseAfterEvent) => void): void
+
+Removes a callback from being called when an item is used.
+
+    - Parameters
+    
+        - callback: (arg0: ItemUseAfterEvent) => void
+
+* Notes:
+ - This function can't be called in read-only mode.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

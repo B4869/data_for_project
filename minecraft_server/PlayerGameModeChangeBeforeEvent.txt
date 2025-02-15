@@ -1,0 +1,51 @@
+# PlayerGameModeChangeBeforeEvent 
+Contains information regarding an event before a player interacts with an entity.
+
+## Properties
+
+- cancel
+cancel: boolean;
+
+If set to true the game mode change will be cancelled.
+
+Type: boolean
+
+- fromGameMode
+read-only fromGameMode: GameMode;
+
+The current game mode.
+
+Type: GameMode
+
+- player
+read-only player: Player;
+
+Source Player for this event.
+
+Type: Player
+
+- toGameMode
+toGameMode: GameMode;
+
+The game mode being changed to.
+
+Type: GameMode
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

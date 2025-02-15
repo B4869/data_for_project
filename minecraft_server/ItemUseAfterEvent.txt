@@ -1,0 +1,55 @@
+# ItemUseAfterEvent 
+
+## Classes that extend ItemUseAfterEvent
+
+- ItemUseBeforeEvent
+
+Contains information related to an item being used on a block. This event fires when an item used by a player successfully triggers an entity interaction.
+
+## Properties
+
+- itemStack
+itemStack: ItemStack;
+
+The impacted item stack that is being used.
+
+Type: ItemStack
+
+- source
+read-only source: Player;
+
+Returns the source entity that triggered this item event.
+
+Type: Player
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

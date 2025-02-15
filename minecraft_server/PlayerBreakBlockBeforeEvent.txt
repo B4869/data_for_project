@@ -1,0 +1,34 @@
+# PlayerBreakBlockBeforeEvent 
+
+## Extends
+
+- BlockEvent
+
+Contains information regarding an event before a player breaks a block.
+
+## Properties
+
+- cancel
+cancel: boolean;
+
+If set to true, cancels the block break event.
+
+Type: boolean
+
+- itemStack
+itemStack?: ItemStack;
+
+The item stack that is being used to break the block, or undefined if empty hand.
+
+Type: ItemStack
+
+- player
+read-only player: Player;
+
+Player breaking the block for this event.
+
+Type: Player
+
+
+
+

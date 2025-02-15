@@ -1,0 +1,85 @@
+# PlayerDimensionChangeAfterEvent 
+Contains information related to changes to a player's dimension having been changed.
+
+## Properties
+
+- fromDimension
+read-only fromDimension: Dimension;
+
+The dimension the player is changing from.
+
+Type: Dimension
+
+- fromLocation
+read-only fromLocation: Vector3;
+
+The location the player was at before changing dimensions.
+
+Type: Vector3
+
+- player
+read-only player: Player;
+
+Handle to the player that is changing dimensions.
+
+Type: Player
+
+- toDimension
+read-only toDimension: Dimension;
+
+The dimension that the player is changing to.
+
+Type: Dimension
+
+- toLocation
+read-only toLocation: Vector3;
+
+The location the player will spawn to after changing dimensions.
+
+Type: Vector3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

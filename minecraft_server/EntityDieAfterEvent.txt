@@ -1,0 +1,20 @@
+# EntityDieAfterEvent 
+Contains data related to the death of an entity in the game.
+
+## Properties
+
+- damageSource
+read-only damageSource: EntityDamageSource;
+
+If specified, provides more information on the source of damage that caused the death of this entity.
+
+Type: EntityDamageSource
+
+- deadEntity
+read-only deadEntity: Entity;
+
+Now-dead entity object.
+
+Type: Entity
+
+

@@ -1,0 +1,87 @@
+# PlayerCursorInventoryComponent 
+
+## Extends
+
+- EntityComponent
+
+Represents the players cursor inventory. Used when moving items between between containers in the inventory UI. Not used with touch controls.
+
+## Properties
+
+- item
+read-only item?: ItemStack;
+
+The ItemStack currently in the players cursor inventory.
+
+Type: ItemStack
+
+* Notes:
+ - This property can throw errors when used.
+
+## Methods
+
+- clear
+clear(): void
+
+Clears the players cursor inventory.
+
+* Notes:
+ - This function can't be called in read-only mode.
+ - This function can throw errors.
+
+## Constants
+
+- componentId
+
+static read-only componentId = "minecraft:cursor_inventory";
+
+Type: string
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

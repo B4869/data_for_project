@@ -29,7 +29,7 @@ Retrieves a prototype item stack based on this block permutation that can be use
 
         Number of instances of this block to place in the prototype item stack.
 
-Returns ItemStack | undefined
+    Returns ItemStack | undefined
 
 
 - getState
@@ -42,7 +42,7 @@ Gets a state for the permutation.
         
         Name of the block state who's value is to be returned.
 
-Returns minecraftvanilladata.BlockStateSuperset[T] | undefined - Returns the state if the permutation has it, else undefined.
+    Returns minecraftvanilladata.BlockStateSuperset[T] | undefined - Returns the state if the permutation has it, else undefined.
 
 - getTags
 getTags(): string[]
@@ -59,7 +59,7 @@ Checks to see if the permutation has a specific tag.
     - Parameters
         - tag: string
         
-Returns boolean - Returns true if the permutation has the tag, else false.
+    Returns boolean - Returns true if the permutation has the tag, else false.
 
     - Examples checkBlockTags
         checkBlockTags.js
@@ -92,7 +92,7 @@ Returns a boolean whether a specified permutation matches this permutation. If s
 
         - states: BlockStateArg
 
-Returns boolean
+    Returns boolean
 
 - withState
 withState(name: T, value: minecraftvanilladata.BlockStateSuperset[T]): BlockPermutation
@@ -106,7 +106,7 @@ Returns a derived BlockPermutation with a specific property set.
         - value: minecraftvanilladata.BlockStateSuperset[T]
         Value of the block property.
 
-Returns BlockPermutation
+    Returns BlockPermutation
 
 * Notes:
  - This function can throw errors.
@@ -123,7 +123,7 @@ Given a type identifier and an optional set of properties, will return a BlockPe
 
         - states: BlockStateArg
 
-Returns BlockPermutation
+    Returns BlockPermutation
 
     - Examples addBlockColorCube
         addBlockColorCube.js

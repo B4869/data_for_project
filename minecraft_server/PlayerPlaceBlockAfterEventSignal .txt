@@ -1,0 +1,49 @@
+# PlayerPlaceBlockAfterEventSignal 
+
+## Methods
+
+- subscribe
+subscribe(callback: (arg0: PlayerPlaceBlockAfterEvent) => void, options?: BlockEventOptions): (arg0: PlayerPlaceBlockAfterEvent) => void
+
+Adds a callback that will be called when a block is placed by a player.
+
+    - Parameters
+        
+        - callback: (arg0: PlayerPlaceBlockAfterEvent) => void
+        
+        - options?: BlockEventOptions = null
+    
+    Returns (arg0: PlayerPlaceBlockAfterEvent) => void
+
+* Notes:
+ - This function can't be called in read-only mode.
+
+- unsubscribe
+unsubscribe(callback: (arg0: PlayerPlaceBlockAfterEvent) => void): void
+
+Removes a callback from being called when an block is placed by a player.
+
+    - Parameters
+    
+        - callback: (arg0: PlayerPlaceBlockAfterEvent) => void
+
+* Notes:
+ - This function can't be called in read-only mode.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

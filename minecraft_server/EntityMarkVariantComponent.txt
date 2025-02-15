@@ -1,0 +1,43 @@
+# EntityMarkVariantComponent 
+
+## Extends
+
+- EntityComponent
+
+Additional variant value. Can be used to further differentiate variants.
+
+## Properties
+
+- value
+value: number;
+
+Value of the mark variant value for this entity.
+
+Type: number
+
+* Notes:
+ - This property can't be edited in read-only mode.
+
+## Constants
+
+- componentId
+static read-only componentId = "minecraft:mark_variant";
+
+Type: string
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

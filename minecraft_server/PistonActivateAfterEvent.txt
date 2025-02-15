@@ -1,0 +1,66 @@
+# PistonActivateAfterEvent 
+
+## Extends
+
+- BlockEvent
+
+Contains information related to changes to a piston expanding or retracting.
+
+## Properties
+
+- isExpanding
+read-only isExpanding: boolean;
+
+True if the piston is the process of expanding.
+
+Type: boolean
+
+- piston
+read-only piston: BlockPistonComponent;
+
+Contains additional properties and details of the piston.
+
+Type: BlockPistonComponent
+
+    - Example pistonAfterEvent
+        pistonAfterEvent.js
+
+            import { world, system, BlockPermutation, BlockPistonState } from "@minecraft/server";
+            import { MinecraftBlockTypes } from "@minecraft/vanilla-data";
+
+            function pistonAfterEvent(log, targetLocation) {
+            const piston = targetLocation.dimension.getBlock(targetLocation);
+            const button = targetLocation.dimension.getBlock({
+                x: targetLocation.x,
+                y: targetLocation.y + 1,
+                z: targetLocation.z,
+            });
+
+            if (!piston || !button) {
+                log("Could not find block at location.");
+                return;
+            }
+
+            piston.setPermutation(BlockPermutation.resolve(MinecraftBlockTypes.Piston).withState("facing_direction", 3));
+            button.setPermutation(BlockPermutation.resolve(MinecraftBlockTypes.AcaciaButton).withState("facing_direction", 1));
+
+            world.afterEvents.pistonActivate.subscribe((event) => {
+                const eventLoc = event.piston.block.location;
+
+                if (eventLoc.x === targetLocation.x &&
+                    eventLoc.y === targetLocation.y &&
+                    eventLoc.z === targetLocation.z) {
+                log(
+                    "Piston event at " +
+                    system.currentTick +
+                    (event.piston.isMoving ? " Moving" : "") +
+                    (event.piston.state === BlockPistonState.Expanding ? " Expanding" : "") +
+                    (event.piston.state === BlockPistonState.Expanded ? " Expanded" : "") +
+                    (event.piston.state === BlockPistonState.Retracting ? " Retracting" : "") +
+                    (event.piston.state === BlockPistonState.Retracted ? " Retracted" : "")
+                );
+                }
+            });
+            }
+
+

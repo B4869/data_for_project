@@ -1,0 +1,24 @@
+# EntityCanClimbComponent
+
+## Extends
+
+- EntityComponent
+
+When added, this component signifies that the entity can climb up ladde
+
+## Constants
+
+- componentId
+
+static read-only componentId = "minecraft:can_climb";
+
+Type: string
+
+
+
+
+
+
+
+
+

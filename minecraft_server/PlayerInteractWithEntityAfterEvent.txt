@@ -1,0 +1,51 @@
+# PlayerInteractWithEntityAfterEvent 
+Contains information regarding an event after a player successfully interacts with an entity.
+
+## Properties
+
+- beforeItemStack
+read-only beforeItemStack?: ItemStack;
+
+The ItemStack before the interaction succeeded, or undefined if hand is empty.
+
+Type: ItemStack
+
+- itemStack
+read-only itemStack?: ItemStack;
+
+The ItemStack after the interaction succeeded, or undefined if hand is empty.
+
+Type: ItemStack
+
+- player
+read-only player: Player;
+
+Source Player for this event.
+
+Type: Player
+
+- target
+read-only target: Entity;
+
+The entity that will be interacted with.
+
+Type: Entity
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+# PlayerGameModeChangeAfterEvent 
+Contains information regarding an event after a players game mode is changed.
+
+## Properties
+
+- fromGameMode
+read-only fromGameMode: GameMode;
+
+The previous game mode before the change.
+
+Type: GameMode
+
+- player
+read-only player: Player;
+
+Source Player for this event.
+
+Type: Player
+
+- toGameMode
+read-only toGameMode: GameMode;
+
+The current game mode after the change.
+
+Type: GameMode
+
+
+
+
+
+

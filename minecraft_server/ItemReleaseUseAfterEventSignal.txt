@@ -1,0 +1,68 @@
+# ItemReleaseUseAfterEventSignal 
+Manages callbacks that are connected to the releasing of charging for a chargeable item.
+
+## Methods
+
+- subscribe
+subscribe(callback: (arg0: ItemReleaseUseAfterEvent) => void): (arg0: ItemReleaseUseAfterEvent) => void
+
+Adds a callback that will be called when a chargeable item is released from charging.
+
+    - Parameters
+
+        - callback: (arg0: ItemReleaseUseAfterEvent) => void
+
+    Returns (arg0: ItemReleaseUseAfterEvent) => void
+
+- unsubscribe
+unsubscribe(callback: (arg0: ItemReleaseUseAfterEvent) => void): void
+
+Removes a callback from being called when a chargeable item is released from charging.
+
+    - Parameters
+    
+        - callback: (arg0: ItemReleaseUseAfterEvent) => void
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

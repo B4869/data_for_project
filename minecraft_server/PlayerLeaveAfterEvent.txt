@@ -1,0 +1,25 @@
+# PlayerLeaveAfterEvent
+Contains information regarding a player that has left the world.
+
+## Properties
+
+- playerId
+read-only playerId: string;
+
+Opaque string identifier of the player that has left the event.
+
+Type: string
+
+- playerName
+read-only playerName: string;
+
+Player that has left the world.
+
+Type: string
+
+
+
+
+
+
+

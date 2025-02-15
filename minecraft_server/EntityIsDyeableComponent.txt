@@ -1,0 +1,15 @@
+# EntityIsDyeableComponent
+
+## Extends
+
+- EntityComponent
+
+When added, this component signifies that dyes can be used on this entity to change its color.
+
+## Constants
+
+- componentId
+static read-only componentId = "minecraft:is_dyeable";
+
+Type: string
+

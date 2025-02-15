@@ -1,0 +1,51 @@
+# EntityDamageSource 
+Provides information about how damage has been applied to an entity.
+
+## Properties
+
+- cause
+cause: EntityDamageCause;
+
+Cause enumeration of damage.
+
+Type: EntityDamageCause
+
+- damagingEntity
+damagingEntity?: Entity;
+
+Optional entity that caused the damage.
+
+Type: Entity
+
+- damagingProjectile
+damagingProjectile?: Entity;
+
+Optional projectile that may have caused damage.
+
+Type: Entity
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

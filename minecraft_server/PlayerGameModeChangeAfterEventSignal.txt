@@ -1,0 +1,40 @@
+# PlayerGameModeChangeAfterEventSignal
+
+## Methods
+
+- subscribe
+subscribe(callback: (arg0: PlayerGameModeChangeAfterEvent) => void): (arg0: PlayerGameModeChangeAfterEvent) => void
+
+Adds a callback that will be called after a players game mode is changed.
+
+    - Parameters
+    
+        - callback: (arg0: PlayerGameModeChangeAfterEvent) => void
+    
+    Returns (arg0: PlayerGameModeChangeAfterEvent) => void
+
+* Notes:      
+ - This function can't be called in read-only mode.
+
+- unsubscribe
+unsubscribe(callback: (arg0: PlayerGameModeChangeAfterEvent) => void): void
+
+Removes a callback from being called after a players game mode is changed.
+
+    - Parameters
+
+        - callback: (arg0: PlayerGameModeChangeAfterEvent) => void
+
+* Notes:      
+ - This function can't be called in read-only mode.
+
+
+
+
+
+
+
+
+
+
+

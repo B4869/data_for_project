@@ -1,0 +1,25 @@
+# BlockRaycastHit
+Contains information for block raycast hit results.
+
+## Properties
+
+- block
+block: Block;
+
+Block that was hit.
+
+Type: Block
+
+- face
+face: Direction;
+
+Face of the block that was hit.
+
+Type: Direction
+
+- faceLocation
+faceLocation: Vector3;
+
+Hit location relative to the bottom north-west corner of the block.
+
+Type: Vector3

@@ -1,0 +1,43 @@
+# EntityLavaMovementComponent 
+
+## Extends
+
+- EntityAttributeComponent
+
+Defines the base movement speed in lava of this entity.
+
+## Constants
+
+- componentId
+static read-only componentId = "minecraft:lava_movement";
+
+Type: string
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

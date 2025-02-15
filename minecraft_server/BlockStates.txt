@@ -10,7 +10,7 @@ Retrieves a specific block state instance.
     - Parameters
         - stateName: string
 
-Returns BlockStateType | undefined - Returns the @minecraft/server.Block state instance if it is found. If the block state instance is not found returns undefined.
+    Returns BlockStateType | undefined - Returns the @minecraft/server.Block state instance if it is found. If the block state instance is not found returns undefined.
 
 - getAll
 static getAll(): BlockStateType[]

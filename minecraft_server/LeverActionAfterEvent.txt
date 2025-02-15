@@ -1,0 +1,96 @@
+# LeverActionAfterEvent
+
+## Extends
+
+- BlockEvent
+
+Contains information related to changes to a lever activating or deactivating.
+
+## Properties
+
+- isPowered
+read-only isPowered: boolean;
+
+True if the lever is activated (that is, transmitting power).
+
+Type: boolean
+
+- player
+read-only player: Player;
+
+Optional player that triggered the lever activation.
+
+Type: Player
+
+    - Example leverActionEvent
+        leverActionEvent.js
+
+            import { world, system, BlockPermutation } from "@minecraft/server";
+            import { MinecraftBlockTypes } from "@minecraft/vanilla-data";
+
+            function leverActionEvent(log, targetLocation) {
+                // วางบล็อก Cobblestone และ Lever
+                const cobblestone = targetLocation.dimension.getBlock(targetLocation);
+                const lever = targetLocation.dimension.getBlock({
+                    x: targetLocation.x,
+                    y: targetLocation.y + 1,
+                    z: targetLocation.z
+                });
+
+                if (!cobblestone || !lever) {
+                    log("Could not find block at location.");
+                    return;
+                }
+
+                cobblestone.setPermutation(BlockPermutation.resolve(MinecraftBlockTypes.Cobblestone));
+                lever.setPermutation(
+                    BlockPermutation.resolve(MinecraftBlockTypes.Lever).withState("lever_direction", "up_north_south")
+                );
+
+                // ตรวจจับเหตุการณ์การกด Lever
+                world.afterEvents.leverAction.subscribe((event) => {
+                    const eventLoc = event.block.location;
+
+                    if (eventLoc.x === targetLocation.x &&
+                        eventLoc.y === targetLocation.y + 1 &&
+                        eventLoc.z === targetLocation.z) {
+                        log("Lever activated at tick " + system.currentTick);
+                    }
+                });
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

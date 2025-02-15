@@ -1,0 +1,79 @@
+# ListBlockVolume 
+
+## Extends
+
+- BlockVolumeBase
+
+Volume composed of an unordered container of unique block locations.
+
+## Methods
+
+- constructor
+new ListBlockVolume(locations: Vector3[])
+
+Creates a new instance of ListBlockVolume.
+
+    - Parameters
+
+        - locations: Vector3[]
+        
+        Initial array of block locations that ListBlockVolume will be constructed with.
+
+Returns ListBlockVolume
+
+- add
+add(locations: Vector3[]): void
+
+Insert block locations into container.
+
+    - Parameters
+
+        - locations: Vector3[]
+        
+        Array of block locations to be inserted into container.
+
+- remove
+remove(locations: Vector3[]): void
+
+Remove block locations from container.
+
+    - Parameters
+
+        - locations: Vector3[]
+        
+        Array of block locations to be removed from container.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

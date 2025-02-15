@@ -1,0 +1,13 @@
+# EntityMovementComponent
+
+## Extends
+
+- EntityAttributeComponent
+Defines the general movement speed of this entity.
+
+## Constants
+
+- componentId
+static read-only componentId = "minecraft:movement";
+
+Type: string

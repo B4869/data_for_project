@@ -1,0 +1,58 @@
+# CameraSetFacingOptions 
+
+## Properties
+
+- easeOptions
+easeOptions?: CameraEaseOptions;
+
+Type: CameraEaseOptions
+
+- facingEntity
+facingEntity: Entity;
+
+Type: Entity
+
+- location
+location?: Vector3;
+
+Type: Vector3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

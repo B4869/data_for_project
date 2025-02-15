@@ -1,0 +1,20 @@
+# FluidContainer 
+Represents constants related to fluid containers.
+
+## Constants
+
+- maxFillLevel
+static read-only maxFillLevel = 6;
+
+Constant that represents the maximum fill level of a fluid container.
+
+Type: number
+
+- minFillLevel
+static read-only minFillLevel = 0;
+
+Constant that represents the minimum fill level of a fluid container.
+
+Type: number
+
+

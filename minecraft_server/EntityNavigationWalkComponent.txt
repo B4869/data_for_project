@@ -1,0 +1,45 @@
+# EntityNavigationWalkComponent
+
+## Extends
+
+- EntityNavigationComponent
+Allows this entity to generate paths by walking around and jumping up and down a block like regular mobs.
+
+## Constants
+
+- componentId
+static read-only componentId = "minecraft:navigation.walk";
+
+Type: string
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

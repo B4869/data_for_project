@@ -1,0 +1,23 @@
+# ScoreboardScoreInfo 
+
+## Properties
+
+- participant
+read-only participant: ScoreboardIdentity;
+
+This scoreboard participant for this score.
+
+Type: ScoreboardIdentity
+
+- score
+read-only score: number;
+
+Score value of the identity for this objective.
+
+Type: number
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+# CameraEaseOptions
+Contains options associated with a camera ease operation.
+
+## Properties
+
+- easeTime
+easeTime?: number;
+
+Time for the ease operation.
+
+Type: number
+
+- easeType
+easeType?: EasingType;
+
+Type of ease operation to use.
+
+Type: EasingType
+
+
+
+
+
+
+
+
+
+
+
+
+
+

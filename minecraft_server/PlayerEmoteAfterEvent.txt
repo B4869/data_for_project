@@ -1,0 +1,46 @@
+# PlayerEmoteAfterEvent
+
+## Properties
+
+- personaPieceId
+read-only personaPieceId: string;
+
+Type: string
+
+- player
+read-only player: Player;
+
+Type: Player
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

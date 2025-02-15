@@ -1,0 +1,17 @@
+# VectorXZ
+
+## Properties
+
+- x
+x: number;
+
+Type: number
+
+- z
+z: number;
+
+Type: number
+
+
+
+

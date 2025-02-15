@@ -1,0 +1,33 @@
+# PlayerInputPermissionCategoryChangeAfterEvent
+Contains information regarding an event after a players input permissions change.
+
+## Properties
+
+- category
+read-only category: InputPermissionCategory;
+
+The category of input permissions that have changed.
+
+Type: InputPermissionCategory
+
+- enabled
+read-only enabled: boolean;
+
+The enabled/disabled state of the players input permissions.
+
+Type: boolean
+
+- player
+read-only player: Player;
+
+The player that has had their input permissions changed.
+
+Type: Player
+
+
+
+
+
+
+
+

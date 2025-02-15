@@ -1,0 +1,5 @@
+# BlockCustomComponentReloadVersionError
+
+## Extends
+
+- Error

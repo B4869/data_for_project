@@ -1,0 +1,44 @@
+# CameraDefaultOptions 
+
+## Properties
+
+- easeOptions
+easeOptions: CameraEaseOptions;
+
+Sets a set of easing options for the camera.
+
+Type: CameraEaseOptions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

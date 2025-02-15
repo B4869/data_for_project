@@ -1,0 +1,52 @@
+# ExplosionAfterEvent
+
+## Classes that extend ExplosionAfterEvent
+
+- ExplosionBeforeEvent
+
+Contains information regarding an explosion that has happened.
+
+## Properties
+
+- dimension
+read-only dimension: Dimension;
+
+Dimension where the explosion has occurred.
+
+Type: Dimension
+
+- source
+read-only source?: Entity;
+
+Optional source of the explosion.
+
+Type: Entity
+
+## Methods
+
+- getImpactedBlocks
+getImpactedBlocks(): Block[]
+
+A collection of blocks impacted by this explosion event.
+
+Returns Block[]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

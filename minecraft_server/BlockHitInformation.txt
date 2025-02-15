@@ -1,0 +1,26 @@
+# BlockHitInformation 
+Contains more information for events where a block is hit.
+
+## Properties
+
+- block
+block: Block;
+
+Block that was hit.
+
+Type: Block
+
+- face
+face: Direction;
+
+Face of the block that was hit.
+
+Type: Direction
+
+- faceLocation
+faceLocation: Vector3;
+
+Location relative to the bottom north-west corner of the block.
+
+Type: Vector3
+

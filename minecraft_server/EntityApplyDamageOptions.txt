@@ -1,0 +1,21 @@
+# EntityApplyDamageOptions 
+Additional descriptions and metadata for a damage event.
+
+## Properties
+
+- cause
+cause: EntityDamageCause;
+
+Underlying cause of the damage.
+
+Type: EntityDamageCause
+
+- damagingEntity
+damagingEntity?: Entity;
+
+Optional entity that caused the damage.
+
+Type: Entity
+
+
+

@@ -1,0 +1,45 @@
+# ItemCompleteUseAfterEvent 
+Contains information related to a chargeable item completing being charged.
+
+## Properties
+
+- itemStack
+read-only itemStack: ItemStack;
+
+Returns the item stack that has completed charging.
+
+Type: ItemStack
+
+- source
+read-only source: Player;
+
+Returns the source entity that triggered this item event.
+
+Type: Player
+
+- useDuration
+read-only useDuration: number;
+
+Returns the time, in ticks, for the remaining duration left before the charge completes its cycle.
+
+Type: number
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

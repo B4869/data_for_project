@@ -1,0 +1,79 @@
+# EntityTypeFamilyComponent 
+
+## Methods
+
+- getTypeFamilies
+getTypeFamilies(): string[]
+
+Returns string[]
+
+* Notes:
+ - This function can throw errors.
+
+-hasTypeFamily
+hasTypeFamily(typeFamily: string): boolean
+
+    - Parameters
+
+        - typeFamily: string
+
+    Returns boolean
+
+* Notes:
+ - This function can throw errors.
+
+## Constants
+
+- componentId
+static read-only componentId = "minecraft:type_family";
+
+Type: string
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

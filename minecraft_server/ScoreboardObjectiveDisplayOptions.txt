@@ -1,0 +1,27 @@
+# ScoreboardObjectiveDisplayOptions 
+Contains additional options for how a scoreboard should be displayed within its display slot.
+
+## Properties
+
+- objective
+objective: ScoreboardObjective;
+
+Objective to be displayed.
+
+Type: ScoreboardObjective
+
+- sortOrder
+sortOrder?: ObjectiveSortOrder;
+
+The sort order to display the objective items within.
+
+Type: ObjectiveSortOrder
+
+
+
+
+
+
+
+
+

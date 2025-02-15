@@ -1,0 +1,71 @@
+# EntitySpawnAfterEvent 
+Contains data related to an entity spawning within the world.
+
+## Properties
+
+- cause
+read-only cause: EntityInitializationCause;
+
+Initialization cause (Spawned, Born ...).
+
+Type: EntityInitializationCause
+
+- entity
+entity: Entity;
+
+Entity that was spawned.
+
+Type: Entit-y
+
+    - Example logEntitySpawnEvent
+        logEntitySpawnEvent.js
+
+            import { world, system } from "@minecraft/server";
+            import { Vector3Utils } from "@minecraft/math";
+
+            function logEntitySpawnEvent(log, targetLocation) {
+            // ลงทะเบียนฟังก์ชันที่เรียกเมื่อมีการสร้าง entity ใหม่
+            world.afterEvents.entitySpawn.subscribe((entityEvent) => {
+                if (entityEvent && entityEvent.entity) {
+                log(`New entity of type ${entityEvent.entity.typeId} created!`, 1);
+                } else {
+                log(`The entity event did not work as expected.`, -1);
+                }
+            });
+
+            system.runTimeout(() => {
+                targetLocation.dimension.spawnEntity(
+                "minecraft:horse<minecraft:ageable_grow_up>",
+                Vector3Utils.add(targetLocation, { x: 0, y: 1, z: 0 })
+                );
+            }, 20);
+            }
+
+    (preview) Work with this sample on the MCTools.dev code sandbox.
+
+* Notes:
+ - This property can't be edited in read-only mode.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

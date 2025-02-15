@@ -1,0 +1,18 @@
+# RGBA
+
+## Extends
+
+- RGB
+
+Represents a fully customizable color within Minecraft.
+
+## Properties
+
+- alpha
+alpha: number;
+
+Determines a color's alpha (opacity) component. Valid values are between 0 (transparent) and 1.0 (opaque).
+
+Type: number
+
+

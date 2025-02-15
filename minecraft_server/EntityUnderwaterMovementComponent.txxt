@@ -1,0 +1,44 @@
+# EntityUnderwaterMovementComponent 
+
+## Extends
+
+- EntityAttributeComponent
+
+Defines the general movement speed underwater of this entity.
+
+## Constants
+
+- componentId
+static read-only componentId = "minecraft:underwater_movement";
+
+Type: string
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

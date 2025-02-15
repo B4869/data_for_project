@@ -1,0 +1,15 @@
+# EntityType
+Represents information about a type of entity.
+
+## Properties
+
+- id
+read-only id: string;
+
+Identifier of this entity type - for example, 'minecraft:skeleton'.
+
+Type: string
+
+
+
+

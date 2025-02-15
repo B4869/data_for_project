@@ -1,0 +1,42 @@
+# EntityHealableComponent 
+
+## Extends
+
+- EntityComponent
+
+Defines the interactions with this entity for healing it.
+
+## Properties
+
+- forceUse
+read-only forceUse: boolean;
+
+Determines if an item can be used regardless of the entity being at full health.
+
+Type: boolean
+
+* Notes:
+ - This property can throw errors when used.
+
+## Methods
+
+- getFeedItems
+getFeedItems(): FeedItem[]
+
+A set of items that can specifically heal this entity.
+
+Returns FeedItem[] - Entity that this component is associated with.
+
+* Notes:
+ - This function can throw errors.
+
+## Constants
+
+- componentId
+static read-only componentId = "minecraft:healable";
+
+Type: string
+
+
+
+

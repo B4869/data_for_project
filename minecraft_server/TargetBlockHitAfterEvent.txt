@@ -1,0 +1,42 @@
+# TargetBlockHitAfterEvent 
+
+## Extends
+
+- BlockEvent
+
+Contains information related to changes to a target block hit.
+
+## Properties
+
+- hitVector
+
+read-only hitVector: Vector3;
+
+The position where the source hit the block.
+
+Type: Vector3
+
+- previousRedstonePower
+read-only previousRedstonePower: number;
+
+The redstone power before the block is hit.
+
+Type: number
+
+- redstonePower
+read-only redstonePower: number;
+
+The redstone power at the time the block is hit.
+
+Type: number
+
+- source
+read-only source: Entity;
+
+Optional source that hit the target block.
+
+Type: Entity
+
+
+
+

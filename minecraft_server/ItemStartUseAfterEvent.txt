@@ -1,0 +1,62 @@
+# ItemStartUseAfterEvent 
+Contains information related to a chargeable item starting to be charged.
+
+## Properties
+
+- itemStack
+read-only itemStack: ItemStack;
+
+The impacted item stack that is starting to be charged.
+
+Type: ItemStack
+
+- source
+read-only source: Player;
+
+Returns the source entity that triggered this item event.
+
+Type: Player
+
+- useDuration
+read-only useDuration: number;
+
+Returns the time, in ticks, for the remaining duration left before the charge completes its cycle.
+
+Type: number
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

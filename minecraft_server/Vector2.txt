@@ -1,0 +1,21 @@
+# Vector2 
+Represents a two-directional vector.
+
+## Properties
+
+- x
+x: number;
+
+X component of the two-dimensional vector.
+
+Type: number
+
+- y
+y: number;
+
+Y component of the two-dimensional vector.
+
+Type: number
+
+
+

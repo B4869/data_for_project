@@ -1,0 +1,99 @@
+# EntityAgeableComponent 
+
+## Extends
+
+- EntityComponent
+
+Adds a timer for the entity to grow up. It can be accelerated by giving the entity the items it likes as defined by feedItems.
+
+## Properties
+
+- duration
+read-only duration: number;
+
+Amount of time before the entity grows up, -1 for always a baby.
+
+Type: number
+
+* Notes:
+ - This property can throw errors when used.
+
+- growUp
+read-only growUp: Trigger;
+
+Event that runs when this entity grows up.
+
+Type: Trigger
+
+* Notes:
+ - This property can throw errors when used.
+
+- transformToItem
+read-only transformToItem: string;
+
+The feed item used will transform into this item upon successful interaction.
+
+Type: string
+
+* Notes:
+ - his property can throw errors when used.
+
+## Methods
+
+- getDropItems
+getDropItems(): string[]
+
+List of items that the entity drops when it grows up.
+
+Returns string[]
+
+* Notes:
+ - function can throw errors.
+
+- getFeedItems
+getFeedItems(): EntityDefinitionFeedItem[]
+
+List of items that can be fed to the entity. Includes 'item' for the item name and 'growth' to define how much time it grows up by.
+
+Returns EntityDefinitionFeedItem[]
+
+* Notes:
+ - This function can throw errors.
+
+## Constants
+
+- componentId
+static read-only componentId = "minecraft:ageable";
+
+Type: string
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

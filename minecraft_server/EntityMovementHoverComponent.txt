@@ -1,0 +1,36 @@
+# EntityMovementHoverComponent 
+
+## Extends
+
+- EntityBaseMovementComponent
+
+When added, this move control causes the mob to hover.
+
+## Constants
+
+- componentId
+static read-only componentId = "minecraft:movement.hover";
+
+Type: string
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

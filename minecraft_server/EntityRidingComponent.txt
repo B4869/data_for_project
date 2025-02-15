@@ -1,0 +1,106 @@
+# EntityRidingComponent 
+
+## Extends
+
+- EntityComponent
+
+This component is added to any entity when it is riding another entity.
+
+## Properties
+
+- entityRidingOn
+read-only entityRidingOn: Entity;
+
+The entity this entity is currently riding on.
+
+Type: Entity
+
+* Notes:
+ This property can throw errors when used.
+
+## Constants
+
+- componentId
+static read-only componentId = "minecraft:riding";
+
+Type: string
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
