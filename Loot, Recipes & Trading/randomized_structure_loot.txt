@@ -1,0 +1,91 @@
+# Randomized Structure Loot
+
+EASY
+Adding loot tables to containers in structure is easy, you need to have a PC and your choice of either NBT Studio (executable) or Loot Tabler (browser application).
+
+## Setup
+    
+    - Creating the Loot Table
+    To start, create the directory BP/loot_tables/chests and create your loot table file here.
+
+    You can learn how to make loot tables in Beginner's Guide
+
+    - Example
+    BP/loot_tables/chests/my_structure_loot.json
+
+    {
+        "pools": [
+            {
+                "rolls": {
+                    "min": 8,
+                    "max": 10
+                },
+                "entries": [
+                    {
+                        "type": "item",
+                        "name": "minecraft:glass_bottle",
+                        "functions": [
+                            {
+                                "function": "set_count",
+                                "count": {
+                                    "min": 4,
+                                    "max": 6
+                                }
+                            }
+                        ],
+                        "weight": 1
+                    },
+                    {
+                        "type": "item",
+                        "name": "minecraft:potion",
+                        "functions": [
+                            {
+                                "function": "set_count",
+                                "count": {
+                                    "min": 4,
+                                    "max": 6
+                                }
+                            }
+                        ],
+                        "weight": 1
+                    }
+                ]
+            }
+        ]
+    }
+
+    - Exporting Structure
+    Once you have created your loot table, export your structure into BP/structures. Then follow the steps for either NBT Studio or Loot Tabler
+
+## NBT Studio (Executable)
+
+    - Software Preparation
+    Download and launch NBT Studio
+
+    - Adding the Loot Table
+    Launch NBT Studio and open file (Ctrl + O)
+
+    Find your container (Ctrl + F)
+
+    Navigate to your container, block_position_data > block_entity_data. Add a string tag
+
+    Add LootTable and the file path to your loot table
+
+    Save changes (Ctrl + S)
+
+## Loot Tabler (Browser Application)
+
+* TIP
+To export a structure on mobile devices, Download this pack.
+
+    - Adding the Loot Table
+    Open the website and click "Upload". Choose your structure file.
+
+    Find your container in the containers list, making use of the information displayed under "Container Options"
+
+    Under "Loot Table", enter the path to your loot table. Set "Loot Table Seed" to blank or 0 if you want the loot to generate randomly. If you want the loot table to generate consistently, enter a specific value.
+
+    Download your structure file and place it in BP/structures.
+
+## Testing
+Load your structure and open the container
