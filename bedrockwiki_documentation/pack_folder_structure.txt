@@ -1,0 +1,199 @@
+# Pack Folder Structure
+
+📂BP  
+ ├── 📂aim_assist  
+ │    ├── 📂presets  
+ │    │    ├── 📝example.json  
+ │  
+ ├── 📂animation_controllers  
+ │    ├── 📝example.ac.json  
+ │  
+ ├── 📂animations  
+ │    ├── 📝example.animation.json  
+ │  
+ ├── 📂biomes  
+ │    ├── 📝example.biome.json  
+ │  
+ ├── 📂blocks  
+ │    ├── 📝example.block.json  
+ │  
+ ├── 📂cameras  
+ │    ├── 📂presets  
+ │    │    ├── 📝example.json  
+ │  
+ ├── 📂dialogue  
+ │    ├── 📝example.dialogue.json  
+ │  
+ ├── 📂entities  
+ │    ├── 📝example.se.json  
+ │  
+ ├── 📂feature_rules  
+ │    ├── 📝example.rule.json  
+ │  
+ ├── 📂features  
+ │    ├── 📝example.feature.json  
+ │  
+ ├── 📂functions  
+ │    ├── 📝example.mcfunction  
+ │    ├── 📝tick.json  
+ │  
+ ├── 📂item_catalog  
+ │    ├── 📝crafting_item_catalog.json  
+ │  
+ ├── 📂items  
+ │    ├── 📝example.item.json  
+ │  
+ ├── 📂loot_tables  
+ │    ├── 📝example.loot.json  
+ │  
+ ├── 📂recipes  
+ │    ├── 📝example.recipe.json  
+ │  
+ ├── 📂scripts  
+ │    ├── 📝example.js  
+ │  
+ ├── 📂spawn_rules  
+ │    ├── 📝example.spawn.json  
+ │  
+ ├── 📂structures  
+ │    ├── 🏛example.mcstructure  
+ │  
+ ├── 📂texts  
+ │    ├── 📝languages.json  
+ │    ├── 🈵*.lang  
+ │  
+ ├── 📂trading  
+ │    ├── 📝example.trade.json  
+ │  
+ ├── 📂economy_trades  
+ │    ├── 📝example.trade.json  
+ │  
+ ├── 📂worldgen  
+ │    ├── 📂jigsaw_structures  
+ │    │    ├── 📝example.json  
+ │    ├── 📂processors  
+ │    │    ├── 📝example.json  
+ │    ├── 📂structure_sets  
+ │    │    ├── 📝example.json  
+ │    ├── 📂template_pools  
+ │         ├── 📝example.json  
+ │  
+ ├── 📝manifest.json  
+ ├── 🖼️pack_icon.png  
+
+📂RP  
+ ├── 📂animation_controllers  
+ │    ├── 📝example.ac.json  
+ │  
+ ├── 📂animations  
+ │    ├── 📝example.animation.json  
+ │  
+ ├── 📂attachables  
+ │    ├── 📝example.attachable.json  
+ │  
+ ├── 📂entity  
+ │    ├── 📝example.ce.json  
+ │  
+ ├── 📂fogs  
+ │    ├── 📝example_fog_setting.json  
+ │  
+ ├── 📂items  
+ │    ├── 📝example.item.json  
+ │  
+ ├── 📂materials  
+ │    ├── 📝example.material  
+ │  
+ ├── 📂models  
+ │    ├── 📂blocks  
+ │    │    ├── 📝example.geo.json  
+ │    ├── 📂entity  
+ │         ├── 📝example.geo.json  
+ │  
+ ├── 📂particles  
+ │    ├── 📝example.particle.json  
+ │  
+ ├── 📂render_controllers  
+ │    ├── 📝example.rc.json  
+ │  
+ ├── 📂sounds  
+ │    ├── 📝example.fsb  
+ │    ├── 📝example.mp3  
+ │    ├── 📝example.ogg  
+ │    ├── 📝example.wav  
+ │    ├── 📝music_definitions.json  
+ │    ├── 📝sound_definitions.json  
+ │  
+ ├── 📂texts  
+ │    ├── 📝language_names.json  
+ │    ├── 📝languages.json  
+ │    ├── 🈵bg_BG.lang  
+ │    ├── 🈵cs_CZ.lang  
+ │    ├── 🈵da_DK.lang  
+ │    ├── 🈵de_DE.lang  
+ │    ├── 🈵el_GR.lang  
+ │    ├── 🈵en_GB.lang  
+ │    ├── 🈵en_US.lang  
+ │    ├── 🈵es_ES.lang  
+ │    ├── 🈵es_MX.lang  
+ │    ├── 🈵fi_FI.lang  
+ │    ├── 🈵fr_CA.lang  
+ │    ├── 🈵fr_FR.lang  
+ │    ├── 🈵hu_HU.lang  
+ │    ├── 🈵id_ID.lang  
+ │    ├── 🈵it_IT.lang  
+ │    ├── 🈵ja_JP.lang  
+ │    ├── 📂ja_JP  
+ │    │    ├── 📂font  
+ │    │         ├── 🖼️glyph_2E.png  
+ │    │         ├── 🖼️*.png  
+ │    ├── 🈵ko_KR.lang  
+ │    ├── 🈵nb_NO.lang  
+ │    ├── 🈵nl_NL.lang  
+ │    ├── 🈵pl_PL.lang  
+ │    ├── 🈵pt_BR.lang  
+ │    ├── 🈵pt_PR.lang  
+ │    ├── 🈵ru_RU.lang  
+ │    ├── 🈵sk_SK.lang  
+ │    ├── 🈵sv_SE.lang  
+ │    ├── 🈵tr_TR.lang  
+ │    ├── 🈵uk_UA.lang  
+ │    ├── 🈵zh_CN.lang  
+ │    ├── 🈵zh_TW.lang  
+ │    ├── 📂zh_TW  
+ │         ├── 📂font  
+ │              ├── 🖼️glyph_2E.png  
+ │              ├── 🖼️*.png  
+ │  
+ ├── 📂textures  
+ │    ├── 📂blocks  
+ │    │    ├── 🖼️example.png  
+ │    ├── 📂entity  
+ │    │    ├── 🖼️example.png  
+ │    ├── 📂environment  
+ │    │    ├── 📂overworld_cubemap  
+ │    │         ├── 🖼️cubemap_0.png  
+ │    │         ├── 🖼️cubemap_1.png  
+ │    │         ├── 🖼️cubemap_2.png  
+ │    │         ├── 🖼️cubemap_3.png  
+ │    │         ├── 🖼️cubemap_4.png  
+ │    │         ├── 🖼️cubemap_5.png  
+ │    ├── 📂items  
+ │    │    ├── 🖼️example.png  
+ │    ├── 📂particle  
+ │    │    ├── 🖼️example.png  
+ │    ├── 📝flipbook_textures.json  
+ │    ├── 📝item_texture.json  
+ │    ├── 📝terrain_texture.json  
+ │    ├── 📝textures_list.json  
+ │  
+ ├── 📂ui  
+ │    ├── 📝_global_variables.json  
+ │    ├── 📝_ui_defs.json  
+ │    ├── 📝*.json  
+ │    ├── 📝biomes_client.json  
+ │    ├── 📝blocks.json  
+ │    ├── 📝contents.json  
+ │  
+ ├── 📝manifest.json  
+ ├── 🖼️pack_icon.png  
+ ├── 📝sounds.json  
