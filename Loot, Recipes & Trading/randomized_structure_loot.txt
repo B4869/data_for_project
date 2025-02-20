@@ -13,6 +13,7 @@ Adding loot tables to containers in structure is easy, you need to have a PC and
     - Example
     BP/loot_tables/chests/my_structure_loot.json
 
+    ```
     {
         "pools": [
             {
@@ -53,6 +54,7 @@ Adding loot tables to containers in structure is easy, you need to have a PC and
             }
         ]
     }
+    ```
 
     - Exporting Structure
     Once you have created your loot table, export your structure into BP/structures. Then follow the steps for either NBT Studio or Loot Tabler

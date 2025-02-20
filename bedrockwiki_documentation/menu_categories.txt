@@ -12,11 +12,13 @@ NOTE: The menu category of custom spawn eggs cannot be modified. You must instea
 
 - Example
 
+```
 "menu_category": {
     "category": "construction", // Tab the item is placed under
     "group": "minecraft:itemGroup.name.door", // Optional - Group the item is placed into
     "is_hidden_in_commands": false // Optional - default is false (item is usable in commands)
 }
+```
 
 * HIDDEN ITEMS INACCESSIBLE IN COMMANDS (MCPE-177866)
 Currently, setting the category to "none" in a custom item (not block) prevents the item from being used in commands, overriding the "is_hidden_in_commands" option. This issue doesn't affect blocks.
@@ -26,6 +28,7 @@ Currently, setting the category to "none" in a custom item (not block) prevents 
 - Example Block Example
 BP/blocks/balsa_wood.json
 
+```
 {
     "format_version": "1.21.60",
     "minecraft:block": {
@@ -38,12 +41,14 @@ BP/blocks/balsa_wood.json
         }
     }
 }
+```
 
 ## Item Example
 
 - Example Item Example
 BP/items/dagger.json
 
+```
 {
     "format_version": "1.21.60",
     "minecraft:item": {
@@ -56,6 +61,7 @@ BP/items/dagger.json
         }
     }
 }
+```
 
 ## List of Categories
 

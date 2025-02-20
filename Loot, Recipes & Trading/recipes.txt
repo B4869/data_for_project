@@ -34,6 +34,7 @@ As an example, a "cold steel sword" might be crafted using the following shaped 
 - Example
 BP/recipes/crafting/weapons/cold_steel_sword.json
 
+```
 {
     "format_version": "1.17.41",
     "minecraft:recipe_shaped": {
@@ -61,6 +62,7 @@ BP/recipes/crafting/weapons/cold_steel_sword.json
         "result": "wiki:cold_steel_sword"
     }
 }
+```
 
 ## Shared Properties and Structures
     - Format Version
@@ -69,7 +71,9 @@ BP/recipes/crafting/weapons/cold_steel_sword.json
     - Example 
     #/
 
+    ```
     "format_version": "1.17.41"
+    ```
 
     In practice, the format version can be set to any value or even omitted.
 
@@ -82,9 +86,11 @@ BP/recipes/crafting/weapons/cold_steel_sword.json
     - Example
     #/minecraft:recipe_shaped/
 
+    ```
     "description": {
 	"identifier": "wiki:cold_steel_sword"
     }
+    ```
 
     Its only child is the required "identifier" property, which is designed to uniquely identify a recipe across all packs applied to a world. There are no namespacing requirements for recipe identifiers except that no two full recipe identifiers in a single pack may match.
 
@@ -98,7 +104,9 @@ BP/recipes/crafting/weapons/cold_steel_sword.json
     - Example
     #/minecraft:recipe_shaped/
 
+    ```
     "tags": ["crafting_table", "altar"]
+    ```
 
     Vanilla interfaces are exposed to tags for each set of recipe types.
 
@@ -134,6 +142,7 @@ BP/recipes/crafting/weapons/cold_steel_sword.json
 
     - Example
 
+    ```
     "unlock": [
                 {
                     "item": "wiki:cold_steel" //item to unlock recipe
@@ -146,6 +155,7 @@ BP/recipes/crafting/weapons/cold_steel_sword.json
                     "context": "PlayerInWater" //event to unlock recipe
                 }
             ]
+            ```
 
     Each object in this array contains "item" and this tells the recipe what item the player needs in their inventory in order for this recipe to be unlocked. It also accepts data values. "context" is used to determine what event unlocks this recipe. "PlayerInWater" will unlock this recipe when the player enters water. This is also the only known context for recipes.
 
@@ -158,14 +168,18 @@ BP/recipes/crafting/weapons/cold_steel_sword.json
         - Example
         #/minecraft:recipe_shapeless/ingredients/0
 
+        ```
         "minecraft:planks"
+        ```
 
         String references additionally support specification of a data value as a suffix:
 
         - Example
         #/minecraft:recipe_shapeless/ingredients/0
 
+        ```
         "minecraft:planks:2"
+        ```
 
         - Item Object
         The item object is a more explicit construct for referencing items.
@@ -173,21 +187,25 @@ BP/recipes/crafting/weapons/cold_steel_sword.json
         - Example
         #/minecraft:recipe_shapeless/ingredients/0
 
+        ```
         {
             "item": "minecraft:planks",
             "data": 2,
             "count": 3
         }        
+        ```
 
         The required "item" property functions the same as the string reference format. Although an explicit data field is available, the data suffix string format is still supported in the "item" property. However, unlike the suffix form, "data" can accept Molang. The Molang here is evaluated once on world load, not per-crafting attempt. Variables cannot be used to pass data between properties in a recipe. Furthermore, the nature of input items cannot be queried. Currently, the only known usable query in the "data" property is q.get_actor_info_id, used to look up the ID of an entity's spawn egg by its identifier, however this can also be achieved by simply setting the "item" to the spawn egg's ID (e.g. minecraft:chicken_spawn_egg).
 
         - Example
         #/minecraft:recipe_shapeless/result
 
+        ```
         {
             "item": "minecraft:spawn_egg",
             "data": "q.get_actor_info_id('minecraft:chicken')"
         }
+        ```
 
         The optional integer "count" property may be used to stack items. It defaults to 1. Currently, setting the count only functions in crafting and furnace recipe outputs and shapeless recipe ingredients. A provided count is ignored in other locations.
         
@@ -203,7 +221,9 @@ BP/recipes/crafting/weapons/cold_steel_sword.json
         - Example
         #/minecraft:recipe_brewing_mix/input
 
+        ```
         "minecraft:potion_type:strength"
+        ```
 
         These identifiers are not usable in the object notation, only the string notation. Variants are unavailable for splash and lingering potions. All such identifiers follow the format: minecraft:potion_type:potion_effect, where potion_effect can be one of the following:
             - water
@@ -236,7 +256,9 @@ Crafting operations instantly transform inputs to outputs using crafting grids. 
 - Example
 #/minecraft:recipe_shapeless/
 
+```
 "tags": ["crafting_table", "stonecutter"]
+```
 
 "crafting_table" applies to both vanilla crafting tables and the player 2 × 2 crafting grid in their inventory. There is currently no way to opt into one but not the other. Crafting recipes additionally support custom tags, linking recipes to a crafting grid provided by a custom block.
 
@@ -246,6 +268,7 @@ Crafting operations instantly transform inputs to outputs using crafting grids. 
     - Example
     BP/recipes/decorations/knobs/brass.json
 
+    ```
     {
         "format_version": "1.17.41",
         "minecraft:recipe_shapeless": {
@@ -279,6 +302,7 @@ Crafting operations instantly transform inputs to outputs using crafting grids. 
             }
         }
     }
+    ```
 
         - Ingredients
         The required "ingredients" array property lists the items required as inputs for the crafting recipe.
@@ -286,6 +310,7 @@ Crafting operations instantly transform inputs to outputs using crafting grids. 
         - Example
         #/minecraft:recipe_shapeless/
 
+        ```
         "ingredients": [
             "wiki:brass",
             {
@@ -293,6 +318,7 @@ Crafting operations instantly transform inputs to outputs using crafting grids. 
                 "data": 2
             }
         ]
+        ```
 
         Each entry is an item descriptor. If an ingredient provides a count, that count must be expressed across multiple crafting grid slots. Using stacked items in a single grid slot to yield a product is unsupported. If the items required for crafting are available but the count of ingredients is greater than the crafting interface being used supports, the recipe will automatically be made unavailable in the recipe book.
 
@@ -302,10 +328,12 @@ Crafting operations instantly transform inputs to outputs using crafting grids. 
         - Example
         #/minecraft:recipe_shapeless/
 
+        ```
         "result": {
             "item": "wiki:door_knob",
             "data": 3
         }
+        ```
 
     - Shaped Recipes
     Shaped recipes enforce that the ingredients used during crafting conform to a strict shape.
@@ -313,6 +341,7 @@ Crafting operations instantly transform inputs to outputs using crafting grids. 
     - Example
     BP/recipes/covered_arch.json
 
+    ```
     {
         "format_version": "1.17.41",
         "minecraft:recipe_shaped": {
@@ -347,6 +376,7 @@ Crafting operations instantly transform inputs to outputs using crafting grids. 
             ]
         }
     }
+    ```
 
         - Patterns
         The required "pattern" array property establishes the shape used for the recipe.
@@ -354,11 +384,13 @@ Crafting operations instantly transform inputs to outputs using crafting grids. 
         - Example
         #/minecraft:recipe_shaped/
 
+        ```
         "pattern": [
             "SSS",
             "I I",
             "I I"
         ]
+        ```
 
         Each entry in the array is a string representing a row in the crafting grid. Each character in each string represents a slot within that row. Spaces by default represent slots that should be empty.
 
@@ -373,20 +405,24 @@ Crafting operations instantly transform inputs to outputs using crafting grids. 
         - Example
         #/minecraft:recipe_shaped/
 
+        ```
         "pattern": [
             "MA",
             "IFI",
             "M"
         ]
+        ```
 
         - Example
         #/minecraft:recipe_shaped/
 
+        ```
         "pattern": [
             "MA ",
             "IFI",
             "M  "
         ]
+        ```
 
         * NOTE
         Currently, no crafting grids, including those configurable from custom blocks, may be larger than 3 × 3. If the expressed pattern is unusable within the current crafting interface, the recipe will automatically be unavailable in the recipe book.
@@ -397,10 +433,12 @@ Crafting operations instantly transform inputs to outputs using crafting grids. 
         - Example
         #/minecraft:recipe_shaped/
 
+        ```
         "pattern": [
             "O"
             "OO"
         ]
+        ```
 
         The "L" shape isn't restricted to the upper-left corner of the crafting grid. Using a 3 × 3 grid as an example, the pattern would be usable with any of these configurations:
 
@@ -427,11 +465,13 @@ Crafting operations instantly transform inputs to outputs using crafting grids. 
         - Example
         #/minecraft:recipe_shaped/
 
+        ```
         "pattern": [
             "O  "
             "OO "
             "   "
         ]
+        ```
 
         - Symmetry
         All shaped recipes are innately horizontally symmetric:
@@ -439,22 +479,26 @@ Crafting operations instantly transform inputs to outputs using crafting grids. 
         - Example
         #/minecraft:recipe_shaped/
 
+        ```
         "pattern": [
             "Z  "
             " Z "
             "  Z"
         ]
+        ```
 
         The preceding recipe may also be used by a player as though it were set to:
 
         - Example
         #/minecraft:recipe_shaped/
 
+        ```
         "pattern": [
             "  Z"
             " Z "
             "Z  "
         ]
+        ```
 
         - Keys
 
@@ -463,10 +507,12 @@ Crafting operations instantly transform inputs to outputs using crafting grids. 
         - Example
         #/minecraft:recipe_shaped/
 
+        ```
         "key": {
             "S": "wiki:cloth",
             "I": "wiki:support"
         }
+        ```
 
         Every key present in the pattern should be accounted for here. Keys names are case-sensitive. If an item supports multiple data values and no data value is provided, any item of that identifier will be usable for that key. Any "count" property present in an item descriptor is ignored and regarded as 1; stacked items in a crafting grid slot are only consumable one at a time.
 
@@ -481,6 +527,7 @@ Crafting operations instantly transform inputs to outputs using crafting grids. 
 
     - Example
 
+    ```
     "unlock": [
                 {
                     "item": "wiki:cold_steel" //item to unlock recipe
@@ -493,6 +540,7 @@ Crafting operations instantly transform inputs to outputs using crafting grids. 
                     "context": "PlayerInWater" //event to unlock recipe
                 }
             ]
+            ```
 
     Each object in this array contains "item" and this tells the recipe what item the player needs in their inventory in order for this recipe to be unlocked. "context" is used to determine what event unlocks this recipe. "PlayerInWater" will unlock this recipe when the player enters water. This is also the only known context for recipes.
 
@@ -502,6 +550,7 @@ Crafting operations instantly transform inputs to outputs using crafting grids. 
         - Example
         #/minecraft:recipe_shaped/
 
+        ```
         "result": [
             {
                 "item": "wiki:covered_arch",
@@ -509,6 +558,7 @@ Crafting operations instantly transform inputs to outputs using crafting grids. 
             },
             "wiki:crafting_scrap"
         ]
+        ```
 
         The first entry in the array will be used as the visible output of the crafting block. All other values are automatically placed in the player's inventory upon removing the visible result from the output slot. There does not seem to be a limit on the number of items that may be returned from a crafting action.
 
@@ -533,7 +583,9 @@ Crafting operations instantly transform inputs to outputs using crafting grids. 
     - Example
     #/minecraft:recipe_shaped/
 
+    ```
     "group": "slingshots"
+    ```
 
     It is currently unknown what, if anything, this property achieves. Presumably, it would be used with the recipe book. Neither using new custom groups nor reusing groups from vanilla definitions appear to achieve anything.
 
@@ -543,7 +595,9 @@ Crafting operations instantly transform inputs to outputs using crafting grids. 
     - Example
     #/minecraft:recipe_shaped/
 
+    ```
     "priority": 2
+    ```
 
     Crafting recipes with lower priority values take precedence. So, if all else is equal, a recipe with a priority of 0 would be used over a recipe with priority 1. Priorities may be negative if necessary. If "priority" is not provided, a priority of 0 is implied.
 
@@ -554,6 +608,7 @@ Furnace recipes are used to transform an item using a heat source over a period 
 - Example Heating
 BP/recipes/magic/magic_ash.json
 
+```
 {
     "format_version": "1.17.41",
     "minecraft:recipe_furnace": {
@@ -568,12 +623,14 @@ BP/recipes/magic/magic_ash.json
         }
     }
 }
+```
 
 All vanilla heating blocks are supported via tags.
 
 - Example
 #/minecraft:recipe_furnace/
 
+```
 "tags": ["furnace", "blast_furnace", "smoker", "campfire", "soul_campfire"]
 
     - Heating Transactions
@@ -587,6 +644,7 @@ All vanilla heating blocks are supported via tags.
         "item": "wiki:magic_ash",
         "count": 4
     }
+    ```
 
     Any count given in the input is ignored. XP returns and fuel sources for a cooking and smelting recipe cannot be altered. The time required to heat an item is set by the used block and is unchangeable.
 
@@ -598,7 +656,9 @@ Only one interface supports brewing recipes:
 - Example
 #/minecraft:recipe_brewing_container/
 
+```
 "tags": ["brewing_stand"]
+```
 
     - Brewing Transactions
     Brewing transactions are similar to heating transactions, requiring an input and output, each pointing to a single item descriptor. Brewing recipes, however, also require the "reagent" property as a catalyst, which also can only point to a single item descriptor.
@@ -606,9 +666,11 @@ Only one interface supports brewing recipes:
     - Example
     #/minecraft:recipe_brewing_mix/
 
+    ```
     "input": "wiki:flask",
     "reagent": "wiki:jade",
     "output": "wiki:insanity_resistance"
+    ```
 
     Provided count values are ignored in these brewing properties. Items are meant to transform one at a time in a brew.
 
@@ -626,6 +688,7 @@ Only one interface supports brewing recipes:
     - Example
     BP/recipes/brewing/negative/paralysis.json
 
+    ```
     {
         "format_version": "1.17.41",
         "minecraft:recipe_brewing_mix": {
@@ -638,6 +701,7 @@ Only one interface supports brewing recipes:
             "output": "wiki:paralysis_brew"
         }
     }
+    ```
 
     * WARNING
     Unfortunately, assigned data values are broken for brewing mix recipes.
@@ -656,6 +720,7 @@ Only one interface supports brewing recipes:
     - Example
     BP/recipes/illumination_potion.json
 
+    ```
     {
         "format_version": "1.17.41",
         "minecraft:recipe_brewing_container": {
@@ -668,6 +733,7 @@ Only one interface supports brewing recipes:
             "output": "wiki:illumination_potion"
         }
     }
+    ```
 
     Brewing containers are stricter than brewing mixes about their inputs. Only the following item types are allowed in a brewing container recipe:
         - minecraft:potion

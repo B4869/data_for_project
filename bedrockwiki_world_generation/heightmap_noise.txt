@@ -12,6 +12,7 @@ First we will define the single block feature. It will define the block that is 
 - Example
 BP/features/stone_feature.json
 
+	```
     {
         "format_version": "1.13.0",
         "minecraft:single_block_feature": {
@@ -23,6 +24,7 @@ BP/features/stone_feature.json
             "enforce_placement_rules": false
         }
     }
+	```
 
 ## Scatter Feature
 
@@ -31,6 +33,7 @@ The scatter feature is the main feature which we'll be using to generate the ter
 - Example
 BP/features/column.json
 
+	```
     {
         "format_version": "1.13.0",
         "minecraft:scatter_feature": {
@@ -47,6 +50,7 @@ BP/features/column.json
             }
         }
     }
+	```
 
 Let me explain whats happening in the iterations: In the iterations we've defined a temp t.height in which we've defined our main noise function. In t.height the value that we're adding first is the base height, basically the height at which the function starts. After that we're querying perlin using the q.noise query which returns values ranging from -1 to 1 and dividing that by a value which smooths out the function. Then we're multiplying the whole function by a value which in simple words is basically the variation in the terrain.
 
@@ -57,6 +61,7 @@ So what's happening here is that we are getting values from the t.height temp an
 - Example
 BP/feature_rules/column_grid_placement.json
 
+```
 {
 	"format_version": "1.13.0",
 	"minecraft:feature_rules": {
@@ -93,6 +98,7 @@ BP/feature_rules/column_grid_placement.json
 		}
 	}
 }
+```
 
 In this we have set the iteration to 256 as the area of a whole chunk is 256 (16x16) to make the columns generate in the whole chunk.
 

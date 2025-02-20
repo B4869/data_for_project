@@ -7,7 +7,7 @@ For some reason, Bedrock requires the leading minecraft namespace, and the coord
 
 It doesn't have autocomplete for particles.
 
-# Working Particles
+## Working Particles
 
 These particles can be spawned directly in-world, without any issues.
 

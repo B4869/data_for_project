@@ -38,6 +38,7 @@ Like all constructed assets in a behavior pack, biome definitions are written in
 
     - Example Format
 
+    ```
     {
         "format_version": "1.13.0",
 
@@ -82,6 +83,7 @@ Like all constructed assets in a behavior pack, biome definitions are written in
             }
         }
     }
+    ```
 
     Invalid JSON — like with all aspects of add-ons — causes a biome definition to fail; that biome will not generate in the world. Unfortunately, no error will be thrown. A JSON validator and/or syntax highlighter easily makes this a non-problem.
 
@@ -89,7 +91,9 @@ Like all constructed assets in a behavior pack, biome definitions are written in
 
         - Example
 
+        ```
         "format_version": "1.13.0"
+        ```
 
         The top-level property "format_version" describes the version specification to which the proceeding schema conforms. The latest issued "format_version" for biomes is "1.13.0".
 
@@ -99,9 +103,13 @@ Like all constructed assets in a behavior pack, biome definitions are written in
 
         - Biome Specification
 
+        - Example
+
+        ```
         "minecraft:biome": {
             …
         }
+        ```
 
         The other top-level property is "minecraft:biome", which establishes the schema for the biome definition.
 
@@ -109,9 +117,11 @@ Like all constructed assets in a behavior pack, biome definitions are written in
 
         - Example
 
+        ```
         "description": {
             "identifier": "pumpkin_pastures"
         }
+        ```
 
         The "description" property of the "minecraft:biome" property is used as the metadata for the biome. It currently contains only one property, "identifier", which is used to uniquely identify a biome. The value here must match the file name, sans the .json or .biome.json extensions. For example, if the identifier is prairie, the filename must be either prairie.json or prairie.biome.json. This identifier is used for referencing from a number of biome definition properties.
 
@@ -119,9 +129,13 @@ Like all constructed assets in a behavior pack, biome definitions are written in
 
         - Components
 
+        - Example
+
+        ```
         "components": {
             …
         }
+        ```
 
         The "minecraft:biome" property also holds the "components" property, which is the meat of a biome definition. The components declared here place, shape, and style biomes.
 
@@ -131,16 +145,19 @@ Like all constructed assets in a behavior pack, biome definitions are written in
 
         - Example
 
+        ```
         "components": {
             …
 
             "minecraft:ignore_automatic_features": {}
         }
+        ```
 
         Although the JSON may be invalid, properties of the same name representing components may be used within the "components" object. Although this situation should be avoided, it should be noted that only the last provided instance of a component will be used by the game: the values inside the earlier defined component(s) will be completely ignored. For example:
 
         - Example
 
+        ```
         "components": {
             …
 
@@ -151,6 +168,7 @@ Like all constructed assets in a behavior pack, biome definitions are written in
                 "noise_params": [1.25, 0]
             }
         }
+        ```
 
         Despite the fact that the "noise_type" property would typically completely override the "noise_params" property, the preset will be ignored in this example due to the order of the components within the "components” object.
 
@@ -162,6 +180,7 @@ Like all constructed assets in a behavior pack, biome definitions are written in
 
         - Example
 
+        ```
         "components": {
             …
 
@@ -171,6 +190,7 @@ Like all constructed assets in a behavior pack, biome definitions are written in
             "animal": {},
             "monster": {}
         }
+        ```
 
         In addition to the components that work to create a biome, the "components" property also allows for the addition of arbitrary tags. Tags appear like empty components, e.g., "animal": {}. Tag names must conform to the regular expression [a-z0-9_.:]+, that is: lowercase Latin letters, Arabic numerals, underscores, periods, and colons.
 
@@ -204,6 +224,7 @@ Minecraft currently has no way of creating new dimensions. The End does not allo
 
     - Example
 
+    ```
     "minecraft:overworld_generation_rules": {
         "generate_for_climates": [
             ["cold", 1]
@@ -212,6 +233,7 @@ Minecraft currently has no way of creating new dimensions. The End does not allo
         "hills_transformation": "pumpkin_pastures_hills",
         "shore_transformation": "pumpkin_pastures"
     }
+    ```
 
     The Overworld uses concepts of climates, regions, and hierarchy to determine how to place biomes.
 
@@ -225,10 +247,12 @@ Minecraft currently has no way of creating new dimensions. The End does not allo
 
         - Example
 
+        ```
         "generate_for_climates": [
             ["frozen", 2],
             ["cold", 1]
         ]
+        ```
 
         Biomes must be aligned with temperature categories to generate as base biomes. To promote a biome to a base biome that will generate in the Overworld, the biome’s definition must have the "generate_for_climates" array property within the "minecraft:overworld_generation_rules" component. This array contains array values of the form [*climate type*, *weight*], where *climate type* is one of five climate strings and *weight* is a whole number value reflecting the biome’s chance to generate. Biomes are generated by weight within each declared climate category in the biomes’s declared region, generating sub-biomes within their bounds.
 
@@ -275,11 +299,13 @@ Minecraft currently has no way of creating new dimensions. The End does not allo
         - Example
         biomes/plains.json
 
+        ```
         "generate_for_climates": [
             ["cold", 1],
             ["medium", 3],
             ["warm", 1]
         ]
+        ```
 
         If the same biome generates in two adjacent climates and these separate biome instances are next to each other, the biome will seem to combine into one with no indication of the boundaries of a climate region.
 
@@ -303,9 +329,11 @@ Minecraft currently has no way of creating new dimensions. The End does not allo
 
             - Example
 
+            ```
             "generate_for_climates": [
                 ["cold", 1]
             ]
+            ```
 
             Common land is the largest slot in the game, making up the vast majority of land. The majority of biomes in Minecraft are slotted here, such as Deserts, Dark Forests, Plains, and Swamps. By default, all custom biomes are slotted into common land unless marked otherwise.
 
@@ -327,6 +355,7 @@ Minecraft currently has no way of creating new dimensions. The End does not allo
 
             - Example
 
+            ```
             "minecraft:overworld_generation_rules": {
                 "generate_for_climates": [
                     ["medium", 1]
@@ -336,11 +365,13 @@ Minecraft currently has no way of creating new dimensions. The End does not allo
             },
 
             "rare": {}
+            ```
 
             Rare land slots are somewhat large but very uncommon regions of the Overworld set aside for biomes. Biomes are slotted here when the "rare" tag is applied to them. Examples of rare biomes in vanilla generation include Jungles in the medium climate, Mesas in the warm climate, and Giant Tree Taigas in the cold climate. No rare land exists in vanilla generation for the frozen climate, but this can be added via customization:
 
             - Example
 
+            ```
             "minecraft:overworld_generation_rules": {
                 "generate_for_climates": [
                     ["frozen", 1]
@@ -348,6 +379,7 @@ Minecraft currently has no way of creating new dimensions. The End does not allo
             },
 
             "rare": {}
+            ```
 
                 Rare land biomes can be de-slotted by applying the "ocean" tag to the declaration. This is because the "ocean" tag takes precedence over the "rare" tag. If no "rare"-tagged biome is available for an instance of rare land in a given climate due to de-slotting, the game will fall back to compatible common land biomes. This situation naturally occurs in the frozen and lukewarm climates, where there are no vanilla rare biomes. If, however, a rare land biome was only de-weighted for a particular climate, it is still possible for that biome to generate if no other biomes are available for those climates.
 
@@ -364,6 +396,7 @@ Minecraft currently has no way of creating new dimensions. The End does not allo
 
             - Example
 
+            ```
             "minecraft:overworld_generation_rules": {
                 "generate_for_climates": [
                     ["lukewarm", 1]
@@ -371,6 +404,7 @@ Minecraft currently has no way of creating new dimensions. The End does not allo
             },
 
             "ocean": {}
+            ```
 
             The basic oceans make up about half of the ocean region. This region is intended to be used by aquatic biomes with a relatively shallow depth.
 
@@ -378,6 +412,9 @@ Minecraft currently has no way of creating new dimensions. The End does not allo
 
             - Deep Oceans
 
+            - Example
+
+            ```
             "minecraft:overworld_generation_rules": {
                 "generate_for_climates": [
                     ["frozen", 1]
@@ -386,6 +423,7 @@ Minecraft currently has no way of creating new dimensions. The End does not allo
 
             "ocean": {},
             "deep": {}
+            ```
 
             Biomes slotted into the deep ocean region use the deep tag in addition to the ocean tag. Deep oceans make up most of the space remaining in oceans. This slot is typically used with oceans extending deeper than others, often halfway to bedrock from the surface.
 
@@ -396,9 +434,11 @@ Minecraft currently has no way of creating new dimensions. The End does not allo
             - Example
             biomes/ocean.json
 
+            ```
             "minecraft:overworld_generation_rules": {
                 "hills_transformation": "tropical_island"
             },
+            ```
 
             Conceptually, islands are no different from sub-biomes in the land region. The islands that generate in vanilla are actually just “hills” in oceans!
 
@@ -407,9 +447,11 @@ Minecraft currently has no way of creating new dimensions. The End does not allo
             - Example
             biomes/deep_ocean.json
 
+            ```
             "minecraft:overworld_generation_rules": {
                 "hills_transformation": "deep_ocean"
             },
+            ```
 
             Because of how shores are prioritized when generating land, islands in the ocean may form entirely as shores unless those shores are disabled. Islands may also have their own river sub-biome; the vanilla islands and all custom biomes by default use Rivers.
 
@@ -423,6 +465,7 @@ Minecraft currently has no way of creating new dimensions. The End does not allo
 
             - Example
 
+            ```
             "minecraft:overworld_generation_rules": {
                 …
 
@@ -432,6 +475,7 @@ Minecraft currently has no way of creating new dimensions. The End does not allo
                 ],
                 "shore_transformation": "rocky_shore"
             }
+            ```
 
             Overworld biomes may directly or indirectly be placed by the world generator. Biomes placed directly are here referred to as base biomes, while those that are placed indirectly via a base biome will be called sub-biomes.
 
@@ -447,10 +491,12 @@ Minecraft currently has no way of creating new dimensions. The End does not allo
 
             - Example
 
+            ```
             "mutate_transformation": [
                 ["crater", 2],
                 ["lava_pit", 1]
             ]
+            ```
 
             Multiple sub-biomes may be declared for each transformation type. They may be given integer-valued weights when declared in a base biome to vary their occurrences. For example, the hills sub-biome is really just a small, common subregion of a base biome, so it can be used to form many different scenes. A single base biome may have, for example, both hill and lake “hills” sub-biomes.
 
@@ -466,30 +512,36 @@ Minecraft currently has no way of creating new dimensions. The End does not allo
 
             - Example
 
+            ```
             "hills_transformation": [
                 ["rolling_hills", 2],
                 ["spiky_hills", 1]
             ]
+            ```
 
             And a new definition declared:
 
             - Example
 
+            ```
             "hills_transformation": [
                 ["tall_hills", 1],
                 ["short_hills", 1]
             ]
+            ```
 
             Only the "tall_hills" and "short_hills" sub-biomes will generate as hills transformations. The previous listing is entirely ignored. If both sets are to be used together, the previous sub-biomes must be redeclared in the new definition:
 
             - Example
             
+            ```
             "hills_transformation": [
                 ["rolling_hills", 2],
                 ["spiky_hills", 1],
                 ["tall_hills", 1],
                 ["short_hills", 1]
             ]
+            ```
 
             - Sub-Biome Types 
             Base biomes may declare their own sub-biomes of these categories:
@@ -524,12 +576,16 @@ Minecraft currently has no way of creating new dimensions. The End does not allo
             - Example
             biomes/mangrove_forest.json
 
+            ```
             "hills_transformation": "mangrove_forest_hills"
+            ```
 
             - Example
             biomes/mangrove_forest_hills.json
 
+            ```
             "mutate_transformation": "mangrove_forest_hills_mutated"
+            ```
 
             Hills sub-biomes may declare their own mutated sub-biomes, effectively creating a mutated hills sub-biome. This very rare sub-biome generation allows all the same interactions as hills or mutated sub-biomes including having its own river and shore.
 
@@ -539,7 +595,9 @@ Minecraft currently has no way of creating new dimensions. The End does not allo
 
             - Example
 
+            ```
             "river_transformation": "riverbed_dry"
+            ```
 
             Rivers exist in dedicated spaces fixed to the seed of a world and are unchangeable via behavior packs. While the shape of rivers technically run everywhere in the Overworld, they only generate when intersecting with a land biome. The intersecting land biome declaration can specify a river sub-biome to apply to the stretches allocated for river generation. While the widths of rivers are not configurable, rivers may appear wider with lower heightmap configurations.
 
@@ -548,6 +606,7 @@ Minecraft currently has no way of creating new dimensions. The End does not allo
             - Example
             biomes/ivory_shallows.json
 
+            ```
             {
                 "format_version": "1.13.0",
 
@@ -567,6 +626,7 @@ Minecraft currently has no way of creating new dimensions. The End does not allo
                     }
                 }
             }
+            ```
 
             This retains the biome’s surface builder and its specified blocks, heightmap, climate, etc., along the river’s route, generating the declaring biome smoothly without interruption. Rivers declared in a biome with the ocean tag have no effect on world generation; slotting tags added to a biome are ignored when it is used as a river.
 
@@ -576,7 +636,9 @@ Minecraft currently has no way of creating new dimensions. The End does not allo
 
             - Example
 
+            ```
             "shore_transformation": "cliffs_steep"
+            ```
 
             Shores are special stretches of land designated to generate between a land biome and ocean biomes: biomes without the ocean tag and those with it. Because these locations vary under customized biome definitions, shores are the only sub-biome whose location can be influenced. This is not merely restricted to the major land and ocean regions of the Overworld but can also be used between conflicting sub-biomes. Alternations such as these could be used to generate large, shallow lakes with shores or even a transition biome between what appears to be two land biomes.
 
@@ -585,6 +647,7 @@ Minecraft currently has no way of creating new dimensions. The End does not allo
             - Example
             biomes/lava_fields.json
 
+            ```
             {
                 "format_version": "1.13.0",
 
@@ -604,6 +667,7 @@ Minecraft currently has no way of creating new dimensions. The End does not allo
                     }
                 }
             }
+            ```
 
             If removed, the base biome will ease into the ocean at a slightly steeper angle, ignoring sandy shores in favor of the blocks used by the base biome’s surface builder.
 
@@ -618,6 +682,7 @@ Minecraft currently has no way of creating new dimensions. The End does not allo
 
         - Example
 
+        ```
         "minecraft:nether_generation_rules": {
             "target_temperature": 0.5,
             "target_humidity": 0.75,
@@ -625,6 +690,7 @@ Minecraft currently has no way of creating new dimensions. The End does not allo
             "target_weirdness": 0,
             "weight": 0.1
         }
+        ```
 
         Nether generation is far more pure and allows for far greater control than the Overworld, but this comes at the cost of significantly increased complexity. Arbitrary systems should be constructed on top of the powerful provided mathematical system for a functioning Nether layout system to work.
 
@@ -827,6 +893,7 @@ Minecraft currently has no way of creating new dimensions. The End does not allo
 
             - Example
 
+            ```
             "minecraft:nether_generation_rules": {
                 "target_temperature": 0.2,
                 "target_humidity": -0.6,
@@ -834,6 +901,7 @@ Minecraft currently has no way of creating new dimensions. The End does not allo
                 "target_weirdness": 0,
                 "weight": 0
             }
+            ```
 
             Assuming the weirdness aspect was ignored, a transition biome would have to occur for every combination before and after each of the other 3 target aspects. Because a single biome definition cannot target multiple spots in the Nether, 8 different definitions (1 positive and 1 negative for each combination of the 3 relevant aspects) would have to be created and well adjusted to act as transitions into this target biome. Furthermore, if any of the aspect targets in this biome changed, all transition biome definitions would have to be updated to accommodate the change.
 
@@ -846,13 +914,19 @@ Minecraft currently has no way of creating new dimensions. The End does not allo
 
             - Example
 
+            ```
             "target_temperature": 1,
             "target_humidity": -1
+            ```
 
             A transition biome could be established using:
 
+            - Example
+
+            ```
             "target_temperature": 0.8,
             "target_humidity": -0.8
+            ```
 
             - Tiering Transitions
             Tiering transitions can be used in a tiering system to separate otherwise strongly opposing tiers. Unlike corner transitions, tiering transitions are fallible due to the nature of biome selection in the Nether and how available space is delegated for aspect targeting.
@@ -919,6 +993,7 @@ Biome shape depends on the surface builder it declares and the biome’s heightm
 
     - Example
 
+    ```
     {
         "name": "minecraft:concrete",
 
@@ -926,12 +1001,15 @@ Biome shape depends on the surface builder it declares and the biome’s heightm
             "color": "red"
         }
     }
+    ```
 
     - Example
 
+    ```
     "minecraft:overworld_height": {
 	"noise_type": "lowlands"
     }
+    ```
 
     Heightmaps are customized by affecting the noise a seed gives its terrain. The Overworld heightmap is adjusted using the "minecraft:overworld_height" component. Noises declared here can be customized using either numeric parameters passed to the noise generator or named presets of these parameters used in vanilla generation.
 
@@ -975,7 +1053,9 @@ Biome shape depends on the surface builder it declares and the biome’s heightm
 
         - Example
 
+        ```
         "noise_type": "ocean"
+        ```
 
         Noise presets provide a convenient way to emulate vanilla biome generation. It is not possible to create custom presets. While the exact values of these presets are hard to gauge, their names are descriptive enough to get an idea of what kind of heightmap a biome will have.
 
@@ -1035,6 +1115,7 @@ Biome shape depends on the surface builder it declares and the biome’s heightm
 
         - Example
 
+        ```
         "minecraft:surface_material_adjustments": {
             "adjustments": [
                 {
@@ -1048,6 +1129,7 @@ Biome shape depends on the surface builder it declares and the biome’s heightm
                 }
             ]
         }
+        ```
 
         Surface adjustments allow for fine-tuning a biome's surface blocks. Despite being called "surface" adjustments, these adjustments can actually affect all blocks declared in an eligible surface builder. These adjustments cannot modify blocks outside the scope of a surface builder and therefore cannot be used to alter bedrock or air, whether the air generates in caves, above the heightmap, or between shelves of land (if the heightmap is radical enough). Currently, only the default and swamp surface builders support adjustments.
 
@@ -1061,8 +1143,10 @@ Biome shape depends on the surface builder it declares and the biome’s heightm
 
             - Example
 
+            ```
             "noise_range": [-1, -0.5],
             "noise_frequency_scale": 0.125,
+            ```
 
             A noise curve that is dependent upon the seed of a world can be used to restrict the x and z components of a surface adjustment. The origin of this noise curve is centered on the world origin and can then optionally be scaled via "noise_frequency_scale" to map onto the horizontal plane of a dimension. The noise curve can therefore only work on this horizontal plane and not on the y coordinate; for that, use height restrictions. To actually use the noise curve to restrict adjustments, a success interval must be provided using "noise_range".
 
@@ -1072,7 +1156,11 @@ Biome shape depends on the surface builder it declares and the biome’s heightm
 
             - Intervals
 
+            - Example
+
+            ```
             "noise_range": [0.5, 1]
+            ```
 
             The noise curve used for surface adjustments generates values lying on the closed interval [-1, 1]. Values on this interval are targeted via a sub-interval using the "noise_range" property.
 
@@ -1082,7 +1170,9 @@ Biome shape depends on the surface builder it declares and the biome’s heightm
 
             - Example
 
+            ```
             "noise_frequency_scale": 0.25
+            ```
 
             The surface adjustment noise curve uses a default mapping relative to the dimension coordinates that would form extremely small transformations. The noise intersections are actually made larger by setting the sizing value to be smaller. Smaller values, such as 0.125, are key to forming large patches of transformations, such as podzol or coarse dirt clusters. Larger values of this property are typically used to create a messier feel to the terrain. Values greater than the default 1 are not recommended unless something akin to a checkerboard pattern is desired.
 
@@ -1090,10 +1180,12 @@ Biome shape depends on the surface builder it declares and the biome’s heightm
 
             - Example
 
+            ```
             "height_range": [
                 "math.random_integer(30, 40)",
                 "math.random_integer(60, 70)"
             ]
+            ```
 
             Height restrictions can be provided to limit the valid transformation region. These restrictions are independent of limitations using the noise curve and much simpler, too. Height restrictions are provided as an interval and simply target a range of y-heights to transform a region. The first value of the "height_range" array must be less than the second value or else the adjustment will fail.
 
@@ -1116,6 +1208,7 @@ Biome shape depends on the surface builder it declares and the biome’s heightm
             - Example
             biomes/savanna_mutated.json
 
+            ```
             "minecraft:surface_parameters": {
                 "foundation_material": "minecraft:stone",
 
@@ -1153,11 +1246,13 @@ Biome shape depends on the surface builder it declares and the biome’s heightm
                     }
                 ]
             }
+            ```
 
             To revert the surface back to its original, “paint back over” the surface with the original blocks, like:
 
             - Example
 
+            ```
             "minecraft:surface_material_adjustments": {
                 "adjustments": [
                     {
@@ -1179,17 +1274,20 @@ Biome shape depends on the surface builder it declares and the biome’s heightm
                     }
                 ]
             }
+            ```
 
         - Climate
 
         - Example
 
+        ```
         "minecraft:climate": {
             "temperature": 1,
             "downfall": 0.25,
             "snow_accumulation": [0.0, 0.125],
             "ash": 1
         }
+        ```
 
         A biome’s climate mostly represents its ambient aesthetic. Aspects of a biome’s climate may have an effect on gameplay, but this is rarely used in vanilla. Climate adjustments work everywhere in Minecraft, even The End, but the adjustments may have no effect if a dimension doesn’t support a specific climate feature, such as precipitation outside the Overworld.
 
@@ -1199,10 +1297,12 @@ Biome shape depends on the surface builder it declares and the biome’s heightm
 
             - Example
 
+            ```
             "minecraft:climate": {
                 "temperature": 0.5
                 …
             }
+            ```
 
             The temperature of a biome affects various gameplay features like precipitation type, the formation of ice and snow layers when the appropriate blocks are directly exposed to sunlight, and the survivability of snow golems. It is implemented as the float property "temperature" and may be set without limitation: all possible float values may be used. Lower values represent colder temperatures. Freezing temperatures, such as where snow falls, occur below 0.15. If no temperature is provided for a biome definition, the game will use a value of 0.5; at this temperature, freezing effects cannot be observed anywhere blocks can be placed in any dimension.
 
@@ -1236,10 +1336,12 @@ Biome shape depends on the surface builder it declares and the biome’s heightm
 
             - Example
 
+            ```
             "minecraft:climate": {
                 "downfall": 0.5
                 …
             }
+            ```
 
             Precipitation is visible as rainfall or snowfall in the Overworld. The float property "downfall" controls the extent of precipitation within a biome. Currently, the property only behaves on the closed interval [0, 1]; values outside this interval are clamped to the nearest valid value. At 0 or less, this property disables all precipitation effects within a biome. At 1 or greater, precipitation effects will be maximized. Values between 0 and 1 scale accordingly.
 
@@ -1253,10 +1355,12 @@ Biome shape depends on the surface builder it declares and the biome’s heightm
 
             - Example
 
+            ```
             "minecraft:climate": {
                 "snow_accumulation": [1, 0.5],
                 …
             }
+            ```
 
             When a biome is generated, blocks that are at a freezing temperature typically have snow cover above them: snow layers stacked atop eligible blocks. The "snow_accumulation" property is used to adjust this snow cover. Snow covering seems to occur as one of the final passes to biome generation, meaning snow will cover features as well as the biome’s surface.
 
@@ -1274,11 +1378,13 @@ Biome shape depends on the surface builder it declares and the biome’s heightm
 
             - Example
 
+            ```
             "minecraft:climate": {
                 …
 
                 "white_ash": 0.5
             }
+            ```
 
             Particle decorations are storms of ambient particles visible within a biome. These properties are solely decorative; unlike other aspects of a biome’s climate, particle decorations have no effect on gameplay. If not provided, no particle effects will be present in a biome. Custom particles currently may not be used. 4 different particle decorations from vanilla biomes are available to use anywhere:
 
@@ -1304,6 +1410,7 @@ Biomes are the starting point of much of the configurable gameplay in Minecraft.
 
     - Example
 
+    ```
     "minecraft:forced_features": {
         "surface_pass": {
             "identifier": "wiki:grasslands_caravan_feature",
@@ -1323,6 +1430,7 @@ Biomes are the starting point of much of the configurable gameplay in Minecraft.
         }
     },
     "minecraft:ignore_automatic_features": {}
+    ```
 
     If a collection of blocks generating in a world aren’t created by a surface builder, they are created from a feature. Features are fundamental to gameplay in Minecraft: vanilla features range from trees to villages to boulders. The features in a biome may handily determine that biome’s worth to a player.
 
@@ -1332,6 +1440,7 @@ Biomes are the starting point of much of the configurable gameplay in Minecraft.
 
         - Example
 
+        ```
         "minecraft:forced_features": {
             "surface_pass": [
                 {
@@ -1352,6 +1461,7 @@ Biomes are the starting point of much of the configurable gameplay in Minecraft.
                 }
             ]
         }
+        ```
 
         The "minecraft:forced_features" component can be used to force a feature to generate within a biome without using feature rules.
 
@@ -1398,6 +1508,7 @@ Biomes are the starting point of much of the configurable gameplay in Minecraft.
 
     - Example
 
+    ```
     "components": {
     …
 
@@ -1407,6 +1518,7 @@ Biomes are the starting point of much of the configurable gameplay in Minecraft.
 
     "rare": {}
     }
+    ```
 
     Tags power much of what brings a biome to life in Minecraft, including entity spawns, external feature attachment, and data-driven gameplay. Because some tags are additionally used (by poor design) to determine where a biome may generate, issues may arise when attempting to separate placement from form and function. See Tags for the implementation details of tags.
 
@@ -1415,6 +1527,7 @@ Biomes are the starting point of much of the configurable gameplay in Minecraft.
     - Example
     biomes/highlands.json
 
+    ```
     {
         "format_version": "1.13.0",
 
@@ -1442,12 +1555,14 @@ Biomes are the starting point of much of the configurable gameplay in Minecraft.
             }
         }
     }
+    ```
 
     The sub-biome must redeclare the "highlands" tag to opt in to its functionality — in this case, the addition of scattered tall grass across the surface:
 
     - Example
     biomes/highlands_forest.json
 
+    ```
     {
         "format_version": "1.13.0",
 
@@ -1468,6 +1583,7 @@ Biomes are the starting point of much of the configurable gameplay in Minecraft.
             }
         }
     }
+    ```
 
     Without that tag, the sub-biome would appear barren. Transitions between the base biome and its mutation would appear strange and inconsistent.
 
@@ -1496,6 +1612,7 @@ Biomes are the starting point of much of the configurable gameplay in Minecraft.
 
         - Example
 
+        ```
         "minecraft:biome_filter": {
             "all_of": [
                 {"test": "has_biome_tag", "operator":"==", "value": "forest"},
@@ -1505,6 +1622,7 @@ Biomes are the starting point of much of the configurable gameplay in Minecraft.
                 {"test": "has_biome_tag", "operator":"!=", "value": "mountain"}
             ]
         }
+        ```
 
         In cases such as this, another perspective can be used for tagging that eases authoring pains.
 
@@ -1538,11 +1656,13 @@ Biomes are the starting point of much of the configurable gameplay in Minecraft.
 
         - Example
 
+        ```
         "components": {
             …
 
             "overworld": {}
         }
+        ```
 
         4 tags exists supporting the game’s dimensions:
 
@@ -1563,6 +1683,7 @@ Biomes are the starting point of much of the configurable gameplay in Minecraft.
 
         - Example
 
+        ```
         "components": {
             …
 
@@ -1570,6 +1691,7 @@ Biomes are the starting point of much of the configurable gameplay in Minecraft.
             "mega": {},
             "hills": {}
         }
+        ```
 
         A number of vanilla biome tags exist to support the specific nature of those biomes.
 
@@ -1632,6 +1754,7 @@ Biomes are the starting point of much of the configurable gameplay in Minecraft.
 
         - Example
 
+        ```
         "components": {
             …
 
@@ -1639,6 +1762,7 @@ Biomes are the starting point of much of the configurable gameplay in Minecraft.
             "deep": {},
             "warm": {}
         }
+        ```
 
         Groups of tags exist for slotting and matching climates and transformations in the Overworld.
 
@@ -1688,11 +1812,13 @@ Biomes are the starting point of much of the configurable gameplay in Minecraft.
 
         - Example
 
+        ```
         "components": {
             …
 
             "animal": {}
         }
+        ```
 
         Using the "animal" tag will allow Cows, Chickens, Sheep, Pigs, and Bats to spawn in a biome.
 
@@ -1702,11 +1828,13 @@ Biomes are the starting point of much of the configurable gameplay in Minecraft.
 
         - Example
 
+        ```
         "components": {
             …
 
             "monster": {}
         }
+        ```
 
         The "monster" tag allows Zombies, Skeletons, Spiders, Creepers, Slime, Endermen, Witches, and Phantoms to spawn in a biome.
 

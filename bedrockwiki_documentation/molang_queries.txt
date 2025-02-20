@@ -139,6 +139,7 @@ Turns true if actual in-game displayed name matches name (use OnixClient to see 
 - Example query.get_name
 animation_controllers/ac.json
 
+```
 {
     "format_version": "1.10.0",
     "animation_controllers": {
@@ -168,6 +169,7 @@ animation_controllers/ac.json
         }
     }
 }
+```
 
 ## query.is_name_any
 
@@ -176,6 +178,7 @@ Formatted like: query.get_name('Name1', 'Name2'). Takes one or more arguments. T
 - Example query.is_name_any
 animation_controllers/ac.json
 
+```
 {
     "format_version": "1.10.0",
     "animation_controllers": {
@@ -205,6 +208,7 @@ animation_controllers/ac.json
         }
     }
 }
+```
 
 ## query.is_item_name_any
 
