@@ -8,6 +8,7 @@ The basic idea of disabling a particle from emitting is as follows:
 - Example Disabling Particles
 RP/particles/some_vanilla_particle.json
 
+```
 {
     "format_version": "1.10.0",
     "particle_effect": {
@@ -29,3 +30,4 @@ RP/particles/some_vanilla_particle.json
         }
     }
 }
+```

@@ -13,6 +13,7 @@ Coarse Dirt File
 - Example
 BP/features/coarse_dirt_feature.json
 
+```
 {
 	"format_version": "1.13.0",
 	"minecraft:single_block_feature": {
@@ -33,12 +34,14 @@ BP/features/coarse_dirt_feature.json
 		]
 	}
 }
+```
 
 Podzol File
 
 - Example
 BP/features/podzol_feature.json
 
+```
 {
 	"format_version": "1.13.0",
 	"minecraft:single_block_feature": {
@@ -53,12 +56,14 @@ BP/features/podzol_feature.json
 		]
 	}
 }
+```
 
 Cobblestone File
 
 - Example
 BP/features/cobblestone_feature.json
 
+```
 {
 	"format_version": "1.13.0",
 	"minecraft:single_block_feature": {
@@ -73,6 +78,7 @@ BP/features/cobblestone_feature.json
 		]
 	}
 }
+```
 
 ## Weighted Random Features
 Weighted random features are going to be our randomizer to select between each type of blocks.
@@ -82,6 +88,7 @@ Learn more about weighted random features here
 - Example
 BP/features/select_surface_block_feature.json
 
+```
 {
 	"format_version": "1.13.0",
 	"minecraft:weighted_random_feature": {
@@ -104,6 +111,7 @@ BP/features/select_surface_block_feature.json
 		]
 	}
 }
+```
 
 ## Scatter Features
 
@@ -114,6 +122,7 @@ Learn more about scatter features here
 - Example
 BP/features/scatter_surface_block_feature.json
 
+```
 {
 	"format_version": "1.13.0",
 	"minecraft:scatter_feature": {
@@ -133,6 +142,7 @@ BP/features/scatter_surface_block_feature.json
 		"places_feature": "wiki:select_surface_block_feature" //Weighted random feature identifier
 	}
 }
+```
 
     - iterations determine how many blocks will be placed. I'm going to use the Molang math.random_integer function to randomize the number of blocks. In this case, it'll be 20 to 25 blocks.
 
@@ -148,6 +158,7 @@ This is the final step for our surface builder. The feature rules for our surfac
 - Example
 BP/feature_rules/overworld_surface_blocks_feature.json
 
+```
 {
 	"format_version": "1.13.0",
 	"minecraft:feature_rules": {
@@ -182,5 +193,6 @@ BP/feature_rules/overworld_surface_blocks_feature.json
 		}
 	}
 }
+```
 
 And our surface builder is done! Feel free to modify and mess around with it!

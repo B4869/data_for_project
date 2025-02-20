@@ -15,6 +15,7 @@ However, bridge. is not required.
 - Example Custom Biomes
 BP/biomes/cold_biome.json
 
+```
 {
     "format_version": "1.13.0",
     "minecraft:biome": {
@@ -49,6 +50,7 @@ BP/biomes/cold_biome.json
         }
     }
 }
+```
 
 - Set format_version to 1.13.0: it's the latest biome file version as of the current release.
 - description takes only one value: identifier. This requires NO namespace and MUST be the same as the file's name. (If you do use a namespace, for example wiki:cold_biome, the file name needs to only match the id, so it has to remain as cold_biome.json.)
@@ -107,6 +109,7 @@ You can find their Documentation on bedrock.dev/r/Features
 - Example Features
 BP/features/blocky_ore_feature.json
 
+```
 {
     "format_version": "1.13.0",
     "minecraft:ore_feature": {
@@ -161,6 +164,7 @@ BP/features/blocky_ore_feature.json
         ]
     }
 }
+```
 
 - minecraft_ore_feature is type of the specific feature that places ores automatically. Each feature type has it's own specific syntax. (There's also single_block_feature that places a single block instead of an ore group, etc)
 - identifier doesn't require a namespace in this scenario. The namespace is optional, and is not to be added in the filename.
@@ -175,6 +179,7 @@ Feature Rules control where and how features (and, in the future, structures) ar
 - Example Feature Rules
 BP/feature_rules/overworld_underground_blocky_ore_feature.json
 
+```
 {
     "format_version": "1.13.0",
     "minecraft:feature_rules": {
@@ -219,6 +224,7 @@ BP/feature_rules/overworld_underground_blocky_ore_feature.json
         }
     }
 }
+```
 
 - description
     - identifier needs no namespace, but the filename needs to match.
@@ -244,8 +250,8 @@ Now that you have your .mcstructure, time to write your feature and feature rule
 
 Here's an code example from the Features Documentation:
 - Example Custom Structures
-// ตรงนี้ไม่มี
 
+```
 {
     "format_version": "1.13.0",
     "minecraft:structure_template_feature": {
@@ -263,6 +269,7 @@ Here's an code example from the Features Documentation:
         }
     }
 }
+```
 
 - structure_name is the structure's identifier, the one you saved via a Structure Block.
 That's pretty much it! Now you're able to generate your own custom Structures in the world.

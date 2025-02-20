@@ -41,6 +41,7 @@ A handful of functions are available for basic item properties. These functions 
     - Example 
     Count Function
 
+    ```
     {
     "function": "set_count",
 
@@ -49,6 +50,7 @@ A handful of functions are available for basic item properties. These functions 
         "max": 4
         }
     }
+    ```
 
     The "count" property determines how many of that item should be yielded; it can either be provided as an integer or a range object. Provided counts values may be larger than the stack size for that item. When this happens, the item will leak into other slots if in a container or separate into multiple different item stacks if dropped into the world. The count property actually defaults to 0, so it should always be included.
 
@@ -70,11 +72,13 @@ A handful of functions are available for basic item properties. These functions 
     - Example
     Name Function
 
+    ```
     {
         "function": "set_name",
 
         "name": "Cursed Bow"
     }
+    ```
 
     The name to give the item is given with the string "name" property. By default, name text appears italicized. However, item names support format codes, and §r can be inserted at the start of the text to reset it to non-italics. Raw text is unsupported in item names. \n can be used for newlines.
 
@@ -96,11 +100,13 @@ A handful of functions are available for basic item properties. These functions 
     - Example
     Lore Function
 
+    ```
     {
         "function": "set_lore",
 
         "lore": ["", ""]
     }
+    ```
 
     The "lore" property configures the lore. It can be represented as either a string or an array of strings. All lore strings support format codes but do not support localization. In the array form, each string represents a new line of lore. Each such string's formatting context is independent, meaning formatting will reset with each string. By default, purple and italicized text is used for lore; this can be reset by prepending the reset format code (§r) to each string as necessary. \n can be used within any lore string to form a newline while preserving the current formatting context.
 
@@ -122,11 +128,13 @@ A handful of functions are available for basic item properties. These functions 
     - Example
     Data Function
 
+    ```
     {
         "function": "set_data",
 
         "data": 2
     }
+    ```
 
     The "data" property sets the item's data. If not provided, it will default to 0. "data" can either be provided as an integer or a range object.
 
@@ -134,16 +142,20 @@ A handful of functions are available for basic item properties. These functions 
 
     - Example
 
+    ```
     "data": 1
+    ```
 
     As a range object:
 
     - Example
 
+    ```
     "data": {
             "min": 0,
             "max": 5
     }
+    ```
 
     The object form will randomly select a data value inclusively between the provided minimum and maximum each instance this function's item entry is selected.
 
@@ -165,12 +177,14 @@ A handful of functions are available for basic item properties. These functions 
     - Example
     Block State Function
 
+    ```
     {
         "function": "random_block_state",
 
         "block_state": "wiki:color",
         "values": 3
     }
+    ```
 
     Sets a block state for a block block_state Required string name of block state values Can be number or min/max object Defaults to 0… kinda required otherwise pointless? IDK…
 
@@ -192,6 +206,7 @@ A handful of functions are available for basic item properties. These functions 
     - Example 
     Aux Value Function
 
+    ```
     {
         "function": "random_aux_value",
 
@@ -200,6 +215,7 @@ A handful of functions are available for basic item properties. These functions 
             "max": 4
         }
     }
+    ```
 
     Sets aux value of an item values Can be integer or min/max object Min/max object chosen uniformly randomly Only used for aux value; won't, for example, set damage of a tool but will set color of wool Overrides any provided aux value as identifier :suffix, like minecraft:wool:10 Works on block data, too
 
@@ -221,6 +237,7 @@ A handful of functions are available for basic item properties. These functions 
     - Example
     Durability Function
 
+    ```
     {
         "function": "set_damage",
 
@@ -229,6 +246,7 @@ A handful of functions are available for basic item properties. These functions 
             "max": 1
         }
     }
+    ```
 
     The "damage" property sets the item's durability. It can be represented either as a number or a range object. Values are intended to range from 0 to 1, where 0 is the minimum possible durability for an item and 1 is undamaged.
 
@@ -266,9 +284,11 @@ Some functions are only usable by a certain set of items. See each function for 
     - Example
     Heat Item Function
 
+    ```
     {
         "function": "furnace_smelt"
     }
+    ```
 
     auto-implies that the entity must’ve been on fire when they died Vanilla files use a function condition for this, but even removing that condition still implies that the entity must’ve died on fire for the furnace_smelt function to trigger
 
@@ -290,6 +310,7 @@ Some functions are only usable by a certain set of items. See each function for 
     - Example
     Book Contents Function
 
+    ```
     {
         "function": "set_book_contents",
 
@@ -298,6 +319,7 @@ Some functions are only usable by a certain set of items. See each function for 
 
         "pages": ["", ""]
     }
+    ```
 
     Sets data for a book Can only be used on writable_book or written_book author String name of the author title String name of the book pages Array of strings — each string is the contents of that page Supports up to 50 strings and 798 characters per string 12,800‌ character limit across all pages Use \n in the string (not \\n) to add newlines Can’t use tabs Can use color codes; Each different page string resets the color codes each time
 
@@ -319,11 +341,13 @@ Some functions are only usable by a certain set of items. See each function for 
     - Example
     Exploration Map Function
 
+    ```
     {
         "function": "exploration_map",
 
         "destination": "village"
     }
+    ```
 
     trade table info: destination Currently only monument mansion. Nothing else, not even buried treasure (this one looks like it’ll work — names the map right instead of Unknown Map like the others, but it doesn’t point anywhere). 😦
 
@@ -347,9 +371,11 @@ Some functions are only usable by a certain set of items. See each function for 
     - Example
     Banner Type Function
 
+    ```
     {
         "function": "set_banner_details"
     }
+    ```
 
     Sets type of a banner (only usable on this) type Can only be 0 or 1 0 is just a white banner 1 is illager banner
 
@@ -371,9 +397,11 @@ Some functions are only usable by a certain set of items. See each function for 
     - Example
     Random Dyeing Function
 
+    ```
     {
         "function": "random_dye"
     }
+    ```
 
     Randomly dyes leather armor or horse armor Doesn’t work on wool or whatever
 
@@ -395,9 +423,11 @@ Some functions are only usable by a certain set of items. See each function for 
     - Example
     Spawn Eggs Function
 
+    ```
     {
         "function": "set_actor_id"
     }
+    ```
 
     Usable with spawn eggs id Should be the identifier for the mob in trade tables, defaults to trader's entity type
 
@@ -419,9 +449,11 @@ Some functions are only usable by a certain set of items. See each function for 
     - Example
     Container Contents Function
 
+    ```
     {
         "function": "fill_container"
     }
+    ```
 
     Sets the contents of a container block loot_table Path to loot table file from behavior pack root
 
@@ -457,9 +489,11 @@ Some functions are only usable by a certain set of items. See each function for 
     - Example
     Enchant for Trading Function
 
+    ```
     {
         "function": "enchant_book_for_trading"
     }
+    ```
 
     documented in trade tables
 
@@ -481,6 +515,7 @@ Some functions are only usable by a certain set of items. See each function for 
     - Example
     Level-Based Enchantments Function
 
+    ```
     {
         "function": "enchant_with_levels",
 
@@ -490,6 +525,7 @@ Some functions are only usable by a certain set of items. See each function for 
         },
         "treasure": true
     }
+    ```
 
     Enchants books as though off an enchantment table with the given levels Unlike enchanting table, doesn’t cap at 30, otherwise seems symmetrical level 99999 gives ludicrously powerful books… with pretty much every possible enchantment on them treasure Enables treasure enchantments as possibilities for that item boolean, defaults to false If false, curses can't appear as possibilities; if true, they can levels Can be number or min/max object Defaults to 0 Can be negative, but will just be remapped as though 0.
 
@@ -511,9 +547,11 @@ Some functions are only usable by a certain set of items. See each function for 
     - Example
     Random Enchantments Function
 
+    ```
     {
         "function": "enchant_randomly"
     }
+    ```
 
     Randomly picks a count of enchantments and their strengths for the given item treasure Enables treasure enchantments as possibilities for that item boolean, defaults to false
 
@@ -535,9 +573,11 @@ Some functions are only usable by a certain set of items. See each function for 
     - Example
     Enchant Gear Function
 
+    ```
     {
         "function": "enchant_random_gear"
     }
+    ```
 
     Randomly picks a count of enchantments and their strengths for the given item Pretty much like enchant_randomly, but seemingly no treasure enchantments Not working on shears, but does even work on carrot-on-a-stick chance Number from 0 to 1 Chance that the item is enchanted at all Defaults to 0 Going over 1 doesn't make it "more" enchanted
 
@@ -559,9 +599,11 @@ Some functions are only usable by a certain set of items. See each function for 
     - Example
     Specific Enchantments Function
 
+    ```
     {
         "function": "specific_enchants"
     }
+    ```
 
     Applies a specific set of enchantments enchants Can be string array or object For array, any mix of strings or objects (see below) For string, an enchantment id For object: id The identifier for the enchantment See below for names level Optional, defaults to 1 Can be an exact number or a 2-valued array, representing min and max, inclusive
 
@@ -594,6 +636,7 @@ Some functions are only usable by a certain set of items. See each function for 
     - Example
     Held Tool Looting Function
 
+    ```
     {
         "function": "looting_enchant",
 
@@ -602,6 +645,7 @@ Some functions are only usable by a certain set of items. See each function for 
             "max": 1
         }
     }
+    ```
 
     Count can be an integer or min/max
 
@@ -623,9 +667,11 @@ Some functions are only usable by a certain set of items. See each function for 
     - Example
     Explosion Decay Function
 
+    ```
     {
         "function": "explosion_decay"
     }
+    ```
 
     By default, always survives. If in an explosion, has a chance of not dropping based on explosion power at that block’s location
 
@@ -647,9 +693,11 @@ Some functions are only usable by a certain set of items. See each function for 
     - Example
     Entity Color Function
 
+    ```
     {
         "function": "set_data_from_color_index"
     }
+    ```
 
     - Trader Material Type
 
@@ -669,8 +717,10 @@ Some functions are only usable by a certain set of items. See each function for 
     - Example 
     Trader Material Type Function
 
+    ```
     {
         "function": "trader_material_type"
     }
+    ```
 
     Only in trades? Maybe it can work somewhere in loot

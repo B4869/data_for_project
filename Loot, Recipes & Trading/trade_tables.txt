@@ -23,6 +23,7 @@ The following example is referenced and analyzed throughout the document:
 - Example Integration
 BP/trading/minister.json
 
+```
 {
     "tiers": [
         {
@@ -143,6 +144,7 @@ BP/trading/minister.json
         }
     ]
 }
+```
 
 ## Structure
 
@@ -151,6 +153,7 @@ Trade tables are represented as un-versioned, un-namespaced objects.
 - Example Structure
 #
 
+```
 {
 	"tiers": [
 		{
@@ -163,6 +166,7 @@ Trade tables are represented as un-versioned, un-namespaced objects.
 		}
 	]
 }
+```
 
 Trade tables use tiers to structure trade organization. Tiers are defined with the required top-level "tiers" array property. Tiers appear in order in the trading interface.
 
@@ -172,18 +176,22 @@ Trade tables use tiers to structure trade organization. Tiers are defined with t
     - Example Tiers
     #/tiers/0
 
+    ```
     {
         "groups": […]
     }
+    ```
 
     - Example Tiers
     #/tiers/1
 
+    ```
     {
         "total_exp_required": 28,
 
         "trades": […]
     }
+    ```
 
     Each tier must either represent a set of trades (as "trades") or trade groups (as "groups"); one of these properties is required. If trades are specified, all such trades will appear for that tier. If instead groups are given, trades from all listed groups will be used for that tier; how each group selects its trades depends on its configuration.
 
@@ -198,7 +206,9 @@ Trade tables use tiers to structure trade organization. Tiers are defined with t
         - Example Tiers
         #/tiers/1/
 
+        ```
         "total_exp_required": 28
+        ```
 
         By default, the amount of experience needed is set to the index of the trade tier. Therefore, the second tier would require the trader to have 1 XP; the third tier would require 2 XP; and so forth. The first tier is always unlocked automatically, regardless of its set experience threshold.
 
@@ -220,7 +230,9 @@ Trade tables use tiers to structure trade organization. Tiers are defined with t
         -Example Tier
         Example Tier Freeze
 
+        ```
         "total_exp_required": -1
+        ```
 
         When its prior tier is unlocked, a tier with a negative XP requirement will immediately unlock, as expected. However, it will be impossible for the player to progress to any subsequent tiers.
 
@@ -230,11 +242,13 @@ Trade tables use tiers to structure trade organization. Tiers are defined with t
     - Example Trade Groups
     #/tiers/0/groups/0
 
+    ```
     {
         "num_to_select": 1,
 
         "trades": […]
     }
+    ```
 
     The trades from which to select are given with the required "trades" array; each entry is a trade. A select number of these trades, indicated by the optional "num_to_select" property, will be picked for that tier for each trader. If "num_to_select" is 0, all trades will be selected; this is the default.
 
@@ -250,6 +264,7 @@ Trade tables use tiers to structure trade organization. Tiers are defined with t
     - Example Trades
     #/tiers/0/trades/1
 
+    ```
     {
         "wants": […],
         "gives": […],
@@ -257,7 +272,8 @@ Trade tables use tiers to structure trade organization. Tiers are defined with t
 
         "reward_exp": false,
         "trader_exp": 8
-    }   
+    }
+    ```
 
     Once a trade is picked for a trade slot, it will not fundamentally change. Only the quantity can be modified in certain situations
 
@@ -270,8 +286,10 @@ Trade tables use tiers to structure trade organization. Tiers are defined with t
         - Example Wanted and Given Items
         #/tiers/0/trades/1/
 
+        ```
         "wants": […],
         "gives": […]
+        ```
 
         A trade can have between 1 and 2 wanted entries and must have exactly 1 given entry. Each entry of either array may be either an item or a choice.
 
@@ -287,7 +305,9 @@ Trade tables use tiers to structure trade organization. Tiers are defined with t
         - Example Trade Limit
         #/tiers/0/trades/1/ 
 
+        ```
         "max_uses": 2
+        ```
 
         Trade limits are specific to each trade. Diminishing supply in one trade won't affect another trade, even if both trades have the same wanted and given items. By default, a trader will be able to carry out an individual trade 7 times before needing to resupply.
 
@@ -303,7 +323,9 @@ Trade tables use tiers to structure trade organization. Tiers are defined with t
         - Example Player Experience
         #/tiers/0/trades/1/
 
+        ```
         "reward_exp": false
+        ```
 
         By default, "reward_exp" is true, and the player will be rewarded with some experience for trading. The amount of experience received is not modifiable within a trade table.
 
@@ -314,7 +336,9 @@ Trade tables use tiers to structure trade organization. Tiers are defined with t
         - Example Trader Experience
         #/tiers/0/trades/1/
 
+        ```
         "trader_exp": 8
+        ```
 
         The amount of experience to reward the trader is given the the optional numeric property "trader_exp". By default, the trader will receive 1 XP.
 
@@ -328,6 +352,7 @@ Trade tables use tiers to structure trade organization. Tiers are defined with t
     - Example Choices 
     #/tiers/1/trades/0/wants/0
 
+    ```
     {
         "choice": [
             {
@@ -340,6 +365,7 @@ Trade tables use tiers to structure trade organization. Tiers are defined with t
             }
         ]
     }
+    ```
 
     Choices only contain the required "choice" array property. Each entry in the array is an item. At least one item must be provided.
 
@@ -356,6 +382,7 @@ Trade tables use tiers to structure trade organization. Tiers are defined with t
     - Example Items
     #/tiers/1/trades/0/wants/0/choice/0
 
+    ```
     {
         "item": "wiki:sacred_stones",
         "quantity": {
@@ -364,11 +391,13 @@ Trade tables use tiers to structure trade organization. Tiers are defined with t
         },
 
         "price_multiplier": 0.5
-    }    
+    }
+    ```    
 
     - Example Items
     #/tiers/0/groups/0/trades/1/gives/0
 
+    ```
     {
         "item": "wiki:exalted_blade",
         "functions": [
@@ -383,6 +412,7 @@ Trade tables use tiers to structure trade organization. Tiers are defined with t
             }
         ]
     }
+    ```
 
         - Item Reference
         Items are referenced within trades using the required "item" string property.
@@ -390,14 +420,18 @@ Trade tables use tiers to structure trade organization. Tiers are defined with t
         - Example
         #/tiers/1/trades/0/wants/0/choice/0/
 
+        ```
         "item": "wiki:exalted_blade"
+        ```
 
         The item reference must point to the identifier of an item. A data value can be provided in-place to the reference as a suffix:
 
         - Example
         Example Data Assignment
 
+        ```
         "item": "minecraft:log:2"
+        ```
 
         * TIP
         Data values can also be set (and much more conveniently randomized) using the set_data function.
@@ -410,10 +444,12 @@ Trade tables use tiers to structure trade organization. Tiers are defined with t
         - Example
         #/tiers/1/trades/0/wants/0/choice/0/
 
+        ```
         "quantity": {
             "min": 4,
             "max": 6
         }
+        ```
 
         Quantity can be expressed as either an integer literal or a range object, such as seen above. If expressed as a range, a random value is selected uniformly inclusively within the specified limits. If no quantity is provided, the item count will default to 1.
 
@@ -427,7 +463,9 @@ Trade tables use tiers to structure trade organization. Tiers are defined with t
         - Example
         #/tiers/1/trades/0/wants/0/choice/0/
 
+        ```
         "price_multiplier": 0.5
+        ```
 
         "price_multiplier" is optional and defaults to 0. Two systems exist that use the price multiplier: a modern and a legacy system. In the modern system, the given price multiplier can only affect the first wanted item in a trade. In the legacy system, any wanted items can be affected.
 
@@ -475,6 +513,7 @@ Trade tables use tiers to structure trade organization. Tiers are defined with t
         - Example Functions
         #/tiers/0/groups/0/trades/1/gives/0/
 
+        ```
         "functions": [
             {
                 "function": "enchant_with_levels",
@@ -486,6 +525,7 @@ Trade tables use tiers to structure trade organization. Tiers are defined with t
                 }
             }
         ]
+        ```
 
         The functions used by trade tables are shared with loot tables. When used (where usable) in a wanted item declaration, they act to restrict the nature of the wanted item. Such function restrictions can only affect the first wanted item.
 
@@ -528,6 +568,7 @@ Trade tables use tiers to structure trade organization. Tiers are defined with t
         - Example
         #/tiers/0/groups/0/trades/1/gives/0/functions/0
 
+        ```
         {
             "function": "enchant_with_levels",
 
@@ -537,6 +578,7 @@ Trade tables use tiers to structure trade organization. Tiers are defined with t
                 "max": 25
             }
         }
+        ```
 
         The cost for the first wanted item is determined by adding this function's chosen level value (capped to 0 if it would be negative) to the original quantity. The level value is computed from the optional "levels" property. If a numeric literal is used, that value is the chosen level value. If a range object is used, as above, a random number is rolled inclusively between the provided minimum and maximum. That random number then acts as the chosen level value. In the above example, the first wanted item's cost would be increased by 5 to 25.
 
@@ -546,6 +588,7 @@ Trade tables use tiers to structure trade organization. Tiers are defined with t
         - Example
         #/tiers/0/groups/0/trades/0/gives/0/functions/0
 
+        ```
         {
             "function": "enchant_book_for_trading",
 
@@ -554,6 +597,7 @@ Trade tables use tiers to structure trade organization. Tiers are defined with t
             "per_level_cost": 4,
             "per_level_random_cost": 8
         }
+        ```
 
         This function was only designed to be used on books, rolling for a single enchantment across all possible non-curse enchantments, including treasure enchantments. The function doesn't adapt to the current item. If used on a book, an enchantment will always successfully be applied; if used on something else enchantable, it's possible the item won't be successfully enchanted.
 
@@ -577,6 +621,7 @@ Trade tables use tiers to structure trade organization. Tiers are defined with t
         - Example
         Example Quantity-Based Enchanted Book Cost
 
+        ```
         {
             "function": "enchant_book_for_trading",
 
@@ -585,6 +630,7 @@ Trade tables use tiers to structure trade organization. Tiers are defined with t
             "per_level_cost": 0,
             "per_level_random_cost": 0
         }
+        ```
 
         - Spawn Egg Trader Binding
         The "set_actor_id" function is used to set the data value of a spawn egg based on a provided entity identifier, given with "id".
@@ -592,9 +638,11 @@ Trade tables use tiers to structure trade organization. Tiers are defined with t
         - Example Spawn Egg Trader Binding
         Example Spawn Egg Trader Binding
 
+        ```
         {
             "function": "set_actor_id"
         }
+        ```
 
         In trade tables, if no ID is provided, the trader's entity type will be assigned to the egg.
 

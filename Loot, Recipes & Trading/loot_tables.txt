@@ -30,11 +30,13 @@ Loot tables are represented as JSON objects with a single required "pools" array
 -Example
 #
 
+```
 {
 	"pools": [
 		…
 	]
 }
+```
 
 The loot returned from a loot table invocation will be the collective sum of the yields of all pools provided here.
 
@@ -44,6 +46,7 @@ The loot returned from a loot table invocation will be the collective sum of the
 - Example Pools
 #
 
+```
 {
 	"rolls": 1,
 	
@@ -54,6 +57,7 @@ The loot returned from a loot table invocation will be the collective sum of the
 		}
 	]
 }
+```
 
     Two types of pools are available: general-purpose weighted random pools and tiered pools, the latter of which is traditionally used for selecting mob equipment.
 
@@ -63,6 +67,7 @@ The loot returned from a loot table invocation will be the collective sum of the
 - Example Weighted Random Pools
 artifacts.json/pools/0
 
+```
 {
 	"rolls": {
 		"min": 2,
@@ -87,6 +92,7 @@ artifacts.json/pools/0
 		}
 	]
 }
+```
 
         - Rolls
 
@@ -95,22 +101,28 @@ artifacts.json/pools/0
 
             - Example
 
+            ```
             "bonus_rolls": 3,
             "bonus_chance": 0.095
+            ```
 
             - Entry Weighting
             The weight is the chance of this entry being chosen. The higher the weight in comparison to other entries in this "entries" array, the higher the chance of the entry being chosen.
 
             - Example
-
+            
+            ```
             "weight": 3
+            ```
 
             - Quality
             The weight of an entry can be changed based on the player's luck using the quality property.
 
             - Example
 
+            ```
             "quality": 2
+            ```
 
             Currently, luck is only expressed when fishing with a fishing rod enchanted with Luck of the Sea.
 
@@ -119,6 +131,7 @@ artifacts.json/pools/0
 
             - Example
 
+            ```
             {
                 "tiers": {
                     "initial_range": 2,
@@ -150,17 +163,20 @@ artifacts.json/pools/0
                     }
                 ]
             }
+            ```
 
             A pool becomes tiered with the inclusion of the "tiers" object property:
 
             - Example
 
+            ```
             "tiers": {
                 "initial_range": 2,
                 
                 "bonus_rolls": 3,
                 "bonus_chance": 0.095
-            }            
+            }
+            ```            
 
 Entries in a tiered pool are ordered. The selected entry for a tiered pool is based on its index. To determine this index, a starting index is randomly rolled and then a batch of success rolls attempt to increment this starting index.
 
@@ -181,26 +197,32 @@ All conditions on entries in a tiered pool are ignored. Conditions on the pool i
 
         - Example 
 
+        ```
         "type": "item",
         "name": "minecraft:apple",
         "weight": 1
+        ```
 
         - Loot Table Entries 
         Loot hierarchies can be formed using loot table entries.
 
         - Example
 
+        ```
         "type": "loot_table",
         "name": "loot_tables/custom/example.json"
         "weight": 1
+        ```
 
         - Empty Entries
         When selected, empty entries won't yield any loot for that roll.
 
         - Example
 
+        ```
         "type": "empty",
         "weight": 4    
+        ```
 
         Empty entries can generally be mimicked using a roll count whose range includes 0, random chance conditions, or count functions that could randomly select 0. Their primary advantage is readability when using weighted random pools: denoting by weight when a roll won't yield an entry may be easier to understand.
 
@@ -210,6 +232,7 @@ All conditions on entries in a tiered pool are ignored. Conditions on the pool i
     - Example Functions
     artifacts.json/pools/entries
 
+```
 {
 	"type": "item",
 	"name": "minecraft:dirt",
@@ -228,6 +251,7 @@ All conditions on entries in a tiered pool are ignored. Conditions on the pool i
 		}
 	]
 }
+```
 
     - Conditions
     Conditions check to see if a certain criteria is met. Examples: "Was Zombie killed by Player", "Did the sword have the Looting enchantment on it? If so, what level?"
@@ -235,6 +259,7 @@ All conditions on entries in a tiered pool are ignored. Conditions on the pool i
     - Example Conditions
     artifacts.json/pools/entries
 
+```
 {
 	"conditions": [
 		{
@@ -265,5 +290,6 @@ All conditions on entries in a tiered pool are ignored. Conditions on the pool i
 		}
 	]
 }
+```
 
 ## Overrides

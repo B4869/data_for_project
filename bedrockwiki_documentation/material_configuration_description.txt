@@ -14,6 +14,7 @@ Let's take a look at sad.json and fancy.json first. They are used to control the
 - Example Material files
 sad.json
 
+```
 [
 	{"path":"materials/sad.material"},
 	{"path":"materials/entity.material"},
@@ -22,10 +23,12 @@ sad.json
 	{"path":"materials/barrier.material"},
 	{"path":"materials/wireframe.material"}
 ]
+```
 
 - example Material files
 fancy.json
 
+```
 [
 	{"path":"materials/fancy.material", "+defines":["FANCY"]},
 	{"path":"materials/entity.material", "+defines":["FANCY"]},
@@ -35,6 +38,7 @@ fancy.json
 	{"path":"materials/barrier.material"},
 	{"path":"materials/wireframe.material"}
 ]
+```
 
 It can be seen that fancy.json defines more fancy.material and hologram.material material files than sad.json, and also defines FANCY macros for multiple material files. The switch of in-game settings/video/exquisite texture is to control the switch between sad and fancy. When the fancy texture switch is turned on, the material file in fancy.json will take effect, and when it is turned off, the material file in sad.json will take effect.
 
@@ -43,6 +47,7 @@ In order to achieve better performance, the material files in fancy.json usually
 -Example Material files
 common.json
 
+```
 [
 	{"path":"materials/particles.material"},
 	{"path":"materials/shadows.material"},
@@ -53,6 +58,7 @@ common.json
 	{"path":"materials/barrier.material"},
 	{"path":"materials/wireframe.material"}
 ]
+```
 
 Compared with sad and fancy, they can be switched between each other. The material files defined in common.json will be loaded after entering the game. Material files are not loaded except those declared in common.json, sad.json, fancy.json.
 
@@ -62,9 +68,11 @@ We use one of the material files entity.material to explain, open the file, we c
 You can see that the definition of each field in the material is in the form of a key-value pair, for example:
 -Example Material syntax
 
+```
 [
 	"vertexShader": "shaders/entity.vertex",
 ]
+```
 
 The left side of the colon represents the key as vertexShader, and the right side represents the value shaders/entity.vertex;
 
@@ -72,6 +80,7 @@ There are also definitions in list form:
 
 -Example Material syntax
 
+```
 [
 	"vertexFields": [
         { "field": "Position" },
@@ -79,6 +88,7 @@ There are also definitions in list form:
         { "field": "UV0" }
     ],
 ]
+```
 
 The declaration with the symbol [ ] is a list, and then inside is the json definition of each child element.
 
@@ -127,6 +137,7 @@ The declaration with the symbol [ ] is a list, and then inside is the json defin
 
 - Example Shader macro definition
 
+```
 "entity_for_skeleton": {
 	"vertexShader": "shaders/entity.vertex",
 	"vrGeometryShader": "shaders/entity.geometry",
@@ -146,11 +157,13 @@ The declaration with the symbol [ ] is a list, and then inside is the json defin
 		}
 	]
 }
+```
 
 Looking at the vertex shader entity.vertex, there will be #ifdef, #else, #endif to judge the macro and execute different logic branches. These judgment statements of the macro are processed at compile time, unlike the if in the traditional shader. Else, the logic branch processed at compile time will not be generated in actual operation, and the performance will not be degraded due to the branch. In addition, it can be seen below that macros can also make multi-layer judgments. First, judge the NETEASE_SKINNING macro, and then judge the LARGE_VERTEX_SHADER_UNIFORMS macro in the internal execution logic:
 
 -Example Shader macro definition
 
+```
 #ifdef NETEASE_SKINNING
 		MAT4 boneMat = transpose(mat3x4ToMat4(BONES_70[int(BONEID_0)]));
 		entitySpacePosition = boneMat * POSITION;
@@ -164,6 +177,7 @@ Looking at the vertex shader entity.vertex, there will be #ifdef, #else, #endif 
 		entitySpaceNormal = BONE * NORMAL;
 	#endif
 #endif
+```
 
     - Runtime state
         - Depth tes
@@ -245,6 +259,7 @@ Looking at the vertex shader entity.vertex, there will be #ifdef, #else, #endif 
 Finally, let's look at an example:
 - Example
 
+```
  "shadow_back": {
       "+states": [
         "StencilWrite",
@@ -281,6 +296,7 @@ Finally, let's look at an example:
       ],
       "msaaSupport": "Both"
     }
+    ```
 
 In the example, StencilWrite represents the support for writing to the mask buffer, EnableStencilTest represents the opening of the mask test, and the configuration of frontFace represents that the mask test always passes when the front face is rendered. If the depth test fails, the buffer value remains unchanged. If it also passes, the stencil bit and the value of stencilWriteMask will be written to the buffer, that is, 1 & 1 = 1 value. The configuration of backFace is also similar.
 
@@ -341,13 +357,15 @@ In the example, StencilWrite represents the support for writing to the mask buff
         -samplerStates
         Configure the sampling state, the value is a list, and configure each texture according to the number of textures to be sampled. Usually, if UV0 and UV1 are declared in the vertex attribute, it means that two textures need to be sampled, and two elements need to be configured here. Let's look at the definition of child elements:
 
-- Example Sample texture sample
+    - Example Sample texture sample
 
-{
-	"samplerIndex": 0,
-	"textureFilter": "Point",
-	"textureWrap": "Repeat"
-}
+    ```
+    {
+      "samplerIndex": 0,
+      "textureFilter": "Point",
+      "textureWrap": "Repeat"
+    }
+    ```
 
 Each property is defined as follows:
 
@@ -448,6 +466,7 @@ Each property is defined as follows:
 
 - Example Material variant
 
+```
 "entity_static": {
       "vertexShader": "shaders/entity.vertex",
       "vrGeometryShader": "shaders/entity.geometry",
@@ -491,6 +510,7 @@ Each property is defined as follows:
         }
       ]
     }
+```
 
 Variants are declarations of material variants. The above declarations declare two sub-variants, skinning and skinning_color. Some external fields are rewritten in the sub-variants. In actual use, it is equivalent to quickly defining two materials. The body and the variant are connected with a dot ".". The two materials are entity_static.skinning and entity_static.skinning_color.
 
@@ -508,16 +528,20 @@ As an example, for example, such a material is declared in the package body file
 
 - Example Material Merge Rules
 
+```
 "testMat": {
 	"defines": [ "MACRO_1", "MACRO_2", "MACRO_3" ],
 }
+```
 
 At this point, a mod also declares this material, defining another three macros:
 - Example Material Merge Rules
 
+```
 "testMat": {
 	"defines": [ "MACRO_4", "MACRO_5", "MACRO_6" ],
 }
+```
 
 In the above case, the final runtime is equivalent to the defines field being overwritten, and the macros that take effect at the actual runtime are only: MACRO_4, MACRO_5, MACRO_6
 
@@ -525,18 +549,22 @@ If the "+" symbol is used when defining in the MOD:
 
 - Example
 
+```
 "testMat": {
 	"+defines": [ "MACRO_4", "MACRO_5", "MACRO_6" ],
 }
+```
 
 Equivalent to adding definitions on the original basis, the macros that take effect at actual runtime are: MACRO_1, MACRO_2, MACRO_3, MACRO_4, MACRO_5, MACRO_6
 
 If the "-" symbol is used when defining in the MOD:
 - Example
 
+```
 "testMat": {
 	"-defines": [ "MACRO_3"],
 }
+```
 
 It is equivalent to deleting some definitions on the original basis, the only macros that take effect at runtime are: MACRO_1, MACRO_2
 
@@ -546,8 +574,10 @@ i.e. if one of the material files declares a delete MACRO_3 action:
 
 - Example
 
+```
 "testMat": {
 	"-defines": [ "MACRO_3"],
 }
+```
 
 Then no matter how other files are covered, add MACRO_3, and this material must not have MACRO_3 macro after the final synthesis.
