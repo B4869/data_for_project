@@ -1,0 +1,151 @@
+# Item Events
+
+- scripting
+
+* FORMAT VERSION 1.21.60
+Using the latest format version when creating custom items provides access to fresh features and improvements. The wiki aims to share up-to-date information about custom items, and currently targets format version 1.21.60.
+
+## Registering Custom Components ​
+Item events trigger when certain conditions are met and can be "listened" to in custom components which are registered in scripts before the world is loaded.
+Within each custom component, event handler functions (such as onBeforeDurabilityDamage) are listed to configure what you want to happen when each event is triggered.
+This example prevents the item from taking durability damage when hitting an entity:
+
+BP/scripts/unbreakable_component.js
+
+```
+import { world } from "@minecraft/server";
+
+const UnbreakableItemComponent = {
+    onBeforeDurabilityDamage(event) {
+        event.durabilityDamage = 0;
+    },
+};
+
+world.beforeEvents.worldInitialize.subscribe(({ itemComponentRegistry }) => {
+    itemComponentRegistry.registerCustomComponent("wiki:unbreakable", UnbreakableItemComponent);
+});
+```
+
+## Applying Custom Components ​
+To bind a custom component to a custom item, simply list them in the minecraft:custom_components component in your item JSON.
+
+minecraft:item
+
+```
+"components": {
+    "minecraft:custom_components": ["wiki:unbreakable"]
+}
+```
+
+## List of Events ​
+- Before Durability Damage ​
+This event will be called when an item containing this component is hitting an entity and about to take durability damage.
+
+Custom Component
+
+```
+onBeforeDurabilityDamage(event) {
+    event.attackingEntity // The attacking entity.
+    event.durabilityDamage // The damage applied to the item's durability when the event occurs.
+    event.hitEntity // The entity being hit.
+    event.itemStack // The item stack used to hit the entity.
+}
+```
+
+- Complete Use ​
+
+* DEPENDENCY
+The complete use event requires the minecraft:use_modifiers component to be active on your item to trigger.
+This event will be called when the use duration of the item containing this component is completed.
+
+minecraft:item > components
+
+```
+"minecraft:use_modifiers": {
+    "use_duration": 5
+}
+```
+Custom Component
+
+```
+onCompleteUse(event) {
+    event.itemStack // Returns the item stack that has completed charging.
+    event.source // Returns the source entity that triggered this item event.
+}
+```
+
+- Consume ​
+This event will be called when an item containing this component is eaten by an entity.
+
+* DEPENDENCIES
+The complete use event requires the minecraft:use_modifiers and the minecraft:food component to be active on your item to trigger.
+
+minecraft:item > components
+
+```
+"minecraft:food": {},
+"minecraft:use_modifiers": {
+    "use_duration": 5
+}
+```
+
+Custom Component
+
+```
+onConsume(event) {
+    event.itemStack // The item stack that was consumed.
+    event.source // The source entity that consumed the item.
+}
+```
+
+- Hit Entity ​
+This function will be called when an item containing this component is used to hit another entity.
+
+Custom Component
+
+```
+onHitEntity(event) {
+    event.attackingEntity // The attacking entity.
+    event.hadEffect // Whether the hit landed or had any effect.
+    event.hitEntity // The entity being hit.
+    event.itemStack // The item stack used to hit the entity.
+}
+```
+
+- Mine Block ​
+This function will be called when an item containing this component is used to mine a block.
+
+Custom Component
+
+```
+onMineBlock(event) {
+    event.block // The block impacted by this event.
+    event.itemStack // The item stack used to mine the block.
+    event.minedBlockPermutation // The block permutation that was mined.
+    event.source // The entity that mined the block.
+}
+```
+
+- Use ​
+This function will be called when an item containing this component is used by a player.
+
+Custom Component
+
+```
+onUse(event) {
+    event.itemStack // The item stack when the item was used.
+    event.source // The player who used the item.
+}
+```
+
+- Use On ​
+This function will be called when an item containing this component is used on a block.
+
+Custom Component
+
+```
+onUseOn(event) {
+    event.source // The entity that used the item on the block.
+    event.usedOnBlockPermutation // The block permutation that the item was used on.
+}
+```

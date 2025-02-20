@@ -1,0 +1,155 @@
+# Item Event Migration
+
+- help
+
+* BEFORE YOU START
+This page requires you to be comfortable with basic JavaScript and requires knowledge of how modern item events work.
+
+Struggling to upgrade your items' JSON events to custom components? Don't worry! This page will help you to understand what the deprecated JSON event responses look like implemented using the Script API.
+
+## Add Mob Effect ​
+Custom Component
+
+```
+onHitEntity({ hitEntity }) {
+    hitEntity.addEffect("regeneration", 30, {
+        amplifier: 10,
+        showParticles: false
+    });
+}
+```
+
+## Damage (Holder) ​
+import { EntityDamageCause } from "@minecraft/server";
+Custom Component
+
+```
+onUse({ source }) {
+    source.applyDamage(2, {
+        cause: EntityDamageCause.drowning
+    });
+}
+```
+
+## Damage (Item) ​
+
+```
+import { EquipmentSlot, GameMode, Player } from "@minecraft/server";
+```
+
+Custom Component
+
+```
+onMineBlock({ source }) {
+    // Get main hand slot
+    if (!(source instanceof Player)) return;
+
+    const equippable = source.getComponent("minecraft:equippable");
+    if (!equippable) return;
+
+    const mainhand = equippable.getEquipmentSlot(EquipmentSlot.Mainhand);
+    if (!mainhand.hasItem()) return;
+
+    // Apply durability damage when not in creative mode
+    if (source.getGameMode() === GameMode.creative) return;
+
+    const itemStack = mainhand.getItem(); // Allows us to get item components
+
+    const durability = itemStack.getComponent("minecraft:durability");
+    if (!durability) return;
+
+    // Factor in unbreaking enchantment
+    const enchantable = itemStack.getComponent("minecraft:enchantable");
+    const unbreakingLevel = enchantable?.getEnchantment("unbreaking")?.level;
+
+    const damageChance = durability.getDamageChance(unbreakingLevel) / 100;
+
+    if (Math.random() > damageChance) return; // Randomly skip damage based on unbreaking level
+
+    // Damage the item
+    const shouldBreak = durability.damage === durability.maxDurability;
+
+    if (shouldBreak) {
+        mainhand.setItem(undefined); // Remove the item
+        source.playSound("random.break"); // Play break sound
+    } else {
+        durability.damage++; // Increase durability damage
+        mainhand.setItem(itemStack); // Update item in main hand
+    }
+}
+```
+
+## Decrement Stack ​
+
+```
+import { EquipmentSlot, GameMode } from "@minecraft/server";
+```
+
+Custom Component
+
+```
+onUse({ source }) {
+    if (!source) return;
+
+    const equippable = source.getComponent("minecraft:equippable");
+    if (!equippable) return;
+
+    const mainhand = equippable.getEquipmentSlot(EquipmentSlot.Mainhand);
+    if (!mainhand.hasItem()) return;
+
+    if (source.getGameMode() !== GameMode.creative) {
+        if (mainhand.amount > 1) {
+            mainhand.amount--; // Remove one item from the stack
+        } else {
+            mainhand.setItem(undefined); // Remove the item stack
+        }
+    }
+}
+```
+
+## Remove Mob Effect ​
+Custom Component
+
+```
+onHitEntity({ hitEntity }) {
+    hitEntity.removeEffect("regeneration");
+}
+```
+
+## Run Command ​
+Custom Component
+
+```
+onUse({ source }) {
+    source.runCommand("say Hello there!")
+    source.runCommand("say Welcome to my world!")
+}
+```
+
+## Teleport ​
+Custom Component
+
+```
+onConsume({ source }) {
+    source.teleport({ x: 100, y: 20, z: 786 });
+}
+```
+
+## Transform Item ​
+
+```
+import { EquipmentSlot, ItemStack } from "@minecraft/server";
+```
+
+Custom Component
+
+```
+onUse({ source }) {
+    const equippable = source?.getComponent("minecraft:equippable");
+    if (!equippable) return;
+
+    const mainhand = equippable.getEquipmentSlot(EquipmentSlot.Mainhand);
+
+    mainhand.setItem(new ItemStack("minecraft:suspicious_stew"));
+}
+```

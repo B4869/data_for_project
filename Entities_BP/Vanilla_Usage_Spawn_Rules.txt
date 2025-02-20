@@ -1,0 +1,951 @@
+# Vanilla Usage Spawn Rules
+
+This page was created with Wiki Content Generator. If there are issues, contact us on Bedrock OSS Discord server. Note that not more than 8 examples are shown for each component to keep this page fast to load. Namespace minecraft was also removed.If you want to see full page, you can do it here. Last updated for 1.21.50
+
+## biome_filter ​
+- armadillo
+
+
+"minecraft:biome_filter": {
+    "test": "has_biome_tag",
+    "value": "savanna"
+}
+
+"minecraft:biome_filter": {
+    "all_of": [
+        {
+            "test": "has_biome_tag",
+            "value": "mesa"
+        },
+        {
+            "test": "has_biome_tag",
+            "operator": "not",
+            "value": "plateau"
+        }
+    ]
+}
+
+"minecraft:biome_filter": {
+    "all_of": [
+        {
+            "test": "has_biome_tag",
+            "value": "mesa"
+        },
+        {
+            "test": "has_biome_tag",
+            "value": "plateau"
+        }
+    ]
+}
+
+- axolotl
+
+
+"minecraft:biome_filter": {
+    "test": "has_biome_tag",
+    "operator": "==",
+    "value": "lush_caves"
+}
+
+- bat
+
+
+"minecraft:biome_filter": {
+    "any_of": [
+        {
+            "test": "has_biome_tag",
+            "operator": "==",
+            "value": "caves"
+        },
+        {
+            "test": "has_biome_tag",
+            "operator": "==",
+            "value": "animal"
+        }
+    ]
+}
+
+- bee
+
+
+"minecraft:biome_filter": [
+    {
+        "test": "has_biome_tag",
+        "operator": "==",
+        "value": "plains"
+    },
+    {
+        "test": "has_biome_tag",
+        "operator": "==",
+        "value": "sunflower_plains"
+    },
+    {
+        "test": "has_biome_tag",
+        "operator": "==",
+        "value": "flower_forest"
+    }
+]
+
+- bogged
+
+
+"minecraft:biome_filter": {
+    "any_of": [
+        {
+            "test": "has_biome_tag",
+            "operator": "==",
+            "value": "swamp"
+        },
+        {
+            "test": "has_biome_tag",
+            "operator": "==",
+            "value": "mangrove_swamp"
+        }
+    ]
+}
+
+- chicken
+
+
+"minecraft:biome_filter": {
+    "test": "has_biome_tag",
+    "operator": "==",
+    "value": "animal"
+}
+
+## brightness_filter ​
+- armadillo
+
+
+"minecraft:brightness_filter": {
+    "min": 7,
+    "max": 15,
+    "adjust_for_weather": false
+}
+
+"minecraft:brightness_filter": {
+    "min": 7,
+    "max": 15,
+    "adjust_for_weather": false
+}
+
+"minecraft:brightness_filter": {
+    "min": 7,
+    "max": 15,
+    "adjust_for_weather": false
+}
+
+- bat
+
+
+"minecraft:brightness_filter": {
+    "min": 0,
+    "max": 4,
+    "adjust_for_weather": true
+}
+
+- bee
+
+
+"minecraft:brightness_filter": {
+    "min": 7,
+    "max": 15,
+    "adjust_for_weather": false
+}
+
+- bogged
+
+
+"minecraft:brightness_filter": {
+    "min": 0,
+    "max": 7,
+    "adjust_for_weather": true
+}
+
+- chicken
+
+
+"minecraft:brightness_filter": {
+    "min": 7,
+    "max": 15,
+    "adjust_for_weather": false
+}
+
+- cow
+
+
+"minecraft:brightness_filter": {
+    "min": 7,
+    "max": 15,
+    "adjust_for_weather": false
+}
+
+## delay_filter ​
+- pillager_patrol
+
+
+"minecraft:delay_filter": {
+    "min": 600,
+    "max": 660,
+    "identifier": "minecraft:pillager_patrol_easy",
+    "spawn_chance": 20
+}
+
+"minecraft:delay_filter": {
+    "min": 600,
+    "max": 660,
+    "identifier": "minecraft:pillager_patrol_normal",
+    "spawn_chance": 20
+}
+
+"minecraft:delay_filter": {
+    "min": 600,
+    "max": 660,
+    "identifier": "minecraft:pillager_patrol_hard",
+    "spawn_chance": 20
+}
+
+## density_limit ​
+- axolotl
+
+
+"minecraft:density_limit": {
+    "underground": 5
+}
+
+- bat
+
+
+"minecraft:density_limit": {
+    "surface": 5
+}
+
+- cod
+
+
+"minecraft:density_limit": {
+    "surface": 20
+}
+
+- creeper
+
+
+"minecraft:density_limit": {
+    "surface": 5
+}
+
+- dolphin
+
+
+"minecraft:density_limit": {
+    "surface": 5,
+    "underground": 0
+}
+
+- drowned
+
+
+"minecraft:density_limit": {
+    "surface": 5
+}
+
+"minecraft:density_limit": {
+    "surface": 2
+}
+
+"minecraft:density_limit": {
+    "underground": 5
+}
+
+## difficulty_filter ​
+- bogged
+
+
+"minecraft:difficulty_filter": {
+    "min": "easy",
+    "max": "hard"
+}
+
+- creeper
+
+
+"minecraft:difficulty_filter": {
+    "min": "easy",
+    "max": "hard"
+}
+
+- drowned
+
+
+"minecraft:difficulty_filter": {
+    "min": "easy",
+    "max": "hard"
+}
+
+"minecraft:difficulty_filter": {
+    "min": "easy",
+    "max": "hard"
+}
+
+"minecraft:difficulty_filter": {
+    "min": "easy",
+    "max": "hard"
+}
+
+- enderman
+
+
+"minecraft:difficulty_filter": {
+    "min": "easy",
+    "max": "hard"
+}
+
+"minecraft:difficulty_filter": {
+    "min": "easy",
+    "max": "hard"
+}
+
+"minecraft:difficulty_filter": {
+    "min": "easy",
+    "max": "hard"
+}
+
+## disallow_spawns_in_bubble ​
+- axolotl
+
+
+"minecraft:disallow_spawns_in_bubble": {}
+
+## distance_filter ​
+- cod
+
+
+"minecraft:distance_filter": {
+    "min": 12,
+    "max": 32
+}
+
+- pillager_patrol
+
+
+"minecraft:distance_filter": {
+    "min": 24,
+    "max": 48
+}
+
+"minecraft:distance_filter": {
+    "min": 24,
+    "max": 48
+}
+
+"minecraft:distance_filter": {
+    "min": 24,
+    "max": 48
+}
+
+- pufferfish
+
+
+"minecraft:distance_filter": {
+    "min": 12,
+    "max": 32
+}
+
+- salmon
+
+
+"minecraft:distance_filter": {
+    "min": 12,
+    "max": 32
+}
+
+"minecraft:distance_filter": {
+    "min": 12,
+    "max": 32
+}
+
+- tropicalfish
+
+
+"minecraft:distance_filter": {
+    "min": 12,
+    "max": 32
+}
+
+## height_filter ​
+- cod
+
+
+"minecraft:height_filter": {
+    "min": 0,
+    "max": 64
+}
+
+- dolphin
+
+
+"minecraft:height_filter": {
+    "min": 0,
+    "max": 64
+}
+
+- glow_squid
+
+
+"minecraft:height_filter": {
+    "min": -64,
+    "max": 30
+}
+
+- pufferfish
+
+
+"minecraft:height_filter": {
+    "min": 0,
+    "max": 64
+}
+
+- salmon
+
+
+"minecraft:height_filter": {
+    "min": 0,
+    "max": 64
+}
+
+"minecraft:height_filter": {
+    "min": 50,
+    "max": 64
+}
+
+- stray
+
+
+"minecraft:height_filter": {
+    "min": 60,
+    "max": 66
+}
+
+- tropicalfish
+
+
+"minecraft:height_filter": {
+    "min": 0,
+    "max": 64
+}
+
+## herd ​
+- armadillo
+
+
+"minecraft:herd": {
+    "min_size": 2,
+    "max_size": 3
+}
+
+"minecraft:herd": {
+    "min_size": 1,
+    "max_size": 2
+}
+
+"minecraft:herd": {
+    "min_size": 1,
+    "max_size": 2
+}
+
+- axolotl
+
+
+"minecraft:herd": {
+    "min_size": 4,
+    "max_size": 6,
+    "event": "minecraft:entity_born",
+    "event_skip_count": 2
+}
+
+- bat
+
+
+"minecraft:herd": {
+    "min_size": 8,
+    "max_size": 8
+}
+
+- bee
+
+
+"minecraft:herd": {
+    "min_size": 1,
+    "max_size": 1
+}
+
+- bogged
+
+
+"minecraft:herd": {
+    "min_size": 1,
+    "max_size": 2
+}
+
+- chicken
+
+
+"minecraft:herd": {
+    "min_size": 2,
+    "max_size": 4
+}
+
+## mob_event_filter ​
+- pillager_patrol
+
+
+"minecraft:mob_event_filter": {
+    "event": "minecraft:pillager_patrols_event"
+}
+
+"minecraft:mob_event_filter": {
+    "event": "minecraft:pillager_patrols_event"
+}
+
+"minecraft:mob_event_filter": {
+    "event": "minecraft:pillager_patrols_event"
+}
+
+## permute_type ​
+- pillager_patrol
+
+
+"minecraft:permute_type": [
+    {
+        "weight": 100,
+        "entity_type": "minecraft:pillager<minecraft:spawn_as_patrol_follower>"
+    }
+]
+
+"minecraft:permute_type": [
+    {
+        "weight": 100,
+        "entity_type": "minecraft:pillager<minecraft:spawn_as_patrol_follower>"
+    }
+]
+
+"minecraft:permute_type": [
+    {
+        "weight": 100,
+        "entity_type": "minecraft:pillager<minecraft:spawn_as_patrol_follower>"
+    }
+]
+
+- zombie
+
+
+"minecraft:permute_type": [
+    {
+        "weight": 95
+    },
+    {
+        "weight": 5,
+        "entity_type": "minecraft:zombie_villager_v2"
+    }
+]
+
+## player_in_village_filter ​
+- pillager_patrol
+
+
+"minecraft:player_in_village_filter": {
+    "distance": 48,
+    "village_border_tolerance": 32
+}
+
+"minecraft:player_in_village_filter": {
+    "distance": 48,
+    "village_border_tolerance": 32
+}
+
+"minecraft:player_in_village_filter": {
+    "distance": 48,
+    "village_border_tolerance": 32
+}
+
+## spawn_event ​
+- stray
+
+
+"minecraft:spawn_event": {
+    "event": "change_to_skeleton"
+}
+
+"minecraft:spawn_event": {
+    "event": "change_to_skeleton"
+}
+
+## spawns_lava ​
+- strider
+
+
+"minecraft:spawns_lava": {}
+
+## spawns_on_block_filter ​
+- armadillo
+
+
+"minecraft:spawns_on_block_filter": [
+    {
+        "name": "minecraft:grass_block"
+    },
+    {
+        "name": "minecraft:red_sand"
+    },
+    {
+        "name": "minecraft:coarse_dirt"
+    },
+    {
+        "name": "minecraft:brown_terracotta"
+    },
+    {
+        "name": "minecraft:hardened_clay"
+    },
+    {
+        "name": "minecraft:orange_terracotta"
+    },
+    {
+        "name": "minecraft:light_gray_terracotta"
+    },
+    {
+        "name": "minecraft:red_terracotta"
+    },
+    {
+        "name": "minecraft:white_terracotta"
+    },
+    {
+        "name": "minecraft:yellow_terracotta"
+    }
+]
+
+"minecraft:spawns_on_block_filter": [
+    {
+        "name": "minecraft:grass_block"
+    },
+    {
+        "name": "minecraft:red_sand"
+    },
+    {
+        "name": "minecraft:coarse_dirt"
+    },
+    {
+        "name": "minecraft:brown_terracotta"
+    },
+    {
+        "name": "minecraft:hardened_clay"
+    },
+    {
+        "name": "minecraft:orange_terracotta"
+    },
+    {
+        "name": "minecraft:light_gray_terracotta"
+    },
+    {
+        "name": "minecraft:red_terracotta"
+    },
+    {
+        "name": "minecraft:white_terracotta"
+    },
+    {
+        "name": "minecraft:yellow_terracotta"
+    }
+]
+
+"minecraft:spawns_on_block_filter": [
+    {
+        "name": "minecraft:grass_block"
+    },
+    {
+        "name": "minecraft:red_sand"
+    },
+    {
+        "name": "minecraft:coarse_dirt"
+    },
+    {
+        "name": "minecraft:brown_terracotta"
+    },
+    {
+        "name": "minecraft:hardened_clay"
+    },
+    {
+        "name": "minecraft:orange_terracotta"
+    },
+    {
+        "name": "minecraft:light_gray_terracotta"
+    },
+    {
+        "name": "minecraft:red_terracotta"
+    },
+    {
+        "name": "minecraft:white_terracotta"
+    },
+    {
+        "name": "minecraft:yellow_terracotta"
+    }
+]
+
+- axolotl
+
+
+"minecraft:spawns_on_block_filter": "minecraft:clay"
+bat
+
+
+"minecraft:spawns_on_block_filter": [
+    "minecraft:stone",
+    "minecraft:granite",
+    "minecraft:diorite",
+    "minecraft:andesite",
+    "minecraft:tuff",
+    "minecraft:deepslate"
+]
+
+- chicken
+
+
+"minecraft:spawns_on_block_filter": "minecraft:grass_block"
+
+- cow
+
+
+"minecraft:spawns_on_block_filter": "minecraft:grass_block"
+
+- donkey
+
+
+"minecraft:spawns_on_block_filter": "minecraft:grass_block"
+
+## spawns_on_block_prevented_filter ​
+- hoglin
+
+
+"minecraft:spawns_on_block_prevented_filter": [
+    "minecraft:nether_wart_block",
+    "minecraft:shroomlight"
+]
+
+- magma_cube
+
+
+"minecraft:spawns_on_block_prevented_filter": [
+    "minecraft:nether_wart_block",
+    "minecraft:shroomlight"
+]
+
+"minecraft:spawns_on_block_prevented_filter": [
+    "minecraft:nether_wart_block",
+    "minecraft:shroomlight"
+]
+
+- piglin
+
+
+"minecraft:spawns_on_block_prevented_filter": [
+    "minecraft:nether_wart_block",
+    "minecraft:shroomlight"
+]
+
+"minecraft:spawns_on_block_prevented_filter": [
+    "minecraft:nether_wart_block",
+    "minecraft:shroomlight"
+]
+
+- skeleton
+
+
+"minecraft:spawns_on_block_prevented_filter": [
+    "minecraft:nether_wart_block",
+    "minecraft:shroomlight"
+]
+
+- zombie_pigman
+
+
+"minecraft:spawns_on_block_prevented_filter": [
+    "minecraft:nether_wart_block",
+    "minecraft:shroomlight"
+]
+
+"minecraft:spawns_on_block_prevented_filter": [
+    "minecraft:nether_wart_block",
+    "minecraft:shroomlight"
+]
+
+## spawns_on_surface ​
+- armadillo
+
+
+"minecraft:spawns_on_surface": {}
+
+"minecraft:spawns_on_surface": {}
+
+"minecraft:spawns_on_surface": {}
+
+- bee
+
+
+"minecraft:spawns_on_surface": {}
+
+- bogged
+
+
+"minecraft:spawns_on_surface": {}
+
+- chicken
+
+
+"minecraft:spawns_on_surface": {}
+
+- cod
+
+
+"minecraft:spawns_on_surface": {}
+
+- cow
+
+
+"minecraft:spawns_on_surface": {}
+
+## spawns_underground ​
+- axolotl
+
+
+"minecraft:spawns_underground": {}
+
+- bat
+
+
+"minecraft:spawns_underground": {}
+
+- creeper
+
+
+"minecraft:spawns_underground": {}
+
+- drowned
+
+
+"minecraft:spawns_underground": {}
+
+- enderman
+
+
+"minecraft:spawns_underground": {}
+
+"minecraft:spawns_underground": {}
+
+"minecraft:spawns_underground": {}
+
+- ghast
+
+
+"minecraft:spawns_underground": {}
+
+## spawns_underwater ​
+- axolotl
+
+
+"minecraft:spawns_underwater": {}
+
+- cod
+
+
+"minecraft:spawns_underwater": {}
+
+- dolphin
+
+
+"minecraft:spawns_underwater": {}
+
+- drowned
+
+
+"minecraft:spawns_underwater": {}
+
+"minecraft:spawns_underwater": {}
+
+"minecraft:spawns_underwater": {}
+
+- glow_squid
+
+
+"minecraft:spawns_underwater": {}
+
+- guardian
+
+
+"minecraft:spawns_underwater": {}
+
+## weight ​
+- armadillo
+
+
+"minecraft:weight": {
+    "default": 10
+}
+
+"minecraft:weight": {
+    "default": 6,
+    "rarity": 3
+}
+
+"minecraft:weight": {
+    "default": 6,
+    "rarity": 2
+}
+
+- axolotl
+
+
+"minecraft:weight": {
+    "default": 10
+}
+
+- bat
+
+
+"minecraft:weight": {
+    "default": 10
+}
+
+- bee
+
+
+"minecraft:weight": {
+    "default": 10
+}
+
+- bogged
+
+
+"minecraft:weight": {
+    "default": 40
+}
+
+- chicken
+
+
+"minecraft:weight": {
+    "default": 10
+}
+
+## world_age_filter ​
+- pillager_patrol
+
+
+"minecraft:world_age_filter": {
+    "min": 6000
+}
+
+"minecraft:world_age_filter": {
+    "min": 6000
+}
+
+"minecraft:world_age_filter": {
+    "min": 6000
+}

@@ -1,0 +1,103 @@
+# Item Tags
+
+Item tags can be used to ensure that an item meets certain conditions.
+
+## Applying Tags ​
+- From 1.20.50 and Onwards ​
+
+```
+{
+    "format_version": "1.21.60",
+    "minecraft:item": {
+        "description": {
+            "identifier": "wiki:my_item"
+        },
+        "components": {
+            "minecraft:tags": {
+                "tags": ["wiki:my_tag"]
+            }
+        }
+    }
+}
+```
+
+- Before 1.20.50 ​
+
+```
+{
+    "format_version": "1.20.40",
+    "minecraft:item": {
+        "description": {
+            "identifier": "wiki:my_item"
+        },
+        "components": {
+            "tag:wiki:my_tag": {}
+        }
+    }
+}
+```
+
+## Testing for Tags ​
+Tags can be queried with:
+
+- q.all_tags
+- q.any_tag
+- q.equipped_item_all_tags
+- q.equipped_item_any_tag
+
+## List of Vanilla Tags 
+
+|------------------------------|-----------------------------------|
+| Tag                          | Vanilla Usage                     |
+|------------------------------|-----------------------------------|
+| minecraft:arrow              |                                   |
+| minecraft:banner             |                                   |
+| minecraft:boat               |                                   |
+| minecraft:acacia_boat        |                                   |
+| minecraft:acacia_chest_boat  |                                   |
+| minecraft:bamboo_chest_raft  |                                   |
+| minecraft:bamboo_raft        |                                   |
+| minecraft:birch_boat         |                                   |
+| minecraft:birch_chest_boat   |                                   |
+| minecraft:cherry_boat        |                                   |
+| minecraft:cherry_chest_boat  |                                   |
+| minecraft:dark_oak_boat      |                                   |
+| minecraft:dark_oak_chest_boat|                                   |
+| minecraft:jungle_boat        |                                   |
+| minecraft:jungle_chest_boat  |                                   |
+| minecraft:mangrove_boat      |                                   |
+| minecraft:mangrove_chest_boat|                                   |
+| minecraft:oak_boat           |                                   |
+| minecraft:oak_chest_boat     |                                   |
+| minecraft:pale_oak_boat      |                                   |
+| minecraft:pale_oak_chest_boat|                                   |
+| minecraft:spruce_boat        |                                   |
+| minecraft:spruce_chest_boat  |                                   |
+| minecraft:boats              |                                   |
+| minecraft:bookshelf_books    | minecraft:book, enchanted_book, writable_book |
+| minecraft:chainmail_tier     | minecraft:chainmail_boots, chainmail_chestplate, chainmail_helmet, chainmail_leggings |
+| minecraft:coals              | minecraft:charcoal, coal        |
+| minecraft:crimson_stems      | minecraft:crimson_hyphae, crimson_stem, stripped_crimson_hyphae, stripped_crimson_stem |
+| minecraft:decorated_pot_sherds | minecraft:angler_pottery_sherd, archer_pottery_sherd, arms_up_pottery_sherd, blade_pottery_sherd, brewer_pottery_sherd, brick, burn_pottery_sherd, danger_pottery_sherd, explorer_pottery_sherd, flow_pottery_sherd, friend_pottery_sherd, guster_pottery_sherd, heart_pottery_sherd, heartbreak_pottery_sherd, howl_pottery_sherd, miner_pottery_sherd, mourner_pottery_sherd, plenty_pottery_sherd, prize_pottery_sherd, scrape_pottery_sherd, sheaf_pottery_sherd, shelter_pottery_sherd, skull_pottery_sherd, snort_pottery_sherd |
+| minecraft:diamond_tier       | minecraft:diamond_axe, diamond_boots, diamond_chestplate, diamond_helmet, diamond_hoe, diamond_leggings, diamond_pickaxe, diamond_shovel, diamond_sword |
+| minecraft:digger             | minecraft:diamond_axe, diamond_hoe, diamond_pickaxe, diamond_shovel, golden_axe, golden_hoe, golden_pickaxe, golden_shovel, iron_axe, iron_hoe, iron_pickaxe, iron_shovel, netherite_axe, netherite_hoe, netherite_pickaxe, netherite_shovel, stone_axe, stone_hoe, stone_pickaxe, stone_shovel, wooden_axe, wooden_hoe, wooden_pickaxe, wooden_shovel |
+| minecraft:door               | minecraft:acacia_door, bamboo_door, birch_door, cherry_door, copper_door, crimson_door, dark_oak_door, exposed_copper_door, iron_door, jungle_door, mangrove_door, oxidized_copper_door, pale_oak_door, spruce_door, warped_door, waxed_copper_door, waxed_exposed_copper_door, waxed_oxidized_copper_door, waxed_weathered_copper_door, weathered_copper_door, wooden_door |
+| minecraft:egg                | minecraft:blue_egg, brown_egg, egg |
+| minecraft:golden_tier        | minecraft:golden_axe, golden_boots, golden_chestplate, golden_helmet, golden_hoe, golden_leggings, golden_pickaxe, golden_shovel, golden_sword |
+| minecraft:hanging_actor      | minecraft:painting |
+| minecraft:hanging_sign       | minecraft:acacia_hanging_sign, bamboo_hanging_sign, birch_hanging_sign, cherry_hanging_sign, crimson_hanging_sign, dark_oak_hanging_sign, jungle_hanging_sign, mangrove_hanging_sign, oak_hanging_sign, pale_oak_hanging_sign, spruce_hanging_sign, warped_hanging_sign |
+| minecraft:horse_armor        | minecraft:diamond_horse_armor, golden_horse_armor, iron_horse_armor, leather_horse_armor |
+| minecraft:iron_tier          | minecraft:iron_axe, iron_boots, iron_chestplate, iron_helmet, iron_hoe, iron_leggings, iron_pickaxe, iron_shovel, iron_sword |
+| minecraft:is_armor           | minecraft:chainmail_boots, chainmail_chestplate, chainmail_helmet, chainmail_leggings, diamond_boots, diamond_chestplate, diamond_helmet, diamond_leggings, elytra, golden_boots, golden_chestplate, golden_helmet, golden_leggings, iron_boots, iron_chestplate, iron_helmet, iron_leggings, leather_boots, leather_chestplate, leather_helmet, leather_leggings, netherite_boots, netherite_chestplate, netherite_helmet, netherite_leggings, turtle_helmet |
+| minecraft:is_axe             | minecraft:diamond_axe, golden_axe, iron_axe, netherite_axe, stone_axe, wooden_axe |
+| minecraft:is_cooked          | minecraft:cooked_beef, cooked_chicken, cooked_cod, cooked_mutton, cooked_porkchop, cooked_rabbit, cooked_salmon, rabbit_stew |
+| minecraft:is_fish            | minecraft:cod, cooked_cod, cooked_salmon, pufferfish, salmon, tropical_fish |
+| minecraft:is_food            | minecraft:apple, baked_potato, beef, beetroot, beetroot_soup, bread, carrot, chicken, cooked_beef, cooked_chicken, cooked_mutton, cooked_porkchop, cooked_rabbit, cookie, dried_kelp, enchanted_golden_apple, golden_apple, golden_carrot, melon_slice, mushroom_stew, mutton, porkchop, potato, pumpkin_pie, rabbit, rabbit_stew, rotten_flesh, sweet_berries |
+| minecraft:is_hoe             | minecraft:diamond_hoe, golden_hoe, iron_hoe, netherite_hoe, stone_hoe, wooden_hoe |
+| minecraft:is_minecart        | minecraft:chest_minecart, command_block_minecart, hopper_minecart, minecart, tnt_minecart |
+| minecraft:is_pickaxe         | minecraft:diamond_pickaxe, golden_pickaxe, iron_pickaxe, netherite_pickaxe, stone_pickaxe, wooden_pickaxe |
+| minecraft:is_shears          | minecraft:shears |
+| minecraft:is_shovel          | minecraft:diamond_shovel, golden_shovel, iron_shovel, netherite_shovel, stone_shovel, wooden_shovel |
+| minecraft:is_sword           | minecraft:diamond_sword, golden_sword, iron_sword, mace, netherite_sword, stone_sword, wooden_sword |
+|------------------------------|-----------------------------------|
+
