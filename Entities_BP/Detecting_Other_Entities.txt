@@ -8,6 +8,7 @@ You might have thought about making your entities fire an event when other entit
 This is probably the most basic way to detect other entities. The main issues is it only accepts one entry and testing if the entity is out of range can be very tricky. Because it's an entity component, you can just place into your entity behavior file and edit the Minecraft filters. Here's a demonstration:
 BP/entities/my_entity.json#components
 
+```
 "minecraft:entity_sensor": {
     "sensor_range": 2.5, //this is for the radius in blocks it will detect other entities in
     "relative_range": false, //if true, the sensor range is additive on top of the entity's hitbox size
@@ -21,12 +22,14 @@ BP/entities/my_entity.json#components
     },
     "event": "event:on_player_detected" //the event that fires when all the conditions in event_filters are met
 }
+```
 
 ## Execute Command ​
 Using the /execute command, you can execute commands as long as another entity is nearby.
 This example you'll be following will make pigs say "oink oink" upon detecting players, though you can replace those with whatever you want. First of all, copy-paste these BP animations.
 BP/animations/detection_animation.json
 
+```
 {
     "format_version": "1.10.0",
     "animations": {
@@ -50,11 +53,13 @@ BP/animations/detection_animation.json
         }
     }
 }
+```
 
 The first one is for detecting if the entity is present, and the other for detecting if the entity is not present. The events used in the /event part of the /execute commands can be used for adding a dummy component or updating an actor property.
 Next of all, copy paste this BP animation controller. This assumes that you set up the /event parts of the /execute commands to add or remove minecraft:is_sheared.
 BP/animation_controllers/pig_animation_controllers.json
 
+```
 {
     "format_version": "1.10.0",
     "animation_controllers": {
@@ -82,10 +87,12 @@ BP/animation_controllers/pig_animation_controllers.json
         }
     }
 }
+```
 
 Finally, copy-paste this snippet into the behavior file for the pig-like so. Make sure to insert this in description.
 BP/entities/my_entity.json#description
 
+```
 "animations": {
     "manage_find_player": "controller.animation.pig_find_player",
     "find_player": "animation.pig.find_player",
@@ -96,3 +103,4 @@ BP/entities/my_entity.json#description
         "manage_find_player"
     ]
 }
+```

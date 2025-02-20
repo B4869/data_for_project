@@ -3,6 +3,7 @@
 runtime_identifier is an optional parameter that sits inside the description of the entity's behavior file, and is used to imitate a vanilla entity's hard-coded elements. It accepts Vanilla Minecraft identifiers, like minecraft:shulker.
 Behavior Entity Description
 
+```
 "description": {
     "identifier": "wiki:my_box",
     "runtime_identifier": "minecraft:shulker", // This is the runtime. It will add hard-coded behaviors from Shulker to this entity.
@@ -10,6 +11,7 @@ Behavior Entity Description
     "is_summonable": true,
     "is_experimental": false
 }
+```
 
 * TIP
 It's important to remember that runtime_identifier will only parse the hard-coded properties of an entity. This means that using a 100% datadriven mob as the Runtime Identifier will not add any new properties to your entity. Additionally, some entity runtimes may overwrite properties found in datadriven components even if they are added in the components section, such as the collision box size for the shulker entity.

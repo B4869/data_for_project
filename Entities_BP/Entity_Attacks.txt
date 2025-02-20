@@ -20,6 +20,7 @@ Even if you are making an unmoving entity (like turret), you still need to add n
 There are many ways to trigger hostility. The most common type nearest_attackable_target, is shown here. It generally allows you to define which entities this entity is interested in attacking:
 
 
+```
 "minecraft:behavior.nearest_attackable_target": {
   "must_see": true, //If true, potential target must be in mob's line of sight
   "reselect_targets": true, //Allows mob to select new target, if one is closer than current
@@ -36,6 +37,7 @@ There are many ways to trigger hostility. The most common type nearest_attackabl
     }
   ]
 }
+```
 
 For more fine control, you may also consider using one of the following components:
 
@@ -52,6 +54,7 @@ This last component is slightly different to the other three, as it is for detec
 
 BP/entities/enderman.json
 
+```
 "minecraft:lookat": {
   "search_radius": 64.0,
   "set_target": true, //Becomes a valid target if true
@@ -73,6 +76,7 @@ BP/entities/enderman.json
     ]
   }
 }
+```
 
 - Target selecting ​
 
@@ -82,6 +86,7 @@ This section shows you how to configure the "Targeting" components, explained ab
 Mobs find targets by using filters can be used to determine which entities are a valid target, through test, subject, operator, and value.
 
 
+```
 "entity_types":[
     {
         "filters":{
@@ -125,6 +130,7 @@ Mobs find targets by using filters can be used to determine which entities are a
         "max_dist":24
     }
 ]
+```
 
 This would only target snow_golems, iron_golems, and players that are not wearing turtle_helmets.
 
@@ -144,6 +150,7 @@ Here are the available attacks:
 Melee attacks are the most common type of attack, they cause knockback, and have a 100% success rate at accuracy.
 
 
+```
 "wiki:melee_attack": {
   "minecraft:attack": {
     "damage": 3,
@@ -158,6 +165,7 @@ Melee attacks are the most common type of attack, they cause knockback, and have
     "require_complete_path": true
   }
 }
+```
 
 Set the damage, choose a mob effect, and change some additional properties.
 The value defined in components stating integers of damage can simply be a constant, or a string containing 2 numbers, for a range of possible values.
@@ -203,7 +211,7 @@ Both the mob effect and duration timer are optional, but when they are used, the
 - Ranged ​
 Fires specified projectiles towards target at set intervals.
 
-
+```
 "wiki:ranged_attack": {
   "minecraft:behavior.ranged_attack": {
     "priority": 2,
@@ -216,6 +224,7 @@ Fires specified projectiles towards target at set intervals.
     "def": "wiki:projectile"
   }
 }
+```
 
 List of vanilla projectiles:
 
@@ -243,12 +252,14 @@ List of vanilla projectiles:
 Only one item has an effect on an entity's ranged attacks. Crossbows. If one is equipped, it is first required for it to be "charged" before the entity can fire anything. Regardless of the projectile stated in minecraft:shooter, the item to charge the crossbow with should always be minecraft:arrow.
 
 
+```
 "minecraft:behavior.charge_held_item": {
   "priority": 2,
   "items": [
     "minecraft:arrow"
   ]
 }
+```
 
 Once minecraft:behavior.charge_held_item has been achieved, the entity will be able to execute the process of minecraft:behavior.ranged_attack, and will then need to charge again.
 
@@ -256,6 +267,7 @@ Once minecraft:behavior.charge_held_item has been achieved, the entity will be a
 These attacks damage all entities within a set radius. It is different to both ranged and melee in that this component doesn’t actually require a target. Regardless of the entities behaviour, all entities will be affected by this. It appears to be similar to melee attacks, as it deals knockback in a similar manner, though dealing damage at a constant rate.
 
 
+```
 "minecraft:area_attack" : {
   "damage_range": 1, //distance in blocks
   "damage_per_tick": 2,
@@ -275,6 +287,7 @@ These attacks damage all entities within a set radius. It is different to both r
     ]
   }
 }
+```
 
 Entity damage sources. It is important to take these into consideration, as certain items in vanilla can protect from some, like armour enchantments, and you can also make mobs immune to specific sources using minecraft:damage_sensor.
 
@@ -282,6 +295,7 @@ Entity damage sources. It is important to take these into consideration, as cert
 Many similarities between this and minecraft:area_attack, this component though having much more flexibility.
 
 
+```
 "wiki:roar_attack": {
   "minecraft:behavior.knockback_roar":{
     "priority":2,
@@ -309,6 +323,7 @@ Many similarities between this and minecraft:area_attack, this component though 
     "cooldown_time":10
   }
 }
+```
 
 This is more like a shockwave of damage. Extremely versatile in uses. Produces a particle effect, which can be disabled by adding a modified version of knockback_roar.json to a resource pack's particles folder.
 
@@ -320,6 +335,7 @@ Express components and values to use for each difficulty.
 
 BP/entities/bee.json
 
+```
 "easy_attack": {
     "minecraft:attack": {
         "damage": 2
@@ -339,6 +355,7 @@ BP/entities/bee.json
         "effect_duration": 18
     }
 }
+```
 
 - Switching Modes ​
 You can use events to make your mob only attack under specific circumstances, or swap between the different types of attack. This can be achieved through simple usage of events and component groups. Two prime examples being minecraft:environment_sensor and minecraft:target_nearby_sensor. The two are pretty similar in regards of structure, difference being that one is for sensing environments and the other for testing for target distance.
@@ -347,6 +364,7 @@ You can use events to make your mob only attack under specific circumstances, or
 Component groups are required to define the different modes of attack, such as:
 
 
+```
 "wiki:ranged_components": {
   "minecraft:shooter": {
     "def": "wiki:projectile"
@@ -359,7 +377,9 @@ Component groups are required to define the different modes of attack, such as:
     "attack_radius": 15.0
   }
 }
+```
 
+```
 "wiki:melee_components": {
   "minecraft:attack": {
     "damage": 6
@@ -368,6 +388,7 @@ Component groups are required to define the different modes of attack, such as:
     "priority": 3
   }
 }
+```
 
 Those are examples of your attack modes, but they are not the only ones you can use. wiki:ranged_components and wiki:melee_components are generic names for the components within them, they can have any name, but it's what's nested inside them that counts.
 
@@ -375,6 +396,7 @@ Those are examples of your attack modes, but they are not the only ones you can 
 These component groups won't actually do anything by themselves. Another component group is required, and some events to add/remove the attack modes.
 
 
+```
 "wiki:melee_swap": {    //When triggered, adds component group for ranged and removes melee component group
   "remove": {
     "component_groups": [
@@ -387,7 +409,9 @@ These component groups won't actually do anything by themselves. Another compone
     ]
   }
 }
+```
 
+```
 "wiki:ranged_swap": {   //When triggered, adds component group for melee and removes ranged component group
   "remove": {
     "component_groups": [
@@ -400,6 +424,7 @@ These component groups won't actually do anything by themselves. Another compone
     ]
   }
 }
+```
 
 The events are effectively for just turning attack modes on and off, by adding and removing different component groups.
 
@@ -408,6 +433,7 @@ To trigger the events, another component group is used. Sensors are components t
 
 For sensing the distance between the mob and target
 
+```
 "wiki:switcher_range": {
   "minecraft:target_nearby_sensor": {
     "inside_range": 4.0,
@@ -423,9 +449,11 @@ For sensing the distance between the mob and target
     }
   }
 }
+```
 
 For sensing certain features of the environment of which the mob is exposed to
 
+```
 "wiki:switcher_environment": {
   "minecraft:environment_sensor": {
     "triggers": [
@@ -450,6 +478,7 @@ For sensing certain features of the environment of which the mob is exposed to
     ]
   }
 }
+```
 
 This uses Filters, similar to how the target is initially selected.
 

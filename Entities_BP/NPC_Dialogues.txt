@@ -8,6 +8,7 @@ NPC dialogue data is stored in dialogue files, which are stored in the dialogue 
 
 dialogue/example.diag.json
 
+```
 {
     "format_version": "1.17",
     "minecraft:npc_dialogue": {
@@ -20,36 +21,42 @@ dialogue/example.diag.json
         ]
     }
 }
+```
+
 In this file, there is an array of scenes. Each scene is a separate dialogue. You can put every dialogue in one file, or you can put each one in a separate file. Within each scene object are a number of properties that can be set to control the dialogue:
 
-    -scene_tag ​
+    - scene_tag ​
     The identifier of the scene, used to target the scene.
 
-    -npc_name ​
+    - npc_name ​
     The display name of the NPC. Optional, if it is not specified, the name of the NPC entity will be used, which is §eNPC by default.
 
-    -text ​
+    - text ​
     The text to display in the speech bubble. Optional.
 
-    -on_open_commands ​
+    - on_open_commands ​
     Array of command strings to be run when the dialogue is opened. Optional.
     
+    ```
     "on_open_commands": [
      "/say Hello"
     ]
-
-    -on_close_commands ​
+    ```
+    - on_close_commands ​
     Array of command strings to be run when the dialogue is closed. Optional.
 
 
+    ```
     "on_close_commands": [
     "/say Goodbye"
     ]
+    ```
 
-    -buttons ​
+    - buttons ​
     An array of objects specifying the buttons to show in the dialogue. Optional.
 
-
+    
+    ```
     "buttons": [
         {
             "name": "Button One",
@@ -65,10 +72,11 @@ In this file, there is an array of scenes. Each scene is a separate dialogue. Yo
             ]
         }
     ]
-
+    ```
 ## Selecting the Player ​
 In on_open_commands, on_close_commands, and the commands property of each button object, you can use normal selectors, such as @p to select the nearest player. However, these selectors are run relative to the NPC entity, so this may be confusing in multiplayer. To solve this, there is a special selector, @initiator which always selects the player with the dialogue open.
 
+```
 "buttons": [
     {
         "name": "Levitation Please",
@@ -77,12 +85,15 @@ In on_open_commands, on_close_commands, and the commands property of each button
         ]
     }
 ]
+```
+
 This selector only works within NPC dialogues, it cannot be used anywhere else.
 
 ## Translation ​
 All of the dialogue properties that will be displayed to the user can also be translated:
 
 
+```
 "npc_name": {
     "rawtext": [
         {
@@ -90,6 +101,8 @@ All of the dialogue properties that will be displayed to the user can also be tr
         }
     ]
 }
+```
+
 The translation key used should then be specified in the resource pack's language files. In this case, entity.endermite.name would translate to "Endermite."
 
 ## Opening Dialogues ​
@@ -100,7 +113,9 @@ The /dialogue command is used to open and control dialogues. The command looks l
 - [sceneName:string]: A string matching the scene_tag of the dialogue to be shown. Optional, if not present, the last dialogue shown by the NPC will be shown.
 - For example, the following command would open the dialogue example for the nearest player, using the nearest NPC:
 
+```
 /dialogue open @e[type=npc,c=1] @p example
+```
 
 ## Changing Dialogues ​
 The /dialogue command is also used to change the dialogue of an NPC. Unlike the /dialogue open command, this command has no effect until a player opens the NPC dialogue manually. This syntax looks like this: /dialogue change <npc: target> <sceneName:string> [player: target]
@@ -110,7 +125,9 @@ The /dialogue command is also used to change the dialogue of an NPC. Unlike the 
 - [player: target]: A selector pointing to the player who will see the updated dialogue. Optional, if not present, all player will be affected.
 - For example, the following command would change the nearest NPC's dialogue to example for a random player.
 
+```
 /dialogue change @e[type=npc,c=1] example @r
+```
 
 ## Full Example ​
 This full example will create a custom item that will allow the player to teleport when they right-click/interact while holding the item. Full source code for this example can be found on Github. For this demo, use the manifest file at the top of this page.
@@ -120,8 +137,11 @@ Even if the NPC will never be visible, an NPC entity is always needed for the /d
 
 functions/setup.mcfunction
 
+```
 tickingarea add 0 1 0 0 2 0
 summon npc "§r" 0 1 0
+```
+
 This function will create a ticking area at 0, 0, and spawn an NPC with no name in the bedrock layer in that ticking area. You will need to run this function once, either manually, or making use of player.json or tick.json.
 
 * TIP
@@ -130,7 +150,9 @@ You can trigger an NPC dialogue from within the player using the /dialogue comma
 - Specify a scene from the BP/dialogue folder.
 - Run the /dialogue command from the player, provided with the scene_tag:
 
+```
 /dialogue open @s @s <scene_tag>
+```
 
     -Pros and Cons: ​
     - + You don't need to worry about hiding away an NPC, if you're just going to run NPC dialogues provided using scene_tags.
@@ -140,6 +162,7 @@ You can trigger an NPC dialogue from within the player using the /dialogue comma
     To avoid this add the minecraft:interaction to the entity which will replace the npc interaction. The npc stuff will still work, but if a player clicks on another player, then the npc won't come up
 
 
+```
     "minecraft:interact": {
         "interactions": [
             {
@@ -157,11 +180,13 @@ You can trigger an NPC dialogue from within the player using the /dialogue comma
             }
         ]
     }
+```
 
     -The Dialogue File 
     This dialogue file features two dialogues, each with two teleport buttons, and a button to switch between the two.
     dialogue/example.diag.json
 
+```
 {
     "format_version": "1.17",
     "minecraft:npc_dialogue": {
@@ -211,6 +236,7 @@ You can trigger an NPC dialogue from within the player using the /dialogue comma
         ]
     }
 }
+```
 
     -Creating the Item ​
     Lastly, create an item that will open the dialogue when right-clicked/interacted with. This item uses the Ender Pearl texture, but you could give it custom texture.
@@ -218,6 +244,7 @@ You can trigger an NPC dialogue from within the player using the /dialogue comma
     Item JSON 
     BP/items/teleport_menu.json
 
+```
 {
     "format_version": "1.21.60",
     "minecraft:item": {
@@ -237,10 +264,12 @@ You can trigger an NPC dialogue from within the player using the /dialogue comma
         }
     }
 }
+```
 
     -Custom Component Script 
     BP/scripts/teleportMenu.js
 
+```
 import { world } from "@minecraft/server";
 
 const TeleportMenuItemComponent = {
@@ -252,6 +281,7 @@ const TeleportMenuItemComponent = {
 world.beforeEvents.worldInitialize.subscribe(({ itemComponentRegistry }) => {
     itemComponentRegistry.registerCustomComponent("wiki:teleport_menu", TeleportMenuItemComponent);
 });
+```
 
     -Testing ​
     When you are done, package these files along with the manifest, and import it into Minecraft. Start a new flat world, and make sure to enable cheats and experiments.

@@ -11,6 +11,7 @@ The structure is simple. The file itself is in RP/textures and is named textures
 
 RP/textures/textures_list.json
 
+```
 [
 	"textures/blocks/foo",
 	"textures/blocks/bar",
@@ -24,6 +25,7 @@ RP/textures/textures_list.json
 	"textures/entity/foo",
 	"textures/entity/bar"
 ]
+```
 
 ## Automating ​
 If you have a lot of textures, this could obviously be tedious to go and list all the texture paths. In this case you can start to use Regolith with its wonderful filters.

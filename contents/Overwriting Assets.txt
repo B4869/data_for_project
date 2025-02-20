@@ -67,6 +67,7 @@ The following files work in this way:
 Example: Lets say you want to override the sugar texture, using the reference files. You can do so by creating a new item_texture.json, with the following contents:
 
 
+```
 {
     "resource_pack_name": "vanilla",
     "texture_data": {
@@ -75,6 +76,8 @@ Example: Lets say you want to override the sugar texture, using the reference fi
         }
     }
 }
+```
+
 This definition will be merged with the vanilla item_texture.json, and will override the short-name sugar. When the vanilla item accesses this short-name, it will get a reference to your custom texture path, instead of the actual texture path to sugar.
 
 ## Overwriting Dangers ​

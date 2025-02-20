@@ -12,6 +12,7 @@ All components are formatted like "minecraft:<name>": { <setting> }. Every compo
 Here is an example of a few components, inside an entity:
 BP/entities/example.json#minecraft:entity
 
+```
 "components": {
     "minecraft:type_family": {
         "family": [
@@ -24,6 +25,7 @@ BP/entities/example.json#minecraft:entity
     },
     "minecraft:can_climb": {},
 }
+```
 
 Notice how the components list only contains components.
 
@@ -32,6 +34,7 @@ Component groups are "folders" for components. They group components and can be 
 Here is an example:
 BP/entities/example.json#minecraft:entity
 
+```
 "component_groups": {
 
     //the name of the component group
@@ -53,6 +56,7 @@ BP/entities/example.json#minecraft:entity
         }
     }
 }
+```
 
 All component groups are custom-created. You cannot use component groups from other entities in your entity.
 In vanilla Minecraft entities, component groups are namespaced with minecraft:, like minecraft:cat_persian above. But it is important to remember that they are not components. When you create your component groups, you can use whatever name/namespace:name combination you want. For example, wiki:example_group above. Here's more info on namespaces.
@@ -63,6 +67,7 @@ Events are a special syntax for adding and removing component groups that can be
 An example:
 BP/entities/example.json#minecraft:entity#events
 
+```
 "minecraft:ageable_grow_up": { //Name of the event
     "remove": { //list of component groups to remove
         "component_groups": [
@@ -75,12 +80,14 @@ BP/entities/example.json#minecraft:entity#events
         ]
     }
 },
+```
 
 Like component groups, events are 100% custom-created inside each entity. You cannot use events from other entities on your own. Do not be tempted to use "minecraft:ageable_grow_up" in your own entity. If you want grow-up functionality, you need to define the component groups and events yourself.
 The only thing you can add/remove from an entity is component groups. As tempting as it is to try and add/remove components directly, this is not possible.
 Events are activated inside of certain components when some criteria is met. Below is an example:
 BP/entities/example.json#minecraft:entity
 
+```
 "components": {
     "minecraft:interact": {
         "interactions": [
@@ -114,6 +121,7 @@ BP/entities/example.json#minecraft:entity
         }
     }
 }
+```
 
 Here, when the entity is interacted with by the player, it will activate the "wiki:on_interact" event. The event will then add the component group "wiki:interacted". This will then apply the component "minecraft:scale".
 For a more in depth tutorial on what events can do check out our page on entity events.
