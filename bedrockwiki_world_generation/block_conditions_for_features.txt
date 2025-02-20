@@ -169,6 +169,3 @@ This technique utilizes aggregate_feature and single_block_feature features. If 
 After reading this tutorial you should be able to use block conditions on any feature you want. This was a very basic example as this can be used for far more complex creations and can be used with any feature.
 
 Like that we have made a rock feature that can only be placed in air blocks and above grass blocks.
-
-Generation screenshot:
-

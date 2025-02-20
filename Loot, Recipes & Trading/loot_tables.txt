@@ -291,5 +291,3 @@ All conditions on entries in a tiered pool are ignored. Conditions on the pool i
 	]
 }
 ```
-
-## Overrides

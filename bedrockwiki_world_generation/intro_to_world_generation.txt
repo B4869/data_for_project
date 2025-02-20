@@ -1,4 +1,4 @@
-# Intro to World Generation\
+# Intro to World Generation
 
 * WARNING
 This page is somewhat out-dated, and contains limited information. For the most up-to-date and comprehensive information, view the other pages in this section.
