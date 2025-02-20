@@ -16,19 +16,27 @@ Minecraft supports 29 languages currently, as described in § Vanilla Languages.
 - Format ​
 The format for a language file is rather straightforward. Translations are supplied as key-value pairs separated by an equals sign (=), the key being a translation key and the value being a string. Values cannot contain newline characters.
 
+```
 wiki.example_translation.line_1=The first line!
 wiki.example_translation.line_2=Some more information following the first line.
+```
+
 Comments may be added with two pound signs (##), either as line comments or in-line comments. All text after the pound signs are a comment until the next line.
 
 * WARNING
 Trailing spaces are not trimmed for in-line comments. If you want to indent a comment, use the Tab character.
 
+```
 ## Translator note: I thought this would be funny to put here.
 item.flint_and_steel.name=Flint and Steve	##[sic]
+```
+
 A translation can contain substitutions in place of text. Substitutions can either be ordered (%1, %2, etc.) or not ordered (%s). Vanilla translations have their values filled in by the game, while players can manually set the substitutions' values with commands that use the raw JSON text format, like with /tellraw.
 
+```
 commands.op.success=Opped: %s
 immersive_reader.book_page_header=Page %1 of %2
+```
 
 - Usage ​
 Localization can be done just about anywhere text can be used, including (but not limited to):
@@ -50,7 +58,9 @@ When editing language files one must also add a languages.json file in the texts
 
 RP/texts/languages.json
 
+```
 ["en_US", "en_GB", "fr_FR"]
+```
 
 - Custom Languages ​
 With a global resource pack, custom languages may be introduced through the languages.json and language_names.json files. Once the pack is applied globally the language can be changed in the "Language" tab of the in-game settings.
@@ -59,15 +69,20 @@ For the following examples, lets assume that we have 2 fully functional language
 
 RP/texts/languages.json
 
+```
 ["xx_XX", "yy_YY"]
+```
+
 language_names.json is an array as well, but this time to define the names to display for the languages.
 
 RP/texts/language_names.json
 
+```
 [
     ["xx_XX", "New Language (Custom Language #1)"],
     ["yy_YY", "Wiki-Speak (Custom Language #2)"]
 ]
+```
 
 * WARNING
 Whenever using a custom language, make sure to unequip the language before you disable the Resource Pack which it is stored in, or else Minecraft will crash.

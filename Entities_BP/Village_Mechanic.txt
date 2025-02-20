@@ -5,6 +5,7 @@ This article is for anyone who wants to try imitate the village mechanic for the
 ## Navigation Behavior ​
 First let's start with some basic navigation behavior.
 
+```
 BP/entities/custom_villager.json#components
 
 "minecraft:preferred_path":{
@@ -34,76 +35,95 @@ BP/entities/custom_villager.json#components
         }
     ]
 }
+```
 
 Allows entity to do random walk.
 
 BP/entities/custom_villager.json#components
 
+```
 "minecraft:behavior.random_stroll":{
     "priority":9,
     "speed_multiplier":0.55,
     "xz_dist":10,
     "y_dist":5
 }
+```
 
 Make entity return to inside dwelling bound, in this case inside a village border. Requiring minecraft:dweller component that will be explained below.
 
 BP/entities/custom_villager.json#components
 
+```
 "minecraft:behavior.move_towards_dwelling_restriction": {
     "priority": 4,
     "speed_multiplier": 1.0
 }
+```
 
 Makes entity navigate around a village by creating a path to patrol. Used by Iron Golem.
 
 BP/entities/custom_villager.json#components
 
+```
 "minecraft:behavior.move_through_village": {
 	"priority": 3,
 	"speed_multiplier": 0.6,
 	"only_at_night": true
 }
+```
 
 Allows entity to enter a building and also take shelter when raining. Needs open door capabilities.
 
 BP/entities/custom_villager.json#components
 
+```
 "minecraft:behavior.move_indoors":{
     "priority":5
 }
+```
 
 Makes entity stay indoors while sun is down.
 
 BP/entities/custom_villager.json#components
 
+```
 "minecraft:behavior.restrict_open_door":{
     "priority": 5
 }
+```
 
 Use in pair with:
 
 BP/entities/custom_villager.json#components
 
+```
 "minecraft:annotation.open_door":{
     "priority": 5
 }
+```
 BP/entities/custom_villager.json#components
 
+```
 "minecraft:navigation.walk":{
     "can_pass_doors":true,
     "can_open_doors":true
 }
+```
+
 BP/entities/custom_villager.json#components
 
+```
  "minecraft:behavior.open_door":{
     "priority":6,
     "close_door_after":true
 }
+```
 
 ## Main Behavior ​
 BP/entities/custom_villager.json#components
 
+```
 "minecraft:dweller": {
 	"dwelling_type": "village",
 	"dweller_role": "inhabitant",
@@ -114,6 +134,7 @@ BP/entities/custom_villager.json#components
 	"can_migrate": true,
 	"first_founding_reward": 5
 }
+```
 
 - dweller_role: inhabitant Allows entity claim a bed and bell. minecraft:behavior.sleep needed.
 - preferred_profession: farmer Optional for minecraft:behavior.work
@@ -132,6 +153,7 @@ You can find out how to make your entity sleep here.
 Requires "dweller_role" set to be "inhabitant" also if "preferred_profession" doesn't exist the entity will try to move to the closest any job site.
 
 
+```
 "minecraft:behavior.work": {
 	"priority": 4,
 	"active_time": 250,
@@ -146,10 +168,12 @@ Requires "dweller_role" set to be "inhabitant" also if "preferred_profession" do
 		"target": "self"
 	}
 }
+```
 
 - Gathering ​
 Allows the entity to gather. Requires "dweller_role" set to be "inhabitant".
 
+```
 "minecraft:behavior.mingle": {
   "priority": 4,
   "speed_multiplier": 0.5,
@@ -158,11 +182,13 @@ Allows the entity to gather. Requires "dweller_role" set to be "inhabitant".
   "mingle_partner_type": "my:custom_entity",
   "mingle_distance": 2.0
 }
+```
 
 - Scheduler ​
 Now you know everything about needed mechanic, let's try to put all of this together in "minecraft:scheduler" First let's do something simple. Put work behavior in component group work like this:
 
 
+```
 "component_groups":{
     "work_schedule":{
         "minecraft:behavior.work":{
@@ -191,10 +217,12 @@ Now you know everything about needed mechanic, let's try to put all of this toge
         }
     }
 }
+```
 
 Next, make your entity work.
 
 
+```
 "minecraft:scheduler":{
     "min_delay_secs":0,
     "max_delay_secs":10,
@@ -235,10 +263,12 @@ Next, make your entity work.
         }
     ]
 }
+```
 
 The events section looks something like this:
 
 
+```
 "events":{
     "work":{
         "remove":{
@@ -265,6 +295,7 @@ The events section looks something like this:
         }
     }
 }
+```
 
 Open your world, spawn entity then put a bed and you should see green particle.
 

@@ -17,6 +17,7 @@ You can use whatever behaviors you like, but here is a good template. The import
 
 BP/entities/dummy.json
 
+```
 {
 	"format_version": "1.16.0",
 	"minecraft:entity": {
@@ -59,12 +60,14 @@ BP/entities/dummy.json
 		}
 	}
 }
+```
 
 If you want to disable collision at all (so you can place a block at it's position), you can use arrow runtime identifier, however, there can be some side effects.
 
 - Resource Entity ​
 RP/entity/dummy.json
 
+```
 {
 	"format_version": "1.10.0",
 	"minecraft:client_entity": {
@@ -83,10 +86,12 @@ RP/entity/dummy.json
 		}
 	}
 }
+```
 
 - Geometry ​
 RP/models/entity/dummy.json
 
+```
 {
 	"format_version": "1.12.0",
 	"minecraft:geometry": [
@@ -99,10 +104,12 @@ RP/models/entity/dummy.json
 		}
 	]
 }
+```
 
 - Render Controller (Optional) ​
 RP/render_controllers/dummy.json
 
+```
 {
 	"format_version": "1.10.0",
 	"render_controllers": {
@@ -117,6 +124,7 @@ RP/render_controllers/dummy.json
 		}
 	}
 }
+```
 
 - Texture (Optional) ​
 You can either leave the texture location blank, or open the model in blockbench and create a blank texture.

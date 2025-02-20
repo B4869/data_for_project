@@ -16,9 +16,11 @@ In our example it will look like this:
 
 BP/entity/mandolorian.json#components
 
+```
 "minecraft:equipment": {
     "table": "loot_tables/entities/gear/mandolorian.json"
 }
+```
 
 ## Loot Table ​
 Finally, add the loot table for your entity. It needs to be in loot_tables/entities/<your_loot_table_name>.json in the behavior pack. In our case, it's called mandolorian.json.
@@ -29,6 +31,7 @@ This isn't the same loot table as what it drops on death. So make sure it has a 
 To have the entity always spawn with the same item, add the following loot table:
 BP/loot_tables/entities/gear/mandolorian.json
 
+```
 {
 	"pools": [
 		{
@@ -43,6 +46,7 @@ BP/loot_tables/entities/gear/mandolorian.json
 		}
 	]
 }
+```
 
 If everything went well, you'd have something looking like this:
 

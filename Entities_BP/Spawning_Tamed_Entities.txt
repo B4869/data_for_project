@@ -7,6 +7,7 @@ In this tutorial, you will learn how to spawn a pre-tamed entity via scripting, 
 ## Scripting Method ​
 This example will spawn a tamed wolf for each player whenever they spawn (or respawn) by using the EntityTameableComponent.tame method.
 
+```
 import { world } from "@minecraft/server";
 
 world.afterEvents.playerSpawn.subscribe(({ player }) => {
@@ -16,6 +17,7 @@ world.afterEvents.playerSpawn.subscribe(({ player }) => {
     const tameable = wolf.getComponent("minecraft:tameable");
     tameable.tame(player);
 });
+```
 
 ## Events Method ​
 
@@ -27,6 +29,7 @@ We'll need to create a simple custom entity that will have the minecraft:arrow r
 
 BP/entities/pretamed_wolf.json
 
+```
 {
     "format_version": "1.21.0",
     "minecraft:entity": {
@@ -46,6 +49,7 @@ BP/entities/pretamed_wolf.json
         }
     }
 }
+```
 
 You can also spawn it with a wiki:pretamed_wolf spawn egg by setting is_spawnable to true!
 
@@ -58,6 +62,7 @@ You can find the BP player entity file in the vanilla behavior pack provided by 
 
 BP/entities/player.json
 
+```
 {
     "format_version": "1.21.0",
     "minecraft:entity": {
@@ -91,12 +96,14 @@ BP/entities/player.json
         }
     }
 }
+```
 
 - Spawning on Projectile Hit ​
 To make the tamed wolf spawn only when the projectile hits something, we first need to create a throwable item:
 
 BP/items/throwable_pretamed_wolf.json
 
+```
 {
     "format_version": "1.21.50",
     "minecraft:item": {
@@ -114,11 +121,13 @@ BP/items/throwable_pretamed_wolf.json
         }
     }
 }
+```
 
 We'll also need to make some adjustment to our custom projectile entity so that it doesn't transform right as it spawns.
 
 BP/entities/pretamed_wolf.json
 
+```
 {
     "format_version": "1.21.0",
     "minecraft:entity": {
@@ -161,5 +170,6 @@ BP/entities/pretamed_wolf.json
         }
     }
 }
+```
 
 Special thanks to Zarkmend ZAN for figuring this out 😃

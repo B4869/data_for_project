@@ -19,16 +19,19 @@ In the vanilla Behavior Pack, this component is used in all kinds of circumstanc
 A simple example which triggers an event after 5.6 seconds:
 
 
+```
 "minecraft:timer": {
   "time": 5.6,
   "time_down_event": {
       "event": "wiki:my_event"
   }
 }
+```
 
 A more complex example which triggers an event after a randomized amount of delay using weighted values:
 
 
+```
 "minecraft:timer": {
   "looping": false, //true will fires event after every execution,  false will fire event only once.
   "random_time_choices": [
@@ -54,10 +57,12 @@ A more complex example which triggers an event after a randomized amount of dela
     "target": "self"
   }
 }
+```
 
 A particularly useful way to handle time events is using a single, looping minecraft:timer component and processing the events on each tick (or however often you decide to fire the timer). This is done by using the randomize parameter in events, where a weight may be used determine how often other events will be run. This can get you a lot of extra mileage out of a single timer component.
 
 
+```
 "wiki:do_event": {
   "randomize": [
     {
@@ -81,12 +86,14 @@ A particularly useful way to handle time events is using a single, looping minec
     }
   ]
 }
+```
 
 - minecraft:environment_sensor ​
 Another component (minecraft:environment_sensor) which can be very useful for time-based events is minecraft:environment_sensor. Pairing this sensor with the hourly_clock_time or clock_time filters can be used to trigger events based off in-game time.
 Here is an example which is used to fire an event 800 ticks after the start of the day (valid range is 0 to 24000):
 
 
+```
 "minecraft:environment_sensor": {
   "triggers": [
     {
@@ -99,12 +106,14 @@ Here is an example which is used to fire an event 800 ticks after the start of t
     }
   ]
 }
+```
 
 - minecraft:ageable ​
 If this component (minecraft:ageable) is not being used in the entity's behavior for a different purpose, it can be useful as an additional timer. It's important to note that it requires the minecraft:is_baby component to be defined in order to function.
 Here is an example which fires an event after four seconds:
 
 
+```
 "minecraft:is_baby": {},
 "minecraft:ageable": {
   "duration": 4,
@@ -113,6 +122,7 @@ Here is an example which fires an event after four seconds:
     "target": "self"
   }
 }
+```
 
 - Other dummy-timers: ​
 Taking a peak at the docs suggest there are other components which can also can be used for timing. Essentially, you are looking for any component with a "time down event" or a "duration".
@@ -131,6 +141,7 @@ By triggering animations from an animation controller or directly from the scrip
 You can set up timelines like this:
 
 
+```
 {
 	"format_version": "1.8.0",
 	"animations": {
@@ -154,11 +165,13 @@ You can set up timelines like this:
 		}
 	}
 }
+```
 
 - Random interval ​
 A very useful feature of the timer component is its ability to define a random interval in which the event will be triggered. This functionality can be replicated using animations and a controller. Below is an example of an animation triggered by adding the minecraft:is_sheared component to an entity which randomly fires an event between 2 to 7 seconds after activation. Animation and controller version 1.10.0.
 
 
+```
 "controller.animation.shanewolf.random_interval": {
   "initial_state": "inactive",
   "states": {
@@ -189,10 +202,13 @@ A very useful feature of the timer component is its ability to define a random i
     }
   }
 }
+```
 
+```
 "animation.shanewolf.random_interval": {
   "animation_length": 100
 }
+```
 
 Explanation: Upon entry into the state beginning the animation, a variable is given a random value between 2 and 7. The animation finishes when the current animation time is greater than or equal to the value of this v.
 Notes:
@@ -205,6 +221,7 @@ Notes:
 Another useful feature of the timer component is its ability to trigger events at a time determined by a weighted list of values. This functionality can also be replicated using animations and a controller. Below is an example of an animation triggered by adding the minecraft:is_charged component to an entity which randomly fires an event at either 2, 5, or 9 seconds with weights of 30, 60, and 10, respectively. Animation and controller version 1.10.0.
 
 
+```
 "controller.animation.shanewolf.random_choices": {
   "initial_state": "inactive",
   "states": {
@@ -241,10 +258,13 @@ Another useful feature of the timer component is its ability to trigger events a
     }
   }
 }
+```
 
+```
 "animation.shanewolf.random_choices": {
   "animation_length": 100
 }
+```
 
 Explanation: Upon entry into the state beginning the animation, a variable is given a random value between 0 and 100 (sum of the weights). The transitions are laid out with the list of values ordered from the smallest time to the largest time. This is done so multiple && operators are not required in the latter transitions to define the variable's range (the query for the smallest times return true first and have their weights checked before the others--flipping 2 and 5 would result in 2 mistakenly having a weight of 90 instead of 30). The animation finishes when the current animation time is greater than or equal to a time in the list and the value of the random variable falls within that time's defined weight range.
 Notes:

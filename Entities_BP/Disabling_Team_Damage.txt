@@ -11,6 +11,7 @@ If you wish to disable team damage (so one cannot hurt their teammates), assign 
 Now add this damage sensor component into your player.json "components": {}. See comments for explanation.
 BP/entities/player.json > minecraft:entity > components
 
+```
 "minecraft:damage_sensor": {
     "triggers": [
         {
@@ -55,6 +56,7 @@ BP/entities/player.json > minecraft:entity > components
         }
     ]
 }
+```
 
 ## Damage from Projectiles ​
 Due to the primitive filters used by projectile entities, you have to use a completely different method to achieve this.
@@ -65,6 +67,7 @@ The process uses:
 - Functions
 BP/entities/player.json
 
+```
 "components": {
     "minecraft:timer": { // This is for applying teams to a projectile to nearby
         "time": [0, 0],  // untagged projectiles, through an event.
@@ -112,16 +115,20 @@ BP/entities/player.json
         }
     }
 }
+```
 
 BP/functions/wiki-apply_team.mcfunction
 
+```
 execute as @s[tag=team1] at @s run tag @e[rm=0,r=1,c=1,type=arrow,tag=] add team1
 execute as @s[tag=team2] at @s run tag @e[rm=0,r=1,c=1,type=arrow,tag=] add team2
 execute as @s[tag=team3] at @s run tag @e[rm=0,r=1,c=1,type=arrow,tag=] add team3
 execute as @s[tag=team4] at @s run tag @e[rm=0,r=1,c=1,type=arrow,tag=] add team4
+```
 
 BP/entities/arrow.json
 
+```
 "components": {
     "minecraft:projectile": {
         "on_hit": {           // On hit, trigger an event...
@@ -143,12 +150,15 @@ BP/entities/arrow.json
        }
     }
 }
+```
 
 BP/functions/wiki-apply_damage.mcfunction
 
+```
 execute as @s[tag=team1] at @s run tag @p[rm=0,r=1,tag=!team1] add damage
 execute as @s[tag=team2] at @s run tag @p[rm=0,r=1,tag=!team2] add damage
 execute as @s[tag=team3] at @s run tag @p[rm=0,r=1,tag=!team3] add damage
 execute as @s[tag=team4] at @s run tag @p[rm=0,r=1,tag=!team4] add damage
+```
 
 If you modify arrow.json, take into consideration the component groups.

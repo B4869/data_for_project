@@ -30,6 +30,7 @@ Vertex, fragments, and sometimes geometry shaders are combined with some options
 - Example:
 
 
+```
 {
     "materials": {
         "version": "1.0.0",
@@ -50,6 +51,8 @@ Vertex, fragments, and sometimes geometry shaders are combined with some options
         }
     }
 }
+
+```
 For all the details about material files and possible field values, check material file JSON schema.
 
 ## Troubleshooting 
@@ -71,9 +74,12 @@ You can pass variables to the shader from a particle or an entity by changing en
 TIME variable is a number of seconds as float and is global for all shaders. For time-based on particle lifetime, you need to pass this:
 
 
+```
 "minecraft:particle_appearance_tinting": {
     "color": ["variable.particle_age/variable.particle_lifetime", 0, 0, 1]
 }
+```
+
 Then in the shader, use PSInput.color.r as time, where 0.0 is particle birth and 1.0 is particle death.
 
 - Camera direction towards the entity ​
@@ -81,23 +87,34 @@ For entity shaders, you can make the shader dependent on the camera direction to
 
 - Add to PS_Input in vertex and fragment shader new field
 
+```
 float3 viewDir: POSITION;
+```
 - After that, add to vertex shader this line
 
+```
 PSInput.viewDir = normalize((mul(WORLD, mul(BONES[VSInput.boneId], float4(VSInput.position, 1)))).xyz);
+```
+
 - In the fragment shader, use PSInput.viewDir to make changes depending on camera rotation
 
 - Debugging values ​
 The easiest way to debug a value is to turn it into color and render it like this.
 
 
+```
 PSOutput.color = float4(PSInput.uv, 0., 1.);
+```
+
 This should create a red-green gradient, showing that the values of uv are between <0, 0> and <1, 1>.
 
 You can use the debug shader I wrote based on this shader. Right now, this shader will display values of the color passed to the shader. To display another value, change line 70 in hlsl shader to
 
 
+```
 int ascii = getFloatCharacter( cellIndex, <float4 vector here> );
+```
+
 GLSL version of debugging shader may crash Minecraft, use only for debugging.
 
 Download debug shader

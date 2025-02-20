@@ -9,6 +9,7 @@ Lets look at a simplified version of the spider RP entity file:
 
     RP/entity/spider.json
 
+```
 {
     "format_version": "1.8.0",
     "minecraft:client_entity": {
@@ -28,6 +29,7 @@ Lets look at a simplified version of the spider RP entity file:
         }
     }
 }
+```
 
     In this case, four short-name definitions have been created:
 
@@ -43,6 +45,7 @@ A simple render controller looks like this:
 
 RP/render_controllers/cow.render.json
 
+```
 {
     "format_version": "1.8.0",
     "render_controllers": {
@@ -57,6 +60,8 @@ RP/render_controllers/cow.render.json
         }
     }
 }
+```
+
 This controller is taking the short-name definitions from the entity file and rendering them. For example, the line: "textures": [ "Texture.default"] says: "Take the default texture, and apply it to the entity". The render controller doesn't know what the default texture is; it simply applies it.
 
 ## Re-using render controllers
@@ -86,6 +91,7 @@ For example, the render controller above is used for the minecraft:cow entity. I
             -Render Controller 
             RP/render_controllers/controller.render.texture_layering.json
 
+```
 {
     "format_version": "1.10.0",
     "render_controllers": {
@@ -104,11 +110,13 @@ For example, the render controller above is used for the minecraft:cow entity. I
         }
     }
 }
+```
 
        -Entity ​
        You need to define all textures in the entity and also use villager_v2_masked material.
        RP/entity/my_entity.json
 
+```
 "materials": {
 	"default": "villager_v2_masked"
 },
@@ -117,6 +125,7 @@ For example, the render controller above is used for the minecraft:cow entity. I
 	"bottom_layer": "textures/bottom"
   //Add more texture short-name definitions here.
 }
+```
 
       -Texture Layering with Variance ​
       While I guess hard-coding layered textures are cool, the real fun comes when you make the textures dynamic:
@@ -124,16 +133,19 @@ For example, the render controller above is used for the minecraft:cow entity. I
       Set multiple top textures, which we will index later.
       RP/entity/my_entity.json#description
 
+```
 "textures": {
 	"top_1": "textures/top_1",
 	"top_2": "textures/top_2",
 	"top_3": "textures/top_3",
 	"bottom_layer": "textures/bottom"
 }
+```
 
      -Render Controller 
      RP/render_controllers/controller.render.wool_only
 
+```
 {
     "format_version": "1.10.0",
     "render_controllers": {
@@ -156,15 +168,18 @@ For example, the render controller above is used for the minecraft:cow entity. I
         }
     }
 }
+```
 
         Using arrays and then q.variant, we can select the top texture based on the variant of the entity.
         Setting variant ​
         Now, to select which layer will show up, we can simply set the variant component in the entity:
         BP/entities/my_entity.json#components
 
+```
         "minecraft:variant": {
 	        "value": 0
         }
+```
 
         Remember that components like variants are zero-indexed, which means 0 is our first texture, and then 1 and 2 point to the second and third.
         Dynamically Changing Texture ​
@@ -179,6 +194,7 @@ For example, the render controller above is used for the minecraft:cow entity. I
 
         RP/render_controllers/controller.render.player.third_person.json
 
+```
 {
     "format_version": "1.8.0",
     "render_controllers": {
@@ -201,19 +217,23 @@ For example, the render controller above is used for the minecraft:cow entity. I
         }
     }
 }
+```
 
         -Entity ​
         Remember to include the geometry variants in your entity's file
 
         
+        ```
         "geometry": {
 	        "default": "geometry.entity.default",
 	        "custom_1": "geometry.entity.custom_1",
 	        "custom_2": "geometry.entity.custom_2"
         }
+        ```
 
         -Common Mistakes ​
         In render controllers, you can have multiple references to textures but only 1 reference to a geometry. This applies to arrays too.
+```
 
         "arrays": {
     "textures": {
@@ -224,11 +244,13 @@ For example, the render controller above is used for the minecraft:cow entity. I
         "array.geo": []
     }
 }
+```
 
         Followed by:
+        ```
         "textures": [
             "array.skin[q.variant]",
             "array.dress[q.skin_id]"
         ],
         "geometry": "array.geo[q.mark_variant]"
-
+        ```

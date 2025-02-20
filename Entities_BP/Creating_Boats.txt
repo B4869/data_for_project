@@ -14,6 +14,7 @@ Currently, the best way to create a boat entity is by using components. 1.16 int
 ## 1st method: minecraft:behavior.rise_to_liquid_level ​
 BP/entities/bar
 
+```
 {
 	"minecraft:entity": {
 		"format_version": "1.14.0",
@@ -72,9 +73,11 @@ BP/entities/bar
 		}
 	}
 }
+```
 
 ## 2nd method: minecraft:buoyant ​
 
+```
 {
 	"minecraft:entity": {
 		"format_version": "1.14.0",
@@ -138,6 +141,7 @@ BP/entities/bar
 		}
 	}
 }
+```
 
 ## What method to use? ​
 Both methods are suitable but have their pros and cons. If you want to disable the bouncing effect, use the first method. If you want more control over it, use the second method. I use the second method for static objects, such as buoys, and the first method for movable entities, such as boats, emulating the vanilla behavior.

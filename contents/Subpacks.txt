@@ -43,6 +43,7 @@ Example:
 
 RP/manifest.json
 
+```
 {
 	"format_version": 2,
 	"header": {
@@ -72,6 +73,8 @@ RP/manifest.json
 		}
 	]
 }
+```
+
 - name - name that will show when selecting subpacks.
 - memory_tier- amount of RAM that device must have to enable this subpack. 1 memory tier = 0.25 GB.
 - folder_name - name of the folder to be used for this subpack, for example in the examples above this would be subpack_1 or subpack_2.
