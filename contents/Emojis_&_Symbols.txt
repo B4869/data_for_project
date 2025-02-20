@@ -1,0 +1,307 @@
+# Emojis & Symbols
+
+* WARNING
+Modifying texture of vanilla emojis and symbols on this page are incompatible with Nintendo Switch platform!
+Emojis are not supported by Ore UI screens.
+
+Minecraft has a bunch of hard-coded Private Use Unicode symbols that it automatically converts to Emoji-like symbols. These can be used anywhere where normal letters can - signs, books, item names, chat, etc.
+Below you can find platform specific Emoji's, as well as general symbols. Copy/paste the "box" character under the Letter colum directly into Minecraft. You can also use the input key using /titleraw or /tellraw.
+There will be instructions for creating custom emoji at the bottom.
+
+## Vanilla Emojis 
+
+- HUD 
+
+|-------|--------------------------|----------|-------|
+| Name  | Letter (Copy/Paste This) | Unicode  | Image |
+|-------|--------------------------|----------|-------|
+| Food  |                         | U+E100   |       |
+| Armor |                         | U+E101   |       |
+| Heart |                         | U+E10C   |       |
+|-------|--------------------------|----------|-------|
+
+- Items & Blocks 
+
+|-----------------|--------------------------|----------|-------|
+| Name            | Letter (Copy/Paste This) | Unicode  | Image |
+|-----------------|--------------------------|----------|-------|
+| Wooden Pickaxe  |                         | U+E108   |       |
+| Wooden Sword    |                         | U+E109   |       |
+| Crafting Table  |                         | U+E10A   |       |
+| Furnace         |                         | U+E10B   |       |
+|-----------------|--------------------------|----------|-------|
+
+- Marketplace 
+
+|----------|--------------------------|----------|-------|
+| Name     | Letter (Copy/Paste This) | Unicode  | Image |
+|----------|--------------------------|----------|-------|
+| Minecoin |                         | U+E102   |       |
+| Token    |                         | U+E105   |       |
+|----------|--------------------------|----------|-------|
+
+- Inventory 
+
+|-----------------|--------------------------|----------|-------|
+| Name            | Letter (Copy/Paste This) | Unicode  | Image |
+|-----------------|--------------------------|----------|-------|
+| Craft Toggle On |                         | U+E0A0   |       |
+| Craft Toggle Off|                         | U+E0A1   |       |
+|-----------------|--------------------------|----------|-------|
+
+- New Touch 
+
+|-------------|--------------------------|----------|---------------------------------------------------|-------|
+| Name        | Letter (Copy/Paste This) | Unicode  | Input Key                                         | Image |
+|-------------|--------------------------|----------|---------------------------------------------------|-------|
+| Jump        |                         | U+E014   | :tip_virtual_button_jump:                        |       |
+| Attack      |                         | U+E015   | :tip_virtual_button_action_attack_or_destroy:    |       |
+| Joy Stick   |                         | U+E016   | :tip_virtual_joystick:                           |       |
+| Place       |                         | U+E018   | :tip_virtual_button_action_build_or_use:         |       |
+| Sneak       |                         | U+E019   | :tip_virtual_button_sneak:                       |       |
+| Sprint      |                         | U+E01A   | :tip_virtual_button_sprint:                      |       |
+| Fly Up      |                         | U+E01B   | :tip_virtual_button_fly_up:                      |       |
+| Fly Down    |                         | U+E01C   | :tip_virtual_button_fly_down:                    |       |
+| Dismount    |                         | U+E01D   | :tip_virtual_button_dismount:                    |       |
+|-------------|--------------------------|----------|---------------------------------------------------|-------|
+
+- Touch 
+
+|-------------------|--------------------------|----------|--------------------------------------------------|----------------------------|
+| Name              | Letter (Copy/Paste This) | Unicode  | Input Key                                        | Image                      |
+|-------------------|--------------------------|----------|--------------------------------------------------|----------------------------|
+| Jump              |                         | U+E084   | :touch_jump:                                     |                            |
+| Crouch            |                         | U+E085   | :touch_sneak:                                    |                            |
+| Fly Up            |                         | U+E086   | :touch_fly_up:                                   |                            |
+| Fly Down          |                         | U+E087   | :touch_fly_down:                                 |                            |
+| Stop Flying       |                         | U+E088   | :touch_stop_flying:                              |                            |
+| Left Arrow        |                         | U+E081   | :touch_left:                                     |                            |
+| Right Arrow       |                         | U+E083   | :touch_right:                                    |                            |
+| Up Arrow          |                         | U+E080   | :touch_forward:                                  |                            |
+| Down Arrow        |                         | U+E082   | :touch_back:                                     |                            |
+| Small Jump        |                         | U+E059   | :tip_touch_jump:                                 |                            |
+| Small Crouch      |                         | U+E05A   | :tip_touch_sneak:                                |                            |
+| Small Fly Up      |                         | U+E05C   | :tip_touch_fly_up:                               |                            |
+| Small Fly Down    |                         | U+E05D   | :tip_touch_fly_down:                             |                            |
+| Small Left Arrow  |                         | U+E056   | :tip_touch_left:                                 |                            |
+| Small Right Arrow |                         | U+E058   | :tip_touch_right:                                |                            |
+| Small Up Arrow    |                         | U+E055   | :tip_touch_forward:                              |                            |
+| Small Down Arrow  |                         | U+E057   | :tip_touch_back:                                 |                            |
+| Small Inventory   |                         | U+E05B   | :tip_touch_inventory:                            |                            |
+|-------------------|--------------------------|----------|--------------------------------------------------|----------------------------|
+
+- Keyboard & Mouse 
+
+|---------------------|--------------------------|----------|------------------------------------------|--------------------------------|
+| Name                | Letter (Copy/Paste This) | Unicode  | Input Key                                | Image                          |
+|---------------------|--------------------------|----------|------------------------------------------|--------------------------------|
+| Left Click          |                         | U+E060   | :mouse_left_button:                     |                                |
+| Right Click         |                         | U+E061   | :mouse_right_button:                    |                                |
+| Middle Click        |                         | U+E062   | :mouse_middle_button:                   |                                |
+| Small Left Click    |                         | U+E070   | :light_mouse_left_button:               |                                |
+| Small Right Click   |                         | U+E071   | :light_mouse_right_button:              |                                |
+| Small Middle Click  |                         | U+E072   | :light_mouse_middle_button:             |                                |
+| Small Mouse         |                         | U+E073   | :light_mouse_button:                    |                                |
+|---------------------|--------------------------|----------|------------------------------------------|--------------------------------|
+
+- Xbox 
+
+|--------------------------|--------------------------|----------|-------|
+| Name                     | Letter (Copy/Paste This) | Unicode  | Image |
+|--------------------------|--------------------------|----------|-------|
+| Y                        |                         | U+E003   |       |
+| B                        |                         | U+E001   |       |
+| A                        |                         | U+E000   |       |
+| X                        |                         | U+E002   |       |
+| Back                     |                         | U+E008   |       |
+| Start                    |                         | U+E009   |       |
+| LB (Left Bumper)         |                         | U+E004   |       |
+| RB (Right Bumper)        |                         | U+E005   |       |
+| LT (Left Trigger)        |                         | U+E006   |       |
+| RT (Right Trigger)       |                         | U+E007   |       |
+| LS (Left Stick)          |                         | U+E00A   |       |
+| RS (Right Stick)         |                         | U+E00B   |       |
+| D-pad Up                 |                         | U+E00C   |       |
+| D-pad Right              |                         | U+E00F   |       |
+| D-pad Down               |                         | U+E00E   |       |
+| D-pad Left               |                         | U+E00D   |       |
+|--------------------------|--------------------------|----------|-------|
+
+- Nintendo Switch 
+
+|--------------------------|--------------------------|----------|-------|
+| Name                     | Letter (Copy/Paste This) | Unicode  | Image |
+|--------------------------|--------------------------|----------|-------|
+| X                        |                         | U+E042   |       |
+| A                        |                         | U+E040   |       |
+| B                        |                         | U+E041   |       |
+| Y                        |                         | U+E043   |       |
+| +                        |                         | U+E049   |       |
+| -                        |                         | U+E048   |       |
+| L (Left Bumper)          |                         | U+E044   |       |
+| R (Right Bumper)         |                         | U+E045   |       |
+| ZL (Left Trigger)        |                         | U+E046   |       |
+| RL (Right Trigger)       |                         | U+E047   |       |
+| L (Left Stick)           |                         | U+E04A   |       |
+| R (Right Stick)          |                         | U+E04B   |       |
+| D-pad Up                 |                         | U+E04C   |       |
+| D-pad Right              |                         | U+E04F   |       |
+| D-pad Down               |                         | U+E04E   |       |
+| D-pad Left               |                         | U+E04D   |       |
+|--------------------------|--------------------------|----------|-------|
+
+- PlayStation (4/5)
+
+|--------------------------|--------------------------|----------|-------|
+| Name                     | Letter (Copy/Paste This) | Unicode  | Image |
+|--------------------------|--------------------------|----------|-------|
+| Triangle                 |                         | U+E023   |       |
+| Circle                   |                         | U+E021   |       |
+| Cross                    |                         | U+E020   |       |
+| Square                   |                         | U+E022   |       |
+| Options/Share            |                         | U+E029   |       |
+| Touch Pad                |                         | U+E028   |       |
+| L1 (Left Bumper)         |                         | U+E024   |       |
+| R1 (Right Bumper)        |                         | U+E025   |       |
+| L2 (Left Trigger)        |                         | U+E026   |       |
+| R2 (Right Trigger)       |                         | U+E027   |       |
+| L3 (Left Stick)          |                         | U+E02A   |       |
+| R3 (Right Stick)         |                         | U+E02B   |       |
+| D-pad Up                 |                         | U+E02C   |       |
+| D-pad Right              |                         | U+E02F   |       |
+| D-pad Down               |                         | U+E02E   |       |
+| D-pad Left               |                         | U+E02D   |       |
+|--------------------------|--------------------------|----------|-------|
+
+- Oculus (Rift/Rift S) 
+
+|-----------------------|--------------------------|----------|-------|
+| Name                  | Letter (Copy/Paste This) | Unicode  | Image |
+|-----------------------|--------------------------|----------|-------|
+| 0                     |                         | U+E0E0   |       |
+| B                     |                         | U+E0E2   |       |
+| A                     |                         | U+E0E1   |       |
+| Y                     |                         | U+E0EA   |       |
+| X                     |                         | U+E0E9   |       |
+| LG (Left Grip)        |                         | U+E0E3   |       |
+| RG (Right Grip)       |                         | U+E0E4   |       |
+| LT (Left Trigger)     |                         | U+E0E7   |       |
+| RT (Right Trigger)    |                         | U+E0E8   |       |
+| LS (Left Stick)       |                         | U+E0E5   |       |
+| RS (Right Stick)      |                         | U+E0E6   |       |
+|-----------------------|--------------------------|----------|-------|
+
+- Windows MR (Mixed Reality) 
+
+|-----------------------------|--------------------------|----------|-------|
+| Name                        | Letter (Copy/Paste This) | Unicode  | Image |
+|-----------------------------|--------------------------|----------|-------|
+| Menu                        |                         | U+E0C2   |       |
+| Windows                     |                         | U+E0CD   |       |
+| Left Touchpad               |                         | U+E0C5   |       |
+| Left Horizontal Touchpad    |                         | U+E0C6   |       |
+| Left Vertical Touchpad      |                         | U+E0C7   |       |
+| Right Touchpad              |                         | U+E0C8   |       |
+| Right Horizontal Touchpad   |                         | U+E0C9   |       |
+| Right Vertical Touchpad     |                         | U+E0CA   |       |
+| LT (Left Trigger)           |                         | U+E0CB   |       |
+| RT (Right Trigger)          |                         | U+E0CC   |       |
+| LG (Left Grab)              |                         | U+E0C0   |       |
+| RG (Right Grab)             |                         | U+E0C1   |       |
+| LS (Left Stick)             |                         | U+E0C3   |       |
+| RS (Right Stick)            |                         | U+E0C4   |       |
+|-----------------------------|--------------------------|----------|-------|
+
+- Other 
+
+|-------------------|--------------------------|----------|-------|
+| Name              | Letter (Copy/Paste This) | Unicode  | Image |
+|-------------------|--------------------------|----------|-------|
+| Crosshair         |                         | U+E017   |       |
+| Agent             |                         | U+E103   |       |
+| Immersive Reader  |                         | U+E104   |       |
+| Hollow Star       |                         | U+E106   |       |
+| Solid Star        |                         | U+E107   |       |
+|-------------------|--------------------------|----------|-------|
+
+- Additional Input Keys ​
+Input keys can be used to automatically detect the input of the player and be used with /titleraw or /tellraw with the text component.
+Below are the results of default keybindings. All text below, including "Unassigned", is literal and will display that text to the player.
+
+|----------------------|----------------------------|------------------|-------------|-------------|-----------------|-------------------|
+| Name                 | Input Key                  | Keyboard & Mouse | Touch       | Xbox        | Nintendo Switch | Playstation (4/5) |
+|----------------------|----------------------------|------------------|-------------|-------------|-----------------|-------------------|
+| Jump                 | :_input_key.jump:          | SPACE            |             |             |                 |                   |
+| Sneak                | :_input_key.sneak:         | SHIFT            |             |             |                 |                   |
+| Sprint               | :_input_key.sprint:        | CONTROL          | Unassigned  |             |                 |                   |
+| Forward              | :_input_key.forward:       | W                | Unassigned  | Unassigned  | Unassigned      | Unassigned        |
+| Back                 | :_input_key.back:          | S                | Unassigned  | Unassigned  | Unassigned      | Unassigned        |
+| Left                 | :_input_key.left:          | A                | Unassigned  | Unassigned  | Unassigned      | Unassigned        |
+| Right                | :_input_key.right:         | D                | Unassigned  | Unassigned  | Unassigned      | Unassigned        |
+| Attack               | :_input_key.attack:        |                  | Unassigned  |             |                 |                   |
+| Inventory            | :_input_key.inventory:     | E                | Unassigned  |             |                 |                   |
+| Cycle Item Left      | :_input_key.cycleItemLeft: | Unassigned       | Unassigned  |             |                 |                   |
+| Cycle Item Right     | :_input_key.cycleItemRight:| Unassigned       | Unassigned  |             |                 |                   |
+| Use                  | :_input_key.use:           |                  | Unassigned  |             |                 |                   |
+| Drop                 | :_input_key.drop:          | Q                | Unassigned  |             |                 |                   |
+| Code Builder         | :_input_key.codeBuilder:   | Unassigned       | Unassigned  | Unassigned  | Unassigned      | Unassigned        |
+|----------------------|----------------------------|------------------|-------------|-------------|-----------------|-------------------|
+
+## Custom Emojis ​
+
+*WARNING
+This method is not officially supported. Use with caution on the Marketplace!
+
+To make a custom emoji, we use a very similar method to the pre-built emoji, except instead of using the Microsoft sprite-sheets, we overwrite them with our own! Some character-slots are already used up with the emoji above, but there are blank slots we can use.
+Please note that the following files have been annotated with slot information: If you use them directly, existing Emoji will have numbers added on top of them. If you need the original sprite-sheets, you can get them from the Vanilla Resources on your system (not included in the Vanilla Resource Pack downloads).
+To get started, you should download the sprite-sheets, and move them into the fonts folder.
+Two sprite-sheets are provided for each glyph-target: One that accurately reflects vanilla, and a second version which has been annotated with hex information, for easily finding the correct character.
+
+- Glyph E0 ​
+
+RP/font/glyph_E0.png
+
+- Glyph E1 ​
+
+RP/font/glyph_E1.png
+
+Edited sample glyph_E1.png for free-use shared by @zheaEvyline:
+
+
+
+If you'd like to add existing Vanilla items to the glyph and use them as emojis in-game, you can easily do so with the Items to Glyph Web Tool created by @Minato
+
+Your filepath should look like this:
+
+📂RP
+📂font
+🖼️glyph_E0.png
+🖼️glyph_E1.png
+
+- Using the Emojis In-Game ​
+Once you have your custom emojis inside the glyph_E0.png or glyph_E1.png, you need to obtain it's corresponding letter/symbol which you will be able to copy-paste to display the emoji in-game using the converter below.
+
+The first two characters of the input are either E0 or E1, depending on which file you added emojis to.
+
+The next two characters are the position inside the image in the format <row><column>, where each character is a number in hexadecimal numeral system. You can find this number by referencing the images above. For example, the top-right square in E0 is 0F, and the bottom right is FF.
+
+So after you are done, it might look like E102 (E1 + 02).
+
+Copy this code into the following field, and press Convert. The symbol on the right-hand side can be copy/pasted into Minecraft.
+
+Hex value
+Result
+Convert
+Alternatively, you can obtain the letter/symbol with the help of this Glyph Web Tool made by @NhanAZ.
+
+- Emoji Positioning ​
+To position an emoji upwards/downwards, simply move it up/down within its own emoji slot.
+To position an emoji towards the left or right, simply add any pixel of 5-10% opacity to its side (within its own slot), opposite to the direction you want to move it.
+Ex: to move an emoji to the right by 2 pixels, add any 5-10% opacity pixel connecting to it, anywhere on its left-most side and add another one to the left of that pixel.
+Note: The following steps apply only to emojis that do not fill their slot width (i.e., are smaller than the slot size).
+
+- Glyph Separation Space ​
+Sometimes, it appears that if you put 2 glyphs near to each other, there will be a couple of empty pixels between them. The only fix for it is to scale the glyph (png file) itself. Ex: 256×256 → 512×512
+
+- Resizing the Emoji ​
+To resize the emoji, change the resolution of the glyph (PNG file) to 512×512. The reason for doubling the resolution is that it increases the number of pixels, providing more room for editing. Once you've done this, open an image editor of your choice, select the new emoji, resize it, and center it within the emoji slot. This will give the emoji more space around it when used in the game.
