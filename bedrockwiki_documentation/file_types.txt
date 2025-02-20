@@ -71,7 +71,7 @@ Both asset extensions, mcpack and mctemplate, appear to functionally behave the 
         - In Editor mode, using the "Export Template" button on the Game settings screen for a world
         - In Editor mode, running the /project export template command. The world will be saved to the projectbackups directory in the com.mojang folder.
 
-# Composites
+## Composites
 
 Composite archives are used to import up to one level archive and any number or combination of asset archives in a single import action. In general, contents to a composite must be packaged. Directories can also be given on the top level of a composite archive for importing asset types (behavior packs, resource packs, skin packs, and world templates) without needing to pre-package them. Nested sub-directories for organization may not be used.
 
